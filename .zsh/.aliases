@@ -7,6 +7,7 @@ alias 'll'='ls -a --color=auto'
 alias '..'='cd ..'
 alias '...'='cd ../..'
 alias 'dl'='cd ~/Downloads'
+alias 'p'='cd ~/projects'
 
 # git aliases 
 alias 'gco'='git commit'
