@@ -1,0 +1,9 @@
+ALIASES=~/.zsh/.aliases
+FUNCTIONS=~/.zsh/.functions
+
+EXPORTS=~/.zsh/.exports
+
+source $ALIASES
+source $FUNCTIONS
+source $EXPORTS
+
