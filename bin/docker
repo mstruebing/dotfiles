@@ -1,0 +1,10 @@
+#!/bin/bash
+
+SERVICE='docker.service'
+EXECUTE='/usr/bin/docker'
+
+ARGS="$@"
+
+~/bin/start-service $SERVICE
+
+$EXECUTE $ARGS

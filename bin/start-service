@@ -1,0 +1,11 @@
+#!/bin/bash
+
+SERVICE="$1"
+
+if [ "`systemctl is-active $SERVICE`" != "active" ]
+then
+    echo "$SERVICE wasnt running so attempting to start"
+    sudo systemctl start $SERVICE
+    echo "waiting 3 seconds to execute..."
+    sleep 3s
+fi
