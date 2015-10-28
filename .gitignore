@@ -1,0 +1,7 @@
+*
+!.gitignore
+!LICENSE
+!bin/start-service
+!bin/docker
+!.zsh/*
+!.zshrc

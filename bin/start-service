@@ -1,10 +1,12 @@
 #!/bin/bash
 
+# this script check if a service is running, if not it will start it
+
 SERVICE="$1"
 
 if [ "`systemctl is-active $SERVICE`" != "active" ]
 then
-    echo "$SERVICE wasnt running so attempting to start"
+    echo "$SERVICE isnt running so attempting to start..."
     sudo systemctl start $SERVICE
     echo "waiting 3 seconds to execute..."
     sleep 3s
