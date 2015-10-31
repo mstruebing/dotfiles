@@ -11,6 +11,7 @@ alias 'p'='cd ~/projects'
 
 # git aliases 
 alias 'gco'='git commit'
+alias 'gcheck'='git checkout'
 alias 'gst'='git status'
 alias 'gdiff'='git diff'
 alias 'gadd'='git add'
