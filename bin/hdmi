@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# this script is handling the configuration of an external display
+
+extern='HDMI1'
+intern='eDP1'
+resolution='1920x1080'
+
+connected=$(xrandr --query | grep $extern | cut -d \  -f 2)
+
+if [ "$connected" == "connected" ];
+then
+  if [ "$1" == "--left" ];
+  then
+    $(xrandr --output $extern --mode $resolution --left-of $intern)
+  else
+    $(xrandr --output $extern --mode $resolution --right-of $intern)
+  fi
+else
+ echo HDMI isn\'t connected
+fi
