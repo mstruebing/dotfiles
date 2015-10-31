@@ -21,3 +21,4 @@ alias 'glog'='git log --oneline --decorate'
 # misc
 alias 'v'='vim'
 alias 'clr'='clear && ls && pwd'
+alias 'makepkg'='makepkg -sic'
