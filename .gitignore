@@ -1,7 +1,6 @@
 *
 !.gitignore
 !LICENSE
-!bin/start-service
-!bin/docker
+!bin/
 !.zsh/*
 !.zshrc
