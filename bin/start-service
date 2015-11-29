@@ -8,6 +8,4 @@ if [ "`systemctl is-active $SERVICE`" != "active" ]
 then
     echo "$SERVICE isnt running so attempting to start..."
     sudo systemctl start $SERVICE
-    echo "waiting 3 seconds to execute..."
-    sleep 3s
 fi
