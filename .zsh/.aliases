@@ -1,7 +1,7 @@
 
 # ls
-alias 'ls'='ls -l --color=auto'
-alias 'll'='ls -a --color=auto'
+alias 'ls'='ls -lh --color=auto'
+alias 'll'='ls -ah --color=auto'
 
 # cd aliases
 alias '..'='cd ..'
