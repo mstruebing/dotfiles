@@ -2,6 +2,8 @@ function cd {
   builtin cd "$@" && ls && pwd
 }
 
+# Shows lines of a file 
+# Usage: slns file <startline> <endline>
 slns() {
   tail -n +$1 $3 | head -n $(($2-$1+1))
 }
