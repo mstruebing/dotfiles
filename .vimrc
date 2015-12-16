@@ -16,3 +16,7 @@ set backspace=indent,eol,start " Backspace through everything
 set autoindent
 
 set number                  " Line numbering"
+
+inoremap { {<CR><CR>}<up><Tab>
+inoremap ( (<CR><CR>)<up><Tab>
+inoremap [ [<CR><CR>]<up><Tab>
