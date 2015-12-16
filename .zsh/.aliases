@@ -8,6 +8,7 @@ alias '..'='cd ..'
 alias '...'='cd ../..'
 alias 'dl'='cd ~/Downloads'
 alias 'p'='cd ~/projects'
+alias 'docs'='cd ~/Documents'
 
 # git aliases 
 alias 'gco'='git commit'
@@ -24,3 +25,4 @@ alias 'glog'='git log --oneline --decorate'
 alias 'v'='vim'
 alias 'clr'='clear && ls && pwd'
 alias 'makepkg'='makepkg -sic'
+alias 'online'='ping google.de'
