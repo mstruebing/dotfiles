@@ -1,3 +1,16 @@
 [user]
 	email = max_struebing@gmx.de
 	name = Max Strübing
+
+[alias]
+  p = push
+  up = pull
+  c = commit -m
+  d = diff
+  co = checkout
+  b = branch
+  lg = log --oneline --decorate
+  s = status
+  branches = branch -a
+  remotes = remote -v
+  undo = reset --soft HEAD^
