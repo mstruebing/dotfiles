@@ -11,15 +11,7 @@ alias 'p'='cd ~/projects'
 alias 'docs'='cd ~/Documents'
 
 # git aliases 
-alias 'gco'='git commit'
-alias 'gcom'='git commit -m'
-alias 'gcheck'='git checkout'
-alias 'gst'='git status'
-alias 'gdiff'='git diff'
-alias 'gadd'='git add'
-alias 'gpush'='git push origin'
-alias 'gpull'='git pull origin'
-alias 'glog'='git log --oneline --decorate'
+alias 'g'='git'
 
 # misc
 alias 'v'='vim'
