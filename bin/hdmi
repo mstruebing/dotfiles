@@ -2,11 +2,11 @@
 
 # this script is handling the configuration of an external display
 
-extern='HDMI1'
+extern='DP1'
 intern='eDP1'
-resolution='1920x1080'
+resolution='1680x1050'
 
-connected=$(xrandr --query | grep $extern | cut -d \  -f 2)
+connected=$(xrandr --query | grep $extern | tail -1 | cut -d \  -f 2)
 
 if [ "$connected" == "connected" ];
 then
