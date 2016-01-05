@@ -4,6 +4,8 @@
 
 [alias]
   p = push
+	pm = push origin master
+	a = add
   up = pull
   c = commit -m
   d = diff
