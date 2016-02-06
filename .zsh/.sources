@@ -6,3 +6,4 @@ source $ALIASES
 source $FUNCTIONS
 source $EXPORTS
 
+tldr -r
