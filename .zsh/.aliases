@@ -24,6 +24,6 @@ alias 's'='web-s'
 # npm aliases
 alias nis='npm install --save'
 alias nid='npm install --save-dev'
-alias nig='npm install --global'
+alias nig='sudo npm install --global'
 alias nt='npm test'
 
