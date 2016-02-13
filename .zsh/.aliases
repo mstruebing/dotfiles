@@ -10,8 +10,9 @@ alias 'dl'='cd ~/Downloads'
 alias 'p'='cd ~/projects'
 alias 'docs'='cd ~/Documents'
 
-# git aliases 
+# git aliases
 alias 'g'='git'
+alias 'gpc'='git push origin $(git_current_branch)' # because i cant use this variable in my gitconfig
 
 # misc
 alias 'v'='vim'
@@ -26,4 +27,3 @@ alias nis='npm install --save'
 alias nid='npm install --save-dev'
 alias nig='sudo npm install --global'
 alias nt='npm test'
-
