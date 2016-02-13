@@ -6,4 +6,6 @@ source $ALIASES
 source $FUNCTIONS
 source $EXPORTS
 
+tmux
+
 tldr -r
