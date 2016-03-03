@@ -1,7 +1,9 @@
 ALIASES=~/.zsh/.aliases
 FUNCTIONS=~/.zsh/.functions
 EXPORTS=~/.zsh/.exports
+Z=/usr/lib/z.sh
 
 source $ALIASES
 source $FUNCTIONS
 source $EXPORTS
+source $Z
