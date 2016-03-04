@@ -7,3 +7,4 @@ source $ALIASES
 source $FUNCTIONS
 source $EXPORTS
 source $Z
+tldr -r
