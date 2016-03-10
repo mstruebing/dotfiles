@@ -14,6 +14,11 @@ function mkd() {
     mkdir -p "$@" && cd "$@";
 }
 
+# calculator aligator :)
+function calc() {
+  echo "$*" | bc -l
+}
+
 # Script to comfortable configure an hdmi monitor on my setup
 # Usage: hdmi [--right]
 # default is left, if you want to have it right pass --right as an argument
