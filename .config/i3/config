@@ -104,8 +104,8 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
-bindsym Control+Alt+Left workspace prev
-bindsym Control+Alt+Right workspace next
+bindsym Control+Mod1+Left workspace prev
+bindsym Control+Mod1+Right workspace next
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -174,7 +174,9 @@ bindsym $mod+z exec playerctl previous
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
+bindsym Control+Mod1+l exec i3lock -d -c 000000 -e -f 
 
 exec --no-startup-id xfce4-panel --disable-wm-check
+exec --no-startup-id setxkbmap -model pc105 -layout us,de -option grp:rctrl_rshift_toggle
 exec ~/bin/startup
-exec nm-applet
+exec --no-startup-id nm-applet
