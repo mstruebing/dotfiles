@@ -14,7 +14,7 @@ set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -35,6 +35,7 @@ bindsym $super+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $super+Shift+q kill
+bindsym $alt+F4 kill
 
 # start dmenu (a program launcher)
 bindsym $super+d exec dmenu_run
@@ -156,9 +157,18 @@ bindsym $super+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        position top
+  position top
         status_command i3status
         tray_output primary
+  colors {
+    separator #586e75
+    background #002b36
+    statusline #aea79f
+    focused_workspace #586e75 #586e75 #ffffff
+    active_workspace #073642 #073642 #ffffff
+    inactive_workspace #002b36 #002b36 #aea79f
+    urgent_workspace #77216f #77216f #ffffff
+  }
 }
 
 # Pulse Audio controls
@@ -183,7 +193,10 @@ bindsym Control+$alt+l exec xscreensaver-command -lock
 # sticky window
 bindsym $super+Shift+s sticky toggle
 
-#exec --no-startup-id xfce4-panel --disable-wm-check
 exec --no-startup-id setxkbmap -model pc105 -layout us,de -option grp:rctrl_rshift_toggle
-exec ~/bin/startup
-#exec --no-startup-id nm-applet
+exec --no-startup-id ~/bin/startup
+
+client.focused #586e75 #586e75 #fdf6e3 #268bd2
+client.focused_inactive #073642 #073642 #93a1a1 #002b36
+client.unfocused #002b36 #002b36 #586e75 #002b36
+client.urgent #dc322f #dc322f #fdf6e3 #dc322f

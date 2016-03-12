@@ -37,10 +37,10 @@ function setDisplay() {
 
     if [[ "$1" == "--right" ]];
     then
-      $(xrandr --output $EXTERN --mode $resolution --right-of $INTERN)
+      $(xrandr --output $EXTERN --mode $resolution --right-of $INTERN --primary)
     elif [ -z "$1" ]
     then
-      $(xrandr --output $EXTERN --mode $resolution --left-of $INTERN)
+      $(xrandr --output $EXTERN --mode $resolution --left-of $INTERN --primary)
     else
       echo ERROR: wrong parameter
       returnValue=1
