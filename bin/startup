@@ -17,16 +17,24 @@ function toggleTouchPad() {
   fi
 }
 
-function hdmi() {
-  local EXTERN='HDMI1'
+function setDisplay() {
+  local VGA='DP1'
+  local HDMI='HDMI1'
   local INTERN='eDP1'
   local returnValue=0
 
-  local connected=$(xrandr --query | grep $EXTERN | tail -1 | cut -d \  -f 2)
-  local resolution=$(xrandr --query | grep -C 1 HDMI1 | tail -1 | awk '{print $1}')
+  local connected=$(xrandr --query | grep $HDMI | tail -1 | cut -d \  -f 2)
 
-  if [[ "$connected" == "connected" ]];
+  local hdmiConnected=$(xrandr --query | grep $HDMI | tail -1 | cut -d \  -f 2 | grep ^connected)
+  local vgaConnected=$(xrandr --query | grep $VGA | tail -1 | cut -d \  -f 2 | grep ^connected)
+
+  [[ $vgaConnected ]] && EXTERN=$VGA
+  [[ $hdmiConnected ]] && EXTERN=$HDMI
+
+  if [[ ! -z $EXTERN ]];
   then
+    local resolution=$(xrandr --query | grep -C 1 $EXTERN | tail -1 | awk '{print $1}')
+
     if [[ "$1" == "--right" ]];
     then
       $(xrandr --output $EXTERN --mode $resolution --right-of $INTERN)
@@ -38,12 +46,30 @@ function hdmi() {
       returnValue=1
     fi
   else
-   echo ERROR:HDMI isn\'t connected
+   echo ERROR: No display is connected!
    returnValue=2
   fi
 
   return $returnValue
 }
 
+function toggleTouchPad() {
+  declare -i ID
+  ID=`xinput list | grep -Eio 'touchpad\s*id\=[0-9]{1,2}' | grep -Eo '[0-9]{1,2}'`
+  declare -i STATE
+  STATE=`xinput list-props $ID|grep 'Device Enabled'|awk '{print $4}'`
+  if [ $STATE -eq 1 ]
+  then
+      xinput disable $ID
+      # echo "Touchpad disabled."
+      # notify-send 'Touchpad' 'Disabled' -i /usr/share/icons/Adwaita/48x48/devices/input-touchpad.png
+  else
+      xinput enable $ID
+      # echo "Touchpad enabled."
+      # notify-send 'Touchpad' 'Enabled' -i /usr/share/icons/Adwaita/48x48/devices/input-touchpad.png
+  fi
+}
+
+
 toggleTouchPad
-hdmi
+setDisplay
