@@ -177,7 +177,8 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # i3lock
-bindsym Control+$alt+l exec i3lock -d -c 000000 -e -f
+#bindsym Control+$alt+l exec i3lock -d -c 000000 -e -f
+bindsym Control+$alt+l exec xscreensaver-command -lock
 
 # sticky window
 bindsym $super+Shift+s sticky toggle
