@@ -1,26 +1,42 @@
 # cds into an directory and make an ls and pwd
-function cd {
+function cd() {
   builtin cd "$@" && ls && pwd
 }
 
 # Shows lines of a file
-# Usage: slns <startline> <endline> file
-slns() {
+# Usage: slns <startline> <endline> <file>
+function slns() {
   tail -n +$1 $3 | head -n $(($2-$1+1))
 }
 
 # Create a new directory and enter it
+# USAGE: mkd folder
 function mkd() {
     mkdir -p "$@" && cd "$@";
 }
 
 # calculator aligator :)
+# USAGE calc <arithmetic expression>
 function calc() {
   echo "$*" | bc -l
 }
 
+# touches a file and (if needed) it's parent directories
+# USAGE: touch folder/folder2/file.extension
+function touch() {
+  if (($# < 1)); then
+    echo "Missing argument";
+    return 1;
+  fi
+
+  for f in "$@"; do
+    mkdir -p -- "$(dirname -- "$f")" && command touch -- "$f"
+  done
+}
+
 # script to configure an extern display
 # default is left can be overriden with --right
+# <setDisplay | setDisplay --right>
 function setDisplay() {
   local VGA='DP1'
   local HDMI='HDMI1'
@@ -57,6 +73,8 @@ function setDisplay() {
   return $returnValue
 }
 
+# toggles the touchpad from latpop
+# USAGE: toggleTouchPad
 function toggleTouchPad() {
   declare -i ID
   ID=`xinput list | grep -Eio 'touchpad\s*id\=[0-9]{1,2}' | grep -Eo '[0-9]{1,2}'`
@@ -72,4 +90,9 @@ function toggleTouchPad() {
       # echo "Touchpad enabled."
       # notify-send 'Touchpad' 'Enabled' -i /usr/share/icons/Adwaita/48x48/devices/input-touchpad.png
   fi
+}
+
+# gets all function comments and the function names
+function getFunctions() {
+  grep -E '^#|^function' .zsh/.functions | sed 's/{/\n/g'
 }
