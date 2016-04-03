@@ -57,10 +57,10 @@ function setDisplay() {
 
     if [[ "$1" == "--right" ]];
     then
-      $(xrandr --output $EXTERN --mode $resolution --right-of $INTERN --primary)
+      $(xrandr --output $EXTERN --mode $resolution --right-of $INTERN)
     elif [ -z "$1" ]
     then
-      $(xrandr --output $EXTERN --mode $resolution --left-of $INTERN --primary)
+      $(xrandr --output $EXTERN --mode $resolution --left-of $INTERN)
     else
       echo ERROR: wrong parameter
       returnValue=1
@@ -69,6 +69,9 @@ function setDisplay() {
    echo ERROR: No display is connected!
    returnValue=2
   fi
+  
+  # Just to set intern display as primary output for nm-applet
+  xrandr --output eDP1 --mode 1920x1080 --primary
 
   return $returnValue
 }
@@ -94,5 +97,5 @@ function toggleTouchPad() {
 
 # gets all function comments and the function names
 function getFunctions() {
-  grep -E '^#|^function' .zsh/.functions | sed 's/{/\n/g'
+  grep -E '^#|^function' $HOME/.zsh/.functions | sed 's/{/\n/g'
 }
