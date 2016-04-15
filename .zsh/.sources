@@ -9,4 +9,4 @@ source $FUNCTIONS
 source $EXPORTS
 source $Z
 source $NVM
-tldr -r
+#tldr -r
