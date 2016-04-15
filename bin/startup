@@ -50,6 +50,9 @@ function setDisplay() {
    returnValue=2
   fi
 
+  # Just to set intern display as primary output for nm-applet
+  xrandr --output eDP1 --mode 1920x1080 --primary
+
   return $returnValue
 }
 
