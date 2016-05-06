@@ -20,6 +20,7 @@ alias 'clr'='clear && ls && pwd'
 alias 'online'='ping google.de'
 alias 'prm'='. ~/.prm/prm/prm.sh'
 alias 's'='web-s'
+alias 'a'='atom .'
 
 # npm aliases
 alias nis='npm install --save'
