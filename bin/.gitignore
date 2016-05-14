@@ -1,2 +1,5 @@
-!*
-composer
+!docker
+!server
+!start-service
+!startup
+!todo
