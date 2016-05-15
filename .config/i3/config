@@ -196,10 +196,15 @@ bindsym $super+Shift+s sticky toggle
 # todo
 bindsym $super+t exec ~/bin/todo
 
+# wnb alt tab bindings
+bindsym $alt+Tab focus right
+bindsym $alt+Shift+Tab focus left
+
 exec --no-startup-id setxkbmap -model pc105 -layout us,de -option grp:rctrl_rshift_toggle
 exec --no-startup-id ~/bin/startup
 exec --no-startup-id nm-applet
-exec --no-startup-id feh --bg-fill /home/maex/Documents/0FTX0KW.png
+exec --no-startup-id ~/.fehbg
+#exec --no-startup-id feh --bg-fill /home/maex/Documents/0FTX0KW.png
 
 client.focused #586e75 #586e75 #fdf6e3 #268bd2
 client.focused_inactive #073642 #073642 #93a1a1 #002b36
