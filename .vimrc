@@ -16,3 +16,8 @@ set backspace=indent,eol,start " Backspace through everything
 set autoindent
 
 set number                  " Line numbering"
+
+set wildmenu " Wildmode, some command completion
+set wildmode=list:longest,full
+
+set mouse=a " Enable mouse support - even in tmux \o/
