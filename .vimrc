@@ -21,3 +21,11 @@ set wildmenu " Wildmode, some command completion
 set wildmode=list:longest,full
 
 set mouse=a " Enable mouse support - even in tmux \o/
+
+" {}()[] :)
+inoremap { {<CR><CR>}<up><Tab>
+inoremap ( (<CR><CR>)<up><Tab>
+inoremap [ [<CR><CR>]<up><Tab>
+
+inoremap ' ''<left>
+inoremap " ""<left>
