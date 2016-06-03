@@ -75,5 +75,5 @@ function toggleTouchPad() {
 
 
 toggleTouchPad
-setDisplay
+setDisplay --right
 xscreensaver -display :0.0 -no-splash &
