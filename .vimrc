@@ -41,6 +41,9 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif""))
 map <C-n> :NERDTreeToggle<CR>>>
 
+" show hidden files by default
+let NERDTreeShowHidden=1
+
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
