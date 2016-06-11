@@ -16,6 +16,7 @@ alias 'gup'='git pull origin $(git_current_branch)'
 
 # misc
 alias 'v'='vim'
+alias 'n'='nvim'
 alias 'clr'='clear && ls && pwd'
 alias 'online'='ping google.de'
 alias 'prm'='. ~/.prm/prm/prm.sh'
