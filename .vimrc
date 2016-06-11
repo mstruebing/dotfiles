@@ -49,3 +49,9 @@ noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
 " toggle hlsearch
 nnoremap <F3> :set hlsearch!<CR>
+
+" comments ctrl+/, adds // at the beginning of a line
+nnoremap <c-_> :s#^//\{1}\\|^#//#<CR> :set nohlsearch<CR>
+
+
+
