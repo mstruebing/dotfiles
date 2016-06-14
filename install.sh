@@ -5,6 +5,7 @@ sed -i 's|^\.||' filelist
 sed -i 's|/install.sh||' filelist
 
 echo /.gitconfig >> filelist
+echo /.config/nvim >> filelist
 
 while read file          
 do
