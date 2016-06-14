@@ -7,6 +7,9 @@ set showmatch               " Show match numbers
 set ignorecase              " Search case-insensitive
 set smartcase               " ...except when something is capitalized
 
+execute "set colorcolumn=" . join(range(81,335), ',')
+highlight ColorColumn ctermbg=Black
+
 " Whitespace handling
 set tabstop=2 shiftwidth=2  " Tab is two spaces
 set expandtab               " Use spaces, not tabs
@@ -52,6 +55,8 @@ nnoremap <F3> :set hlsearch!<CR>
 
 " comments ctrl+/, adds // at the beginning of a line
 nnoremap <c-_> :s#^//\{1}\\|^#//#<CR> :set nohlsearch<CR>
+vnoremap <c-_> :s#^//\{1}\\|^#//#<CR> :set nohlsearch<CR>
 
-
+" filetype plugin on for specific file mappings
+filetype plugin on
 

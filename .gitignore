@@ -5,6 +5,7 @@
 !.zsh/*
 !.zshrc
 !.vimrc
+!.vim/
 !.gitconfig
 !.npmrc
 !.tmux.conf
