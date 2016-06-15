@@ -38,6 +38,9 @@ inoremap " ""<left>
 inoremap < <><left>
 inoremap ` ``<left>
 
+" block comments
+iab /* /*<CR> *<CR>*/<Up>
+
 set rtp^=/usr/share/vim/vimfiles/
 
 " nerdtree
@@ -54,9 +57,14 @@ noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 " toggle hlsearch
 nnoremap <F3> :set hlsearch!<CR>
 
+" Switch leader key to `<Space>`
+let mapleader = "\<Space>"
+
 " comments ctrl+/, adds // at the beginning of a line
-nnoremap <c-_> :s#^//\{1}\\|^#//#<CR> :set nohlsearch<CR>
-vnoremap <c-_> :s#^//\{1}\\|^#//#<CR> :set nohlsearch<CR>
+nnoremap <Leader>/ :s#^//\{1}\\|^#//#<CR> :set nohlsearch<CR>
+vnoremap <Leader>/ :s#^//\{1}\\|^#//#<CR> :set nohlsearch<CR>
+nnoremap <Leader>. :s#^//##<CR> :set nohlsearch<CR>
+vnoremap <Leader>. :s#^//##<CR> :set nohlsearch<CR>
 
 " filetype plugin on for specific file mappings
 filetype plugin on
