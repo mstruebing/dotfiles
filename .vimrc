@@ -10,7 +10,7 @@ set ignorecase              " Search case-insensitive
 set smartcase               " ...except when something is capitalized
 
 "execute "set colorcolumn=" . join(range(81,335), ',')
-highlight ColorColumn ctermbg=DarkBlue
+highlight ColorColumn ctermbg=White
 
 set textwidth=82
 set colorcolumn=-1
