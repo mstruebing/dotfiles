@@ -1,4 +1,6 @@
 syntax on
+set background=dark
+colorscheme solarized
 
 " Nicer searching
 set incsearch               " Incremental searching
@@ -7,8 +9,11 @@ set showmatch               " Show match numbers
 set ignorecase              " Search case-insensitive
 set smartcase               " ...except when something is capitalized
 
-execute "set colorcolumn=" . join(range(81,335), ',')
-highlight ColorColumn ctermbg=Black
+"execute "set colorcolumn=" . join(range(81,335), ',')
+highlight ColorColumn ctermbg=DarkBlue
+
+set textwidth=82
+set colorcolumn=-1
 
 " Whitespace handling
 set tabstop=8
