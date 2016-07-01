@@ -79,3 +79,6 @@ set cursorline
 
 " Deactivate swap file creation
 set noswapfile
+
+" makefile needs tabs
+:autocmd FileType make set noexpandtab
