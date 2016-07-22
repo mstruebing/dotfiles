@@ -7,7 +7,7 @@
 # time that oh-my-zsh is loaded.
 ZSH_THEME="mstruebing"
 #ZSH_THEME="ys"
-ZSH_TMUX_AUTOSTART=true
+#ZSH_TMUX_AUTOSTART=true
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
