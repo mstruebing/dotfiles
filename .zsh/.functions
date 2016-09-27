@@ -67,6 +67,9 @@ function setDisplay() {
     fi
   else
    echo ERROR: No display is connected!
+   echo set to default
+   xrandr --output $HDMI --off
+   xrandr --output $VGA --off
    returnValue=2
   fi
   

@@ -76,4 +76,6 @@ function toggleTouchPad() {
 
 toggleTouchPad
 setDisplay --right
-xscreensaver -display :0.0 -no-splash &
+setxkbmap -option caps:escape
+setxkbmap -model pc105 -layout us,de -option grp:rctrl_rshift_toggle
+xss-lock -- i3lock -d -c 000000 -e -f &
