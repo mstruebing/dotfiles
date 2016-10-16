@@ -46,10 +46,10 @@ bindsym $super+d exec rofi -show drun
 # bindsym $super+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $super+j focus left
-bindsym $super+k focus down
-bindsym $super+l focus up
-bindsym $super+semicolon focus right
+bindsym $super+k focus left
+bindsym $super+semicolon focus down
+bindsym $super+j focus up
+bindsym $super+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $super+Left focus left
