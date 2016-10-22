@@ -1,6 +1,6 @@
-ALIASES=~/.zsh/.aliases
-FUNCTIONS=~/.zsh/.functions
-EXPORTS=~/.zsh/.exports
+ALIASES=~/.zsh/aliases
+FUNCTIONS=~/.zsh/functions
+EXPORTS=~/.zsh/exports
 Z=/usr/lib/z.sh
 NVM=/usr/share/nvm/init-nvm.sh
 
@@ -9,4 +9,3 @@ source $FUNCTIONS
 source $EXPORTS
 source $Z
 source $NVM
-#tldr -r

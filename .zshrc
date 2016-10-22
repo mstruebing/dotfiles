@@ -88,5 +88,5 @@ export LANG=en_US.UTF-8
 
 # Personal includes
 
-SOURCES=~/.zsh/.sources
+SOURCES=~/.zsh/sources
 source $SOURCES
