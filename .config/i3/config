@@ -122,6 +122,15 @@ bindsym $super+Shift+8 move container to workspace 8
 bindsym $super+Shift+9 move container to workspace 9
 bindsym $super+Shift+0 move container to workspace 10
 
+# Assign windows to workspace
+assign [class="chromium"] 1
+assign [class="URxvt"] 2
+assign [class="Slack"] 4
+for_window [class="Spotify"] move to workspace 9
+
+# move workspace to monitor
+bindsym $super+m move workspace to output left
+
 # reload the configuration file
 bindsym $super+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)

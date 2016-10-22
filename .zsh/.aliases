@@ -33,6 +33,10 @@ alias nt='npm test'
 alias tmux='tmux -u'
 alias panes='tmux splitw -h && tmux splitw -v'
 
+# creates two new panes and run htop and temp in them
+alias monitor="tmux split-window -h 'htop' && tmux split-window \"watch -n 1 \"sensors | sed 's/.*://g' | sed 's/(.*)//g' | sed 's/^\W\+//g' | head -n 5 | tail -n 3\"\""
+
+
 # gives me the temp of my cores
 alias temp="watch -n 1 \"sensors | sed 's/.*://g' | sed 's/(.*)//g' | sed 's/^\W\+//g' | head -n 5 | tail -n 3\""
 
