@@ -123,7 +123,7 @@ bindsym $super+Shift+9 move container to workspace 9
 bindsym $super+Shift+0 move container to workspace 10
 
 # Assign windows to workspace
-assign [class="chromium"] 1
+assign [class="Chromium"] 1
 assign [class="URxvt"] 2
 assign [class="Slack"] 4
 for_window [class="Spotify"] move to workspace 9
@@ -169,6 +169,7 @@ bindsym $super+r mode "resize"
 bar {
   position top
         status_command i3status
+        status_command ~/bin/spotifyStatus/bar.sh
         tray_output primary
   colors {
     separator #586e75

@@ -20,7 +20,6 @@ alias 'n'='nvim'
 alias 'clr'='clear && ls && pwd'
 alias 'online'='ping google.de'
 alias 'prm'='. ~/.prm/prm/prm.sh'
-alias 's'='web-s'
 alias 'a'='atom -a .'
 
 # npm aliases
@@ -30,7 +29,7 @@ alias nig='sudo npm install --global'
 alias nt='npm test'
 
 # because my prompt isn't show properly
-alias tmux='tmux -u'
+alias tmux='tmux -2u'
 alias panes='tmux splitw -h && tmux splitw -v'
 
 # creates two new panes and run htop and temp in them
