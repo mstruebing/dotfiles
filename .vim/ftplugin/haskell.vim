@@ -12,6 +12,6 @@ inoremap <buffer> <F12> <ESC>:w<CR>:!ghc -Wall %<CR>
 
 " F10 to save current file and open a new tmux pane where ghci is loaded with this
 " file
-noremap <buffer> <F10> :w<CR>:!tmux splitw -v -l 15 'exec ghci %'<CR> 
-inoremap <buffer> <F10> <ESC>:w<CR>:!tmux splitw -v -l 15 'exec ghci %'<CR> 
+noremap <buffer> <F10> :w<CR>:!tmux splitw -v -l 15 'stack exec ghci %'<CR> 
+inoremap <buffer> <F10> <ESC>:w<CR>:!tmux splitw -v -l 15 'stack exec ghci %'<CR> 
 

@@ -127,6 +127,9 @@ assign [class="Chromium"] 1
 assign [class="URxvt"] 2
 assign [class="Slack"] 4
 for_window [class="Spotify"] move to workspace 9
+assign [class="Vlc"] 10
+assign [class="Google-chrome"] 10
+assign [class="Slack"] 4
 
 # move workspace to monitor
 bindsym $super+m move workspace to output left
@@ -199,7 +202,6 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 
 # i3lock
 bindsym Control+$alt+l exec i3lock -d -c 000000 -e -f
-#bindsym Control+$alt+l exec xscreensaver-command -lock
 
 # sticky window
 bindsym $super+Shift+s sticky toggle

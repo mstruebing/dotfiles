@@ -10,9 +10,9 @@ set ignorecase              " Search case-insensitive
 set smartcase               " ...except when something is capitalized
 
 "execute "set colorcolumn=" . join(range(81,335), ',')
-highlight ColorColumn ctermbg=White
+highlight ColorColumn ctermbg=Yellow
 
-set textwidth=82
+"set textwidth=82
 set colorcolumn=-1
 
 " Whitespace handling
@@ -44,7 +44,7 @@ inoremap < <><left>
 inoremap ` ``<left>
 
 " block comments
-iab /* /*<CR> *<CR>*/<Up>
+iab /** /**<CR><CR><BS>/<Up>
 
 set rtp^=/usr/share/vim/vimfiles/
 

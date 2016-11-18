@@ -1,3 +1,3 @@
-if [ "$(tty)" = "/dev/tty1" ]; then
-  startx
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+    startx
 fi
