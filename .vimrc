@@ -82,3 +82,6 @@ set noswapfile
 
 " makefile needs tabs
 :autocmd FileType make set noexpandtab
+
+" Split (unjoin) lines
+nnoremap K i<CR><ESC>
