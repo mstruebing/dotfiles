@@ -44,7 +44,7 @@ inoremap < <><left>
 inoremap ` ``<left>
 
 " block comments
-iab /** /**<CR><CR><BS>/<Up>
+iab /** /**<CR><BS>/<Up>
 
 set rtp^=/usr/share/vim/vimfiles/
 
@@ -85,3 +85,5 @@ set noswapfile
 
 " Split (unjoin) lines
 nnoremap K i<CR><ESC>
+
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
