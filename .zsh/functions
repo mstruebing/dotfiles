@@ -102,3 +102,4 @@ function toggleTouchPad() {
 function getFunctions() {
   grep -E '^#|^function' $HOME/.zsh/.functions | sed 's/{/\n/g'
 }
+
