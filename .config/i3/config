@@ -130,6 +130,8 @@ for_window [class="Spotify"] move to workspace 9
 assign [class="Vlc"] 10
 assign [class="Google-chrome"] 10
 assign [class="Slack"] 4
+assign [class="VirtualBox"] 5
+assign [class="MPlayer"] 10
 
 # move workspace to monitor
 bindsym $super+m move workspace to output left
