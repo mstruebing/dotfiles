@@ -123,12 +123,12 @@ bindsym $super+Shift+9 move container to workspace 9
 bindsym $super+Shift+0 move container to workspace 10
 
 # Assign windows to workspace
-assign [class="Chromium"] 1
+# assign [class="Chromium"] 1
 assign [class="URxvt"] 2
 assign [class="Slack"] 4
 for_window [class="Spotify"] move to workspace 9
 assign [class="Vlc"] 10
-assign [class="Google-chrome"] 10
+# assign [class="Google-chrome"] 10
 assign [class="Slack"] 4
 assign [class="VirtualBox"] 5
 assign [class="MPlayer"] 10
