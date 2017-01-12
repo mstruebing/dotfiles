@@ -9,6 +9,7 @@ set showmatch               " Show match numbers
 set ignorecase              " Search case-insensitive
 set smartcase               " ...except when something is capitalized
 set nospell
+set smartindent
 
 "execute "set colorcolumn=" . join(range(81,335), ',')
 highlight ColorColumn ctermbg=Yellow
