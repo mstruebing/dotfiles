@@ -20,6 +20,7 @@ set backspace=indent,eol,start " Backspace through everything
 " Indentation
 set autoindent
 set smartindent
+" filetype indent on
 
 set number                  " Line numbering
 set relativenumber
@@ -36,6 +37,9 @@ nnoremap <Left> :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
 nnoremap <Up> :resize -2<CR>
 nnoremap <Down> :resize +2<CR><Paste>
+
+nnoremap <F11> :VimuxPromptCommand<CR>
+nnoremap <F12> :VimuxRunLastCommand<CR>
 
 " block comments
 iab /** /**<CR><CR>/<UP>
@@ -76,8 +80,6 @@ set noswapfile
 " Split (unjoin) lines
 nnoremap K i<CR><ESC>
 
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
 " some menu tabbing stuff
 set completeopt=longest,menuone
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
@@ -86,6 +88,26 @@ inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
 inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
+" lightline theme
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ },
+      \ 'separator': { 'left': '|', 'right': '|' },
+      \ 'subseparator': { 'left': '|', 'right': '|' }
+      \ }
 
 " for syntastic
 " create file .syntastic_javac_config
@@ -93,6 +115,8 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
 " see: http://stackoverflow.com/questions/16721322/vim-syntastic-java-unaware-of-current-project-classes
 let g:syntastic_java_javac_config_file_enabled = 1
 
+" gives nerdtree the same state in every tab
+autocmd BufWinEnter * NERDTreeMirror
 
 call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'editorconfig/editorconfig-vim'
@@ -103,4 +127,7 @@ call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'vim-syntastic/syntastic'
     Plug 'scrooloose/nerdtree'
     Plug 'tpope/vim-commentary'
+    Plug 'itchyny/lightline.vim'
+    Plug 'benmills/vimux'
 call plug#end()
+
