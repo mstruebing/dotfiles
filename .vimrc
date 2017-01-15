@@ -10,6 +10,7 @@ set ignorecase              " Search case-insensitive
 set smartcase               " ...except when something is capitalized
 set nospell
 set smartindent
+set noshowmode
 
 " Whitespace handling
 set tabstop=8

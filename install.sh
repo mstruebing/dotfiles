@@ -13,3 +13,4 @@ do
 done < filelist
 
 rm filelist
+rm ~/filelist
