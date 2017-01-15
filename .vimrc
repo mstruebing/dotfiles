@@ -25,6 +25,7 @@ set backspace=indent,eol,start " Backspace through everything
 
 " Indentation
 set autoindent
+set smartindent
 
 set number                  " Line numbering"
 set relativenumber
@@ -64,6 +65,7 @@ map <C-t> :NERDTreeToggle<CR>>
 " show hidden files by default
 let NERDTreeShowHidden=1
 
+" j/k for multilines
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
@@ -97,6 +99,7 @@ nnoremap K i<CR><ESC>
 
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
+" some menu tabbing stuff
 set completeopt=longest,menuone
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
   \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
@@ -104,3 +107,11 @@ inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
 inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
+
+call plug#begin('~/.vim/vim-plug-plugins')
+    Plug 'editorconfig/editorconfig-vim'
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-surround'
+    Plug 'ajh17/VimCompletesMe'
+call plug#end()

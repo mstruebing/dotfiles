@@ -38,9 +38,9 @@ function touch() {
 # default is left can be overriden with --right
 # <setDisplay | setDisplay --right>
 function setDisplay() {
-  local VGA='DP-1'
-  local HDMI='HDMI-1'
-  local INTERN='eDP-1'
+  local VGA='DP-1-1'
+  local HDMI='HDMI-1-1'
+  local INTERN='eDP-1-1'
   local returnValue=0
 
   local connected=$(xrandr --query | grep $HDMI | tail -1 | cut -d \  -f 2)
@@ -100,6 +100,5 @@ function toggleTouchPad() {
 
 # gets all function comments and the function names
 function getFunctions() {
-  grep -E '^#|^function' $HOME/.zsh/.functions | sed 's/{/\n/g'
+  grep -E '^#|^function' $HOME/.zsh/functions | sed 's/{/\n/g'
 }
-
