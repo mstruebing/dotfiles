@@ -100,7 +100,6 @@ call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-surround'
     Plug 'ajh17/VimCompletesMe'
-    Plug 'ajh17/VimCompletesMe'
     Plug 'vim-syntastic/syntastic'
     Plug 'scrooloose/nerdtree'
     Plug 'tpope/vim-commentary'
