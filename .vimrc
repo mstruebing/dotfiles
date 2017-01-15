@@ -119,15 +119,25 @@ let g:syntastic_java_javac_config_file_enabled = 1
 autocmd BufWinEnter * NERDTreeMirror
 
 call plug#begin('~/.vim/vim-plug-plugins')
+    " editorconfig
     Plug 'editorconfig/editorconfig-vim'
+    " () {} []
     Plug 'jiangmiao/auto-pairs'
+    " vim plugin
     Plug 'tpope/vim-fugitive'
+    " surroundings like '' () and stuff
     Plug 'tpope/vim-surround'
+    " complete filenames/code
     Plug 'ajh17/VimCompletesMe'
+    " syntax checker
     Plug 'vim-syntastic/syntastic'
+    " nerdtree \o/
     Plug 'scrooloose/nerdtree'
+    " gcc comment in and out
     Plug 'tpope/vim-commentary'
+    " vim statusline - i'm a hipster
     Plug 'itchyny/lightline.vim'
+    " easy do a shell command with :VimuxRunCommand
     Plug 'benmills/vimux'
 call plug#end()
 
