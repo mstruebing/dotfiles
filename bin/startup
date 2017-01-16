@@ -18,9 +18,9 @@ function toggleTouchPad() {
 }
 
 function setDisplay() {
-  local VGA='DP-1'
-  local HDMI='HDMI-1'
-  local INTERN='eDP-1'
+  local VGA='DP-1-1'
+  local HDMI='HDMI-1-1'
+  local INTERN='eDP-1-1'
   local returnValue=0
 
   local connected=$(xrandr --query | grep $HDMI | tail -1 | cut -d \  -f 2)
@@ -51,7 +51,7 @@ function setDisplay() {
   fi
 
   # Just to set intern display as primary output for nm-applet
-  xrandr --output eDP-1 --mode 1920x1080 --primary
+  xrandr --output $INTERN --mode 1920x1080 --primary
 
   return $returnValue
 }

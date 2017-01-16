@@ -100,6 +100,5 @@ function toggleTouchPad() {
 
 # gets all function comments and the function names
 function getFunctions() {
-  grep -E '^#|^function' $HOME/.zsh/.functions | sed 's/{/\n/g'
+  grep -E '^#|^function' $HOME/.zsh/functions | sed 's/{/\n/g'
 }
-
