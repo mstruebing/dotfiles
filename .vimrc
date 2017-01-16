@@ -39,8 +39,8 @@ nnoremap <Right> :vertical resize -2<CR>
 nnoremap <Up> :resize -2<CR>
 nnoremap <Down> :resize +2<CR><Paste>
 
-nnoremap <F11> :VimuxPromptCommand<CR>
-nnoremap <F12> :VimuxRunLastCommand<CR>
+nnoremap <F11> :w<CR>:VimuxPromptCommand<CR>
+nnoremap <F12> :w<CR>:VimuxRunLastCommand<CR>
 
 " block comments
 iab /** /**<CR><CR>/<UP>
@@ -80,6 +80,9 @@ set noswapfile
 
 " Split (unjoin) lines
 nnoremap K i<CR><ESC>
+
+" use - as 'prefix key' for choosewin
+nmap - <Plug>(choosewin)
 
 " some menu tabbing stuff
 set completeopt=longest,menuone
@@ -140,5 +143,7 @@ call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'itchyny/lightline.vim'
     " easy do a shell command with :VimuxRunCommand
     Plug 'benmills/vimux'
+    " switch 'panes' :)
+    Plug 't9md/vim-choosewin'
 call plug#end()
 
