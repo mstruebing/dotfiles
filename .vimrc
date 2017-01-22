@@ -39,8 +39,10 @@ nnoremap <Right> :vertical resize -2<CR>
 nnoremap <Up> :resize -2<CR>
 nnoremap <Down> :resize +2<CR><Paste>
 
-nnoremap <F11> :w<CR>:VimuxPromptCommand<CR>
-nnoremap <F12> :w<CR>:VimuxRunLastCommand<CR>
+map <F11> :w<CR>:VimuxPromptCommand<CR>
+map <F12> :w<CR>:VimuxRunLastCommand<CR>
+inoremap <F11> <ESC>:w<CR>:VimuxPromptCommand<CR>
+inoremap <F12> <ESC>:w<CR>:VimuxRunLastCommand<CR>
 
 " block comments
 iab /** /**<CR><CR>/<UP>
