@@ -147,5 +147,7 @@ call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'benmills/vimux'
     " switch 'panes' :)
     Plug 't9md/vim-choosewin'
+    " emmet :)
+    Plug 'mattn/emmet-vim'
 call plug#end()
 
