@@ -83,16 +83,8 @@ set noswapfile
 " Split (unjoin) lines
 nnoremap K i<CR><ESC>
 
-" use - as 'prefix key' for choosewin
-nmap - <Plug>(choosewin)
-
 " some menu tabbing stuff
 set completeopt=longest,menuone
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-
-inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 " lightline theme
 let g:lightline = {
@@ -124,26 +116,28 @@ let g:syntastic_java_javac_config_file_enabled = 1
 " gives nerdtree the same state in every tab
 autocmd BufWinEnter * NERDTreeMirror
 
+" deoplete config
+let g:deoplete#enable_at_startup = 1
+inoremap <silent><expr><TAB> deoplete#mappings#manual_complete()
+" UltiSnips config
+inoremap <silent><expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+let g:UltiSnipsExpandTrigger = "<nop>"
+inoremap <expr> <CR> pumvisible() ? "<C-R>=UltiSnips#ExpandSnippetOrJump()<CR>" : "\<CR>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
 call plug#begin('~/.vim/vim-plug-plugins')
-    " editorconfig
     Plug 'editorconfig/editorconfig-vim'
-    " () {} []
     Plug 'jiangmiao/auto-pairs'
-    " vim plugin
     Plug 'tpope/vim-fugitive'
-    " surroundings like '' () and stuff
     Plug 'tpope/vim-surround'
-    " complete filenames/code
-    Plug 'ajh17/VimCompletesMe'
-    " syntax checker
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'vim-syntastic/syntastic'
-    " nerdtree \o/
     Plug 'scrooloose/nerdtree'
-    " gcc comment in and out
     Plug 'tpope/vim-commentary'
-    " vim statusline - i'm a hipster
     Plug 'itchyny/lightline.vim'
-    " easy do a shell command with :VimuxRunCommand
     Plug 'benmills/vimux'
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
 call plug#end()
 
