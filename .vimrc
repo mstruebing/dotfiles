@@ -145,7 +145,5 @@ call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'itchyny/lightline.vim'
     " easy do a shell command with :VimuxRunCommand
     Plug 'benmills/vimux'
-    " switch 'panes' :)
-    Plug 't9md/vim-choosewin'
 call plug#end()
 

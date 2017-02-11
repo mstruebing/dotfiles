@@ -39,8 +39,8 @@ function touch() {
 # <setDisplay | setDisplay --right>
 function setDisplay() {
   local VGA='DP-1'
-  local HDMI='HDMI1'
-  local INTERN='HDMI2'
+  local HDMI='HDMI-1-1'
+  local INTERN='eDP-1-1'
   local returnValue=0
 
   local connected=$(xrandr --query | grep $HDMI | tail -1 | cut -d \  -f 2)
