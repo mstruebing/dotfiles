@@ -139,5 +139,6 @@ call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'benmills/vimux'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
+    Plug 'mattn/emmet-vim'
 call plug#end()
 
