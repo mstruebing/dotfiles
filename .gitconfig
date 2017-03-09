@@ -13,7 +13,7 @@
   co = checkout
   b = branch
   lg = log --oneline --decorate
-  s = status
+  s = status --branch --short
   branches = branch -a
   remotes = remote -v
   undo = reset --soft HEAD^
