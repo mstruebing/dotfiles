@@ -44,9 +44,6 @@ map <F12> :w<CR>:VimuxRunLastCommand<CR>
 inoremap <F11> <ESC>:w<CR>:VimuxPromptCommand<CR>
 inoremap <F12> <ESC>:w<CR>:VimuxRunLastCommand<CR>
 
-" block comments
-iab /** /**<CR><CR>/<UP>
-
 set rtp^=/usr/share/vim/vimfiles/
 
 " nerdtree
