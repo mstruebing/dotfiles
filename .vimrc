@@ -1,6 +1,6 @@
 syntax on
-set background=dark
-colorscheme solarized
+" set background=dark
+" colorscheme solarized
 
 " Nicer searching
 set incsearch               " Incremental searching
@@ -9,8 +9,19 @@ set showmatch               " Show match numbers
 set ignorecase              " Search case-insensitive
 set smartcase               " ...except when something is capitalized
 set nospell
-set smartindent
 set noshowmode
+
+set clipboard=unnamedplus
+
+" Open new split panes to right and bottom, which feels more natural than Vim’s default
+set splitbelow
+set splitright
+
+" We can use different key mappings for easy navigation between splits to save a keystroke. So instead of ctrl-w then j, it’s just ctrl-j
+" nnoremap <C-j> <C-W><J>
+" nnoremap <C-k> <C-W><K>
+" nnoremap <C-l> <C-W><L>
+" nnoremap <C-h> <C-W><H>
 
 " Whitespace handling
 set tabstop=8
@@ -21,7 +32,6 @@ set backspace=indent,eol,start " Backspace through everything
 " Indentation
 set autoindent
 set smartindent
-" filetype indent on
 
 set number                  " Line numbering
 set relativenumber
@@ -30,8 +40,6 @@ set wildmenu " Wildmode, some command completion
 set wildmode=list:longest,full
 
 set mouse=a " Enable mouse support - even in tmux \o/
-
-inoremap < <><left>
 
 " cool resizing
 nnoremap <Left> :vertical resize +2<CR>
@@ -85,7 +93,7 @@ set completeopt=longest,menuone
 
 " lightline theme
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'seoul256',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
