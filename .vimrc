@@ -1,6 +1,6 @@
 syntax on
 " set background=dark
-" colorscheme solarized
+colorscheme peachpuff
 
 " Nicer searching
 set incsearch               " Incremental searching
@@ -145,5 +145,8 @@ call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
     Plug 'mattn/emmet-vim'
+    Plug 'sheerun/vim-polyglot'
+
+    " Plug 'vim-scripts/ScrollColors'
 call plug#end()
 
