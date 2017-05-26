@@ -17,16 +17,10 @@ alias 'gup'='git pull origin $(git_current_branch)'
 # misc
 alias 'v'='vim'
 alias 'n'='nvim'
-alias 'clr'='clear && ls && pwd'
 alias 'online'='ping google.de'
 alias 'prm'='. ~/.prm/prm/prm.sh'
+alias 'mux'='tmuxinator'
 alias 'a'='atom -a .'
-
-# npm aliases
-alias nis='npm install --save'
-alias nid='npm install --save-dev'
-alias nig='sudo npm install --global'
-alias nt='npm test'
 
 # because my prompt isn't show properly
 alias tmux='tmux -2u'
