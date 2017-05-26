@@ -118,8 +118,10 @@ let g:lightline = {
 " see: http://stackoverflow.com/questions/16721322/vim-syntastic-java-unaware-of-current-project-classes
 let g:syntastic_java_javac_config_file_enabled = 1
 
+
 " gives nerdtree the same state in every tab
-autocmd BufWinEnter * NERDTreeMirror
+" fucks up the git diff buffer from vim-fugitive
+" autocmd BufWinEnter * NERDTreeMirror
 
 " deoplete config
 let g:deoplete#enable_at_startup = 1
@@ -146,6 +148,8 @@ call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'honza/vim-snippets'
     Plug 'mattn/emmet-vim'
     Plug 'sheerun/vim-polyglot'
+
+    Plug 'christoomey/vim-tmux-navigator'
 
     " Plug 'vim-scripts/ScrollColors'
 call plug#end()
