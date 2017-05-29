@@ -18,7 +18,6 @@ alias 'gup'='git pull origin $(git_current_branch)'
 alias 'v'='vim'
 alias 'n'='nvim'
 alias 'online'='ping google.de'
-alias 'prm'='. ~/.prm/prm/prm.sh'
 alias 'mux'='tmuxinator'
 alias 'a'='atom -a .'
 
