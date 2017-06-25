@@ -1,13 +1,13 @@
 # ~/.tmuxinator/neos-ui.yml
 
 name: neos-ui
-root: ~/projects/contrib/Neos/Packages/Application/Neos.Neos.Ui/
+root: ~/projects/contrib/neos-ext/Packages/Application/Neos.Neos.Ui/
 
 # Optional tmux socket
 # socket_name: foo
 
 # Runs before everything. Use it to start daemons etc.
-pre: /home/maex/bin/docker start mysql
+pre: sudo /home/maex/bin/docker start mysql
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
@@ -29,7 +29,7 @@ startup_window: editor
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t neos-ui
-post: xdg-open http://127.0.0.1:8000/neos!
+post: xdg-open 127.0.0.1:8000/neos!
 
 windows:
   - server: ../../../ && server

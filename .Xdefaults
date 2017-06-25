@@ -55,7 +55,7 @@ URxvt.pointerBlank:         true
 !!Source http://github.com/altercation/solarized
 
 *background: #002b36
-*foreground: #657b83
+*foreground: #839496
 !!*fading: 40
 *fadeColor: #002b36
 *cursorColor: #93a1a1
@@ -111,5 +111,5 @@ URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 URxvt.lineSpace: 1
 
-URxvt.transparent:   true
+URxvt.transparent:   false
 URxvt.shading:       10
