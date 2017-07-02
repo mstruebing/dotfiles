@@ -1,6 +1,6 @@
 syntax on
-" set background=dark
-colorscheme peachpuff
+set background=dark
+colorscheme torte
 
 " Nicer searching
 set incsearch               " Incremental searching
@@ -155,6 +155,6 @@ call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
     Plug 'zchee/deoplete-go', { 'do': 'make'}
 
-    " Plug 'vim-scripts/ScrollColors'
+    Plug 'vim-scripts/ScrollColors'
 call plug#end()
 
