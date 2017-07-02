@@ -148,8 +148,12 @@ call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'honza/vim-snippets'
     Plug 'mattn/emmet-vim'
     Plug 'sheerun/vim-polyglot'
-
     Plug 'christoomey/vim-tmux-navigator'
+
+    Plug 'eagletmt/neco-ghc'
+    Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
+    Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+    Plug 'zchee/deoplete-go', { 'do': 'make'}
 
     " Plug 'vim-scripts/ScrollColors'
 call plug#end()

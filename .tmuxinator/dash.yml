@@ -1,13 +1,13 @@
-# ~/.tmuxinator/neos-ui.yml
+# ~/.tmuxinator/dash.yml
 
-name: neos-ui
-root: ~/projects/contrib/neos-ext/Packages/Application/Neos.Neos.Ui/
+name: dash
+root: ~/
 
 # Optional tmux socket
 # socket_name: foo
 
 # Runs before everything. Use it to start daemons etc.
-pre: sudo /home/maex/bin/docker start mysql
+# pre: sudo /etc/rc.d/mysqld start
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
@@ -19,7 +19,7 @@ pre: sudo /home/maex/bin/docker start mysql
 # tmux_command: byobu
 
 # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
-startup_window: editor
+# startup_window: editor
 
 # Specitifes (by index) which pane of the specified window will be selected on project startup. If not set, the first pane is used.
 # startup_pane: 1
@@ -28,17 +28,17 @@ startup_window: editor
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t neos-ui
-post: xdg-open 127.0.0.1:8000/neos!
+# post: tmux -CC attach -t dash
 
 windows:
-  - server: ../../../ && server
   - editor:
-      layout: 3262,212x56,0,0[212x44,0,0,32,212x11,0,45{106x11,0,45,34,105x11,107,45,35}]
+      layout: 98b5,185x54,0,0{85x54,0,0[85x14,0,0,19,85x39,0,15,20],99x54,86,0[99x14,86,0,21,99x3,86,15,22,99x35,86,19,23]}
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - nvim
-        -
-        -
+        - 'sconsify -username="maaeex"'
+        - 'pacaur -Syyu'
+        - htop
+        - temp
+        - weechat
