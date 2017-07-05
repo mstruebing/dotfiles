@@ -39,8 +39,8 @@ bindsym $alt+F4 kill
 
 # start dmenu (a program launcher)
 # bindsym $super+d exec dmenu_run
-# bindsym $super+d exec rofi -show drun
-bindsym $super+d exec "rofi -combi-modi window,drun -show combi -modi combi"
+bindsym $super+d exec rofi -show drun
+# bindsym $super+d exec "rofi -combi-modi window,drun -show combi -modi combi"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -192,9 +192,10 @@ bar {
 # bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo +5% #increase sound volume
 # bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo -5% #decrease sound volume
 # bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo toggle # mute sound
-set $sink `pactl list short sinks | grep RUNNING | cut -f1`
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $sink +10%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $sink -10%
+# set $abc `pactl list short sinks | grep RUNNING | cut -f1`
+set $sink `~/bin/whichSink.sh`
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $sink +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $sink -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $sink toggle
 
 # Media player controls
