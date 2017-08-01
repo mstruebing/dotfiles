@@ -91,6 +91,18 @@ nnoremap K i<CR><ESC>
 " some menu tabbing stuff
 set completeopt=longest,menuone
 
+" some git maps
+map <leader>gs :Gstatus<CR>
+map <leader>gc :Gcommit<CR>
+map <leader>gb :Gblame<CR>
+map <leader>gl :Glog<CR>
+
+map <leader>f :FZF<CR>
+map <leader>a :Ag 
+
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+
 " lightline theme
 let g:lightline = {
       \ 'colorscheme': 'seoul256',
@@ -118,6 +130,18 @@ let g:lightline = {
 " see: http://stackoverflow.com/questions/16721322/vim-syntastic-java-unaware-of-current-project-classes
 let g:syntastic_java_javac_config_file_enabled = 1
 
+" Enable per-command history.
+" CTRL-N and CTRL-P will be automatically bound to next-history and
+" previous-history instead of down and up. If you don't like the change,
+" explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+
+" use ag
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+
+syntax on
+" [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
 
 " gives nerdtree the same state in every tab
 " fucks up the git diff buffer from vim-fugitive
@@ -156,5 +180,8 @@ call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'zchee/deoplete-go', { 'do': 'make'}
 
     Plug 'vim-scripts/ScrollColors'
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
+    Plug 'airblade/vim-gitgutter'
 call plug#end()
 

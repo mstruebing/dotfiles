@@ -110,3 +110,5 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
