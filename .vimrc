@@ -85,6 +85,9 @@ set noswapfile
 " makefile needs tabs
 :autocmd FileType make set noexpandtab
 
+" spell for md
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
+
 " Split (unjoin) lines
 nnoremap K i<CR><ESC>
 
@@ -184,4 +187,3 @@ call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'junegunn/fzf.vim'
     Plug 'airblade/vim-gitgutter'
 call plug#end()
-
