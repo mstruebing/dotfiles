@@ -187,3 +187,6 @@ call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'junegunn/fzf.vim'
     Plug 'airblade/vim-gitgutter'
 call plug#end()
+
+
+hi Normal guibg=NONE ctermbg=NONE
