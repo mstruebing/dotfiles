@@ -140,7 +140,7 @@ let g:syntastic_java_javac_config_file_enabled = 1
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 " use ag
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag --hidden -g ""'
 
 syntax on
 " [Buffers] Jump to the existing window if possible
