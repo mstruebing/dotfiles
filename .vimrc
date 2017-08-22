@@ -45,7 +45,7 @@ set mouse=a " Enable mouse support - even in tmux \o/
 nnoremap <Left> :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
 nnoremap <Up> :resize -2<CR>
-nnoremap <Down> :resize +2<CR><Paste>
+nnoremap <Down> :resize +2<CR>
 
 map <F11> :w<CR>:VimuxPromptCommand<CR>
 map <F12> :w<CR>:VimuxRunLastCommand<CR>
