@@ -13,6 +13,10 @@ set noshowmode
 
 set clipboard=unnamedplus
 
+" reload file if changed on disk
+set autoread
+au CursorHold * checktime  
+
 " Open new split panes to right and bottom, which feels more natural than Vim’s default
 set splitbelow
 set splitright
@@ -56,7 +60,8 @@ set rtp^=/usr/share/vim/vimfiles/
 
 " nerdtree
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif""))
+" enter nerdtree on start
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif""))
 map <C-t> :NERDTreeToggle<CR>
 
 " show hidden files by default
