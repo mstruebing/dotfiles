@@ -38,7 +38,7 @@ function touch() {
 # default is left can be overriden with --right
 # <setDisplay | setDisplay --right>
 function setDisplay() {
-  local VGA='DP-1'
+  local VGA='DP-1-1'
   local HDMI='HDMI-1-1'
   local INTERN='eDP-1-1'
   local returnValue=0
