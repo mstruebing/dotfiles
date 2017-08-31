@@ -1,7 +1,7 @@
-# ~/.tmuxinator/dash.yml
+# ~/.tmuxinator/editorconfig-checker.php.yml
 
-name: 0__dash
-root: ~/
+name: editorconfig-checkerJS
+root: ~/projects/own/editorconfig-checker/editorconfig-checker.javascript
 
 # Optional tmux socket
 # socket_name: foo
@@ -28,15 +28,14 @@ root: ~/
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t dash
+# post: tmux -CC attach -t editorconfig-checker.php
 
 windows:
-  - chat:
+  - editor:
+      layout: 6095,212x56,0,0[212x44,0,0,18,212x11,0,45,19]
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - weechat
-  - term:
-      panes:
-        - 'pacaur -Syyu'
+        - nvim
+        - 

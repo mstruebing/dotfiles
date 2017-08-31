@@ -107,6 +107,11 @@ map <leader>gl :Glog<CR>
 
 map <leader>f :FZF<CR>
 map <leader>a :Ag 
+map <leader>w :Windows<CR> 
+
+" Move to line
+map <Leader>l <Plug>(easymotion-bd-jk)
+nmap <Leader>l <Plug>(easymotion-overwin-line)
 
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
@@ -165,6 +170,10 @@ inoremap <expr> <CR> pumvisible() ? "<C-R>=UltiSnips#ExpandSnippetOrJump()<CR>" 
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
+
+let g:polyglot_disabled = ['elm']
+let g:elm_syntastic_show_warnings = 1
+
 call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'editorconfig/editorconfig-vim'
     Plug 'jiangmiao/auto-pairs'
@@ -191,7 +200,10 @@ call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
     Plug 'airblade/vim-gitgutter'
-call plug#end()
 
+    Plug 'elmcast/elm-vim'
+    Plug 'easymotion/vim-easymotion'
+    Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+call plug#end()
 
 hi Normal guibg=NONE ctermbg=NONE
