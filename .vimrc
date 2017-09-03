@@ -2,6 +2,11 @@ syntax on
 set background=dark
 colorscheme torte
 
+" temp fix for relative numbers when a file is opened with fzf as a split or
+" new tab
+" see https://github.com/junegunn/fzf/issues/930#issuecomment-303212379
+au TermOpen * set relativenumber
+
 " Nicer searching
 set incsearch               " Incremental searching
 set hlsearch                " Highlight matches
