@@ -209,6 +209,8 @@ call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'elmcast/elm-vim'
     Plug 'easymotion/vim-easymotion'
     Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+
+    Plug 'inside/vim-search-pulse'
 call plug#end()
 
 hi Normal guibg=NONE ctermbg=NONE
