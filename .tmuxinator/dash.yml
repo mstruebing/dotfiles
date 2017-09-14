@@ -29,6 +29,7 @@ root: ~/
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t dash
+post: tmux kill-session -t 0
 
 windows:
   - chat:

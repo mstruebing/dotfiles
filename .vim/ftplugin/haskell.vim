@@ -1,1 +1,1 @@
-inoremap <buffer> < <
+" inoremap <buffer> < <

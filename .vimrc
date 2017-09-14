@@ -10,7 +10,7 @@ au TermOpen * set relativenumber
 " Nicer searching
 set incsearch               " Incremental searching
 set hlsearch                " Highlight matches
-set showmatch               " Show match numbers
+set showmatch               " Show matching brackets
 set ignorecase              " Search case-insensitive
 set smartcase               " ...except when something is capitalized
 set nospell
@@ -33,7 +33,7 @@ set splitright
 " nnoremap <C-h> <C-W><H>
 
 " Whitespace handling
-set tabstop=8
+set tabstop=4
 set shiftwidth=4
 set expandtab               " Use spaces, not tabs
 set backspace=indent,eol,start " Backspace through everything
@@ -62,6 +62,8 @@ inoremap <F11> <ESC>:w<CR>:VimuxPromptCommand<CR>
 inoremap <F12> <ESC>:w<CR>:VimuxRunLastCommand<CR>
 
 set rtp^=/usr/share/vim/vimfiles/
+
+autocmd Filetype javascript iabbrev log console.log(<Right>;<Left><Left>
 
 " nerdtree
 autocmd StdinReadPre * let s:std_in=1
@@ -179,6 +181,37 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:polyglot_disabled = ['elm']
 let g:elm_syntastic_show_warnings = 1
 
+" http://vim.wikia.com/wiki/Go_away_and_come_back
+" Creates a session
+function! MakeSession()
+  let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
+  if (filewritable(b:sessiondir) != 2)
+    exe 'silent !mkdir -p ' b:sessiondir
+    redraw!
+  endif
+  let b:sessionfile = b:sessiondir . '/session.vim'
+  exe 'mksession! ' . b:sessionfile
+endfunction
+
+" Loads a session if it exists
+function! LoadSession()
+    let b:sessiondir = $HOME . '/.vim/sessions' . getcwd()
+    let b:sessionfile = b:sessiondir . '/session.vim'
+    if (filereadable(b:sessionfile))
+      exe 'source ' b:sessionfile
+    else
+      echo 'No session loaded.'
+    endif
+endfunction
+
+augroup sessions
+  autocmd!
+  if argc() == 0
+    au VimEnter * nested :call LoadSession()
+    au VimLeave * :call MakeSession()
+  endif
+augroup END
+
 call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'editorconfig/editorconfig-vim'
     Plug 'jiangmiao/auto-pairs'
@@ -211,6 +244,7 @@ call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 
     Plug 'inside/vim-search-pulse'
+    Plug 'mstruebing/vim.typoscript'
 call plug#end()
 
 hi Normal guibg=NONE ctermbg=NONE
