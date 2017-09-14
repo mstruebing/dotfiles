@@ -232,7 +232,6 @@ call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'eagletmt/neco-ghc'
     Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
     Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-    Plug 'zchee/deoplete-go', { 'do': 'make'}
 
     Plug 'vim-scripts/ScrollColors'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -241,7 +240,8 @@ call plug#begin('~/.vim/vim-plug-plugins')
 
     Plug 'elmcast/elm-vim'
     Plug 'easymotion/vim-easymotion'
-    Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+
+    Plug 'fatih/vim-go'
 
     Plug 'inside/vim-search-pulse'
     Plug 'mstruebing/vim.typoscript'
