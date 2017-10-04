@@ -26,12 +26,6 @@ au CursorHold * checktime
 set splitbelow
 set splitright
 
-" We can use different key mappings for easy navigation between splits to save a keystroke. So instead of ctrl-w then j, it’s just ctrl-j
-" nnoremap <C-j> <C-W><J>
-" nnoremap <C-k> <C-W><K>
-" nnoremap <C-l> <C-W><L>
-" nnoremap <C-h> <C-W><H>
-
 " Whitespace handling
 set tabstop=4
 set shiftwidth=4
@@ -213,38 +207,99 @@ augroup sessions
 augroup END
 
 call plug#begin('~/.vim/vim-plug-plugins')
+    " use editorconfig
     Plug 'editorconfig/editorconfig-vim'
+    
+    " () [] {} :)
     Plug 'jiangmiao/auto-pairs'
-    Plug 'tpope/vim-fugitive'
+
+    " easily change/add/delete surroundings
     Plug 'tpope/vim-surround'
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'vim-syntastic/syntastic'
+
+    " git plugin
+    Plug 'tpope/vim-fugitive'
+
+    " filebrowser
     Plug 'scrooloose/nerdtree'
+
+    " completion framework
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+    " syntax checking
+    Plug 'vim-syntastic/syntastic'
+
+    " easily comment/uncomment lines
     Plug 'tpope/vim-commentary'
+
+    " statusline
     Plug 'itchyny/lightline.vim'
+
+    " run commands from vim inside a tmux pane
     Plug 'benmills/vimux'
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
-    Plug 'mattn/emmet-vim'
-    Plug 'sheerun/vim-polyglot'
+
+    " easily navigate between vim and tmux panes
     Plug 'christoomey/vim-tmux-navigator'
 
-    Plug 'eagletmt/neco-ghc'
-    Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
-    Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+    " syntax highlights
+    Plug 'sheerun/vim-polyglot'
 
+    " scroll through different colorschemes
     Plug 'vim-scripts/ScrollColors'
+
+    " fuzzyfinder
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
+
+    " show changed lines in file
     Plug 'airblade/vim-gitgutter'
 
-    Plug 'elmcast/elm-vim'
+    " some nice motions
     Plug 'easymotion/vim-easymotion'
 
+    " Highlight search cursor
+    Plug 'inside/vim-search-pulse'
+
+
+    """""""""""""""""""""""""""""""
+    " Language Plugins
+    """""""""""""""""""""""""""""""
+
+    " elm plugin
+    Plug 'elmcast/elm-vim'
+
+    " go plugin
     Plug 'fatih/vim-go'
 
-    Plug 'inside/vim-search-pulse'
+    " javascript code completion
+    Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+
+    " php code completion
+    Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
+
+    " haskell code completion
+    Plug 'eagletmt/neco-ghc'
+
+    " html plugin 
+    Plug 'mattn/emmet-vim'
+
+    " typoscript // fusion
     Plug 'mstruebing/vim.typoscript'
+
+    """""""""""""""""""""""""""""""
+    " Snippets
+    """""""""""""""""""""""""""""""
+
+    " ultisnips
+    Plug 'SirVer/ultisnips'
+
+    " snippet collection
+    Plug 'honza/vim-snippets'
+
+    " ES2015 code snippets (Optional)
+    Plug 'epilande/vim-es2015-snippets'
+
+    " React code snippets
+    Plug 'epilande/vim-react-snippets'
 call plug#end()
 
 hi Normal guibg=NONE ctermbg=NONE
