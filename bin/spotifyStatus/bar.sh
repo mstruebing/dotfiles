@@ -4,9 +4,13 @@ i3status | while :
 do
     # with mpd
     read line
-    song=$(ncmpcpp --current-song '{{{{%a - }%t}}|{%f}}')
-    if [[ ! -z $song ]]; then
-        echo -n "$song | $line" || exit 1
+    songLocal=$(ncmpcpp --host 127.0.0.1 --current-song '{{{{%a - }%t}}|{%f}}')
+    songPi=$(ncmpcpp --current-song '{{{{%a - }%t}}|{%f}}')
+    if [[ ! -z $songLocal ]]; then
+        echo -n "$songLocal | $line" || exit 1
+        continue
+    elif [[ ! -z $songPi && $songPi != "Error while processing configuration: Timeout while connecting" ]]; then
+        echo -n "$songPi | $line" || exit 1
         continue
     fi
 
