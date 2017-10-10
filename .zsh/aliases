@@ -21,6 +21,8 @@ alias 'n'='nvim'
 alias 'online'='ping google.de'
 alias 'mux'='tmuxinator'
 alias 'a'='atom -a .'
+alias 'm'='ncmpcpp'
+alias 'ml'='ncmpcpp --host 127.0.0.1'
 
 # because my prompt isn't show properly
 alias tmux='tmux -2u'
@@ -32,4 +34,3 @@ alias monitor="tmux split-window -h 'htop' && tmux split-window \"watch -n 1 \"s
 
 # gives me the temp of my cores
 alias temp="watch -n 1 \"sensors | sed 's/.*://g' | sed 's/(.*)//g' | sed 's/^\W\+//g' | head -n 5 | tail -n 3\""
-
