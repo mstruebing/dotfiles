@@ -200,9 +200,9 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $sink toggle
 
 # Media player controls
 bindsym Print exec xfce4-screenshooter
-bindsym $super+x exec playerctl play-pause
-bindsym $super+c exec playerctl next
-bindsym $super+z exec playerctl previous
+bindsym $super+x exec playerctl play-pause || mpc toggle
+bindsym $super+c exec playerctl next || mpc next
+bindsym $super+z exec playerctl previous || mpc prec
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec light -A 20 # increase screen brightness
