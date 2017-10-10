@@ -207,6 +207,47 @@ augroup sessions
 augroup END
 
 call plug#begin('~/.vim/vim-plug-plugins')
+    """""""""""""""""""""""""""""""
+    " Language Plugins
+    """""""""""""""""""""""""""""""
+
+    " elm plugin
+    Plug 'elmcast/elm-vim'
+
+    " go plugin
+    Plug 'fatih/vim-go'
+
+    " javascript code completion
+    Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+
+    " php code completion
+    Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
+
+    " haskell code completion
+    Plug 'eagletmt/neco-ghc'
+
+    " html plugin 
+    Plug 'mattn/emmet-vim'
+
+    " typoscript // fusion
+    Plug 'mstruebing/vim.typoscript'
+
+    """""""""""""""""""""""""""""""
+    " Snippets
+    """""""""""""""""""""""""""""""
+
+    " ultisnips
+    Plug 'SirVer/ultisnips'
+
+    " snippet collection
+    Plug 'honza/vim-snippets'
+
+    " ES2015 code snippets (Optional)
+    Plug 'epilande/vim-es2015-snippets'
+
+    " React code snippets
+    Plug 'epilande/vim-react-snippets'
+
     " use editorconfig
     Plug 'editorconfig/editorconfig-vim'
     
@@ -258,48 +299,6 @@ call plug#begin('~/.vim/vim-plug-plugins')
 
     " Highlight search cursor
     Plug 'inside/vim-search-pulse'
-
-
-    """""""""""""""""""""""""""""""
-    " Language Plugins
-    """""""""""""""""""""""""""""""
-
-    " elm plugin
-    Plug 'elmcast/elm-vim'
-
-    " go plugin
-    Plug 'fatih/vim-go'
-
-    " javascript code completion
-    Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-
-    " php code completion
-    Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
-
-    " haskell code completion
-    Plug 'eagletmt/neco-ghc'
-
-    " html plugin 
-    Plug 'mattn/emmet-vim'
-
-    " typoscript // fusion
-    Plug 'mstruebing/vim.typoscript'
-
-    """""""""""""""""""""""""""""""
-    " Snippets
-    """""""""""""""""""""""""""""""
-
-    " ultisnips
-    Plug 'SirVer/ultisnips'
-
-    " snippet collection
-    Plug 'honza/vim-snippets'
-
-    " ES2015 code snippets (Optional)
-    Plug 'epilande/vim-es2015-snippets'
-
-    " React code snippets
-    Plug 'epilande/vim-react-snippets'
 call plug#end()
 
 hi Normal guibg=NONE ctermbg=NONE
