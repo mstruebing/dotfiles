@@ -68,6 +68,9 @@ map <C-t> :NERDTreeToggle<CR>
 " show hidden files by default
 let NERDTreeShowHidden=1
 
+" disable ctrl-t mapping
+let g:go_def_mapping_enabled = 0
+
 " j/k for multilines
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
