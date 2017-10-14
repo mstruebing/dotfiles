@@ -189,10 +189,6 @@ bar {
 }
 
 # Pulse Audio controls
-# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo +5% #increase sound volume
-# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo -5% #decrease sound volume
-# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo toggle # mute sound
-# set $abc `pactl list short sinks | grep RUNNING | cut -f1`
 set $sink `~/bin/whichSink.sh`
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $sink +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $sink -5%
@@ -200,9 +196,9 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $sink toggle
 
 # Media player controls
 bindsym Print exec xfce4-screenshooter
-bindsym $super+x exec playerctl play-pause || mpc toggle
-bindsym $super+c exec playerctl next || mpc next
-bindsym $super+z exec playerctl previous || mpc prec
+bindsym $super+x exec ~/bin/play-toggle
+bindsym $super+c exec ~/bin/play-next
+bindsym $super+z exec ~/bin/play-prev
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec light -A 20 # increase screen brightness
