@@ -1,13 +1,14 @@
-# ~/.tmuxinator/blog.yml
+# ~/.tmuxinator/one-view-one-day.yml
 
-name: blog
-root: ~/projects/own/blog
+name: one-day-one-view
+root: ~/projects/own/one-day-one-view
 
 # Optional tmux socket
 # socket_name: foo
 
 # Runs before everything. Use it to start daemons etc.
 # pre: sudo /etc/rc.d/mysqld start
+pre: /home/maex/bin/docker start mysql
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
@@ -28,16 +29,16 @@ root: ~/projects/own/blog
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t blog
-post: xdg-open http://127.0.0.1:1313/
+# post: tmux -CC attach -t one-view-one-day
 
 windows:
-  - server:
+  - server: server
+  - editor:
+      layout: 3262,212x56,0,0[212x44,0,0,32,212x11,0,45{106x11,0,45,34,105x11,107,45,35}]
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - 'hugo serve'
-  - editor:
-      panes:
-        - 'nvim'
+        - nvim
+        -
+        -

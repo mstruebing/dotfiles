@@ -5,8 +5,8 @@ then
   exit 0
 fi
 
-localMPC=$(mpc prec | wc -l 2>/dev/null)
+localMPC=$(mpc prev | wc -l 2>/dev/null)
 
 if [[ $localMPC -eq 1 ]]; then
-    ssh pi 'mpc prec' &>/dev/null
+    ssh pi 'mpc prev' &>/dev/null
 fi
