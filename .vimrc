@@ -270,7 +270,8 @@ call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
     " syntax checking
-    Plug 'vim-syntastic/syntastic'
+    " Plug 'vim-syntastic/syntastic'
+    Plug 'w0rp/ale'
 
     " easily comment/uncomment lines
     Plug 'tpope/vim-commentary'

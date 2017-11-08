@@ -23,6 +23,8 @@ alias 'mux'='tmuxinator'
 alias 'a'='atom -a .'
 alias 'm'='ncmpcpp'
 alias 'ml'='ncmpcpp --host 127.0.0.1'
+alias 'rtv'='rtv --enable-media'
+alias 'fzf'='FZF_DEFAULT_COMMAND=\'ag --hidden -g ""\' fzf'
 
 # because my prompt isn't show properly
 alias tmux='tmux -2u'
