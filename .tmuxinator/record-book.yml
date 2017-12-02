@@ -28,7 +28,8 @@ startup_window: editor
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-post: xdg-open http://127.0.0.1:8000
+# post: xdg-open http://127.0.0.1:8000
+on_project_start: xdg-open http://127.0.0.1:8000
 
 windows:
   - server: server

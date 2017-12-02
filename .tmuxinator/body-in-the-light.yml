@@ -31,7 +31,8 @@ startup_window: editor
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t body-in-the-light
-post: xdg-open http://127.0.0.1:8000/neos
+# post: xdg-open http://127.0.0.1:8000/neos
+on_project_start: xdg-open http://127.0.0.1:8000/neos
 
 windows:
   - server: server

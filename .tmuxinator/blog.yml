@@ -29,7 +29,8 @@ root: ~/projects/own/myblog
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t blog
-post: xdg-open http://127.0.0.1:1313/
+# post: xdg-open http://127.0.0.1:1313/
+on_project_start: xdg-open http://127.0.0.1:1313/
 
 windows:
   - server:

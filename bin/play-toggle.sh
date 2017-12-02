@@ -5,8 +5,10 @@ then
   exit 0
 fi
 
-localMPC=$(mpc toggle | wc -l 2>/dev/null)
+play=$(ssh pi 'volumio status' | grep status | grep play | wc -l)
 
-if [[ $localMPC -eq 1 ]]; then
-    ssh pi 'mpc toggle' &>/dev/null
+if [[ $play -eq 1 ]]; then
+    ssh pi 'volumio pause'
+else 
+    ssh pi 'volumio play'
 fi

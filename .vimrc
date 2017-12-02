@@ -112,12 +112,17 @@ map <leader>gl :Glog<CR>
 map <leader>f :FZF<CR>
 map <leader>a :Ag 
 map <leader>w :Windows<CR> 
+map <leader>b :Buffers<CR> 
 
 " Move to line
 map <Leader>l <Plug>(easymotion-bd-jk)
 nmap <Leader>l <Plug>(easymotion-overwin-line)
 
 imap <c-x><c-l> <plug>(fzf-complete-line)
+
+" ale map 
+nnoremap <Leader>n :ALENext<CR>
+nnoremap <Leader>N :ALEPrevious<CR>
 
 
 " lightline theme
@@ -271,7 +276,7 @@ call plug#begin('~/.vim/vim-plug-plugins')
 
     " syntax checking
     " Plug 'vim-syntastic/syntastic'
-    Plug 'w0rp/ale'
+    " Plug 'w0rp/ale'
 
     " easily comment/uncomment lines
     Plug 'tpope/vim-commentary'
@@ -303,6 +308,9 @@ call plug#begin('~/.vim/vim-plug-plugins')
 
     " Highlight search cursor
     Plug 'inside/vim-search-pulse'
+
+    ":BufOnly closes all buffers
+    Plug 'vim-scripts/BufOnly.vim'
 call plug#end()
 
 hi Normal guibg=NONE ctermbg=NONE

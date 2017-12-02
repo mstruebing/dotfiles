@@ -7,7 +7,7 @@ alias '..'='cd ..'
 alias '...'='cd ../..'
 alias 'dl'='cd ~/Downloads'
 alias 'p'='cd ~/projects'
-alias 't'='cd /tmp'
+# alias 't'='cd /tmp'
 alias 'docs'='cd ~/Documents'
 
 # git aliases
@@ -24,6 +24,7 @@ alias 'a'='atom -a .'
 alias 'm'='ncmpcpp'
 alias 'ml'='ncmpcpp --host 127.0.0.1'
 alias 'rtv'='rtv --enable-media'
+alias 'r'='rtv'
 alias 'fzf'='FZF_DEFAULT_COMMAND=\'ag --hidden -g ""\' fzf'
 
 # because my prompt isn't show properly
