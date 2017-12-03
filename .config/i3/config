@@ -39,8 +39,9 @@ bindsym $alt+F4 kill
 
 # start dmenu (a program launcher)
 # bindsym $super+d exec dmenu_run
-bindsym $super+d exec rofi -show drun
-# bindsym $super+d exec "rofi -combi-modi window,drun -show combi -modi combi"
+# bindsym $super+d exec rofi -show drun
+bindsym $super+p exec rofi-pass 
+bindsym $super+d exec "rofi -combi-modi window,drun,ssh -show combi -modi combi"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -125,6 +126,7 @@ bindsym $super+Shift+0 move container to workspace 10
 
 # Assign windows to workspace
 assign [class="Chromium"] 1
+assign [class="qutebrowser"] 1
 assign [class="URxvt"] 2
 assign [class="Slack"] 4
 for_window [class="Spotify"] move to workspace 9
@@ -195,9 +197,9 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $sink toggle
 
 # Media player controls
 bindsym Print exec xfce4-screenshooter
-bindsym $super+x exec ~/bin/play-toggle
-bindsym $super+c exec ~/bin/play-next
-bindsym $super+z exec ~/bin/play-prev
+bindsym $super+x exec ~/bin/play-toggle.sh
+bindsym $super+c exec ~/bin/play-next.sh
+bindsym $super+z exec ~/bin/play-prev.sh
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec light -A 20 # increase screen brightness
@@ -223,6 +225,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id urxvtd -q -f -o
+exec --no-startup-id pasystray
 
 client.focused #586e75 #586e75 #fdf6e3 #268bd2
 client.focused_inactive #073642 #073642 #93a1a1 #002b36

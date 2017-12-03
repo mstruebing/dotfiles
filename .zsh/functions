@@ -98,6 +98,10 @@ function toggleTouchPad() {
   fi
 }
 
+function lb() {
+    n ~/Documents/logbook/$(date '+%Y-%m-%d').md
+}
+
 # gets all function comments and the function names
 function getFunctions() {
   grep -E '^#|^function' $HOME/.zsh/functions | sed 's/{/\n/g'

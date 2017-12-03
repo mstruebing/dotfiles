@@ -1,6 +1,7 @@
 # ls
 alias 'ls'='ls -lh --color=auto'
 alias 'll'='ls -ah --color=auto'
+alias 'l'='ls'
 
 # cd aliases
 alias '..'='cd ..'
@@ -16,7 +17,6 @@ alias 'gpc'='git push origin $(git_current_branch)' # because i cant use this va
 alias 'gup'='git pull origin $(git_current_branch)'
 
 # misc
-alias 'v'='vim'
 alias 'n'='nvim'
 alias 'online'='ping google.de'
 alias 'mux'='tmuxinator'

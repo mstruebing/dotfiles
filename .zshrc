@@ -1,12 +1,12 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/maex/.oh-my-zsh
+  export ZSH=/usr/share/oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="mstruebing"
-#ZSH_THEME="ys"
+# ZSH_THEME="ys"
 ZSH_TMUX_AUTOSTART=true
 
 # Uncomment the following line to use case-sensitive completion.
@@ -91,23 +91,24 @@ export LANG=en_US.UTF-8
 SOURCES=~/.zsh/sources
 source $SOURCES
 
-# place this after nvm initialization!
+ # place this after nvm initialization!
 autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
+ load-nvmrc() {
+   local node_version="$(nvm version)"
+   local nvmrc_path="$(nvm_find_nvmrc)"
 
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+   if [ -n "$nvmrc_path" ]; then
+     local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
 
-    if [ "$nvmrc_node_version" != "N/A" ] && [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm install
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
+     if [ "$nvmrc_node_version" != "N/A" ] && [ "$nvmrc_node_version" != "$node_version" ]; then
+       nvm install
+     fi
+   elif [ "$node_version" != "$(nvm version default)" ]; then
+     echo "Reverting to nvm default version"
+     nvm use default
+   fi
+ }
+
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 

@@ -1,13 +1,15 @@
 # ~/.tmuxinator/neos-ui.yml
 
 name: neos-ui
-root: ~/projects/contrib/Neos.3.2/Packages/Application/Neos.Neos.Ui/
+root: ~/projects/contrib/neos-base-distribution/Packages/Application/Neos.Neos.Ui/
 
 # Optional tmux socket
 # socket_name: foo
 
 # Runs before everything. Use it to start daemons etc.
-pre: /home/maex/bin/docker start mysql
+# pre: /home/maex/bin/docker start mysql
+
+on_project_start: sudo systemctl start mariadb.service
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247

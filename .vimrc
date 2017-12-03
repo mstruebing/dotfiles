@@ -150,7 +150,7 @@ let g:lightline = {
 " create file .syntastic_javac_config
 " let g:syntastic_java_javac_classpath = '/home/davis/progs/princeton-algos/week1/libs/algs4.jar'
 " see: http://stackoverflow.com/questions/16721322/vim-syntastic-java-unaware-of-current-project-classes
-let g:syntastic_java_javac_config_file_enabled = 1
+" let g:syntastic_java_javac_config_file_enabled = 1
 
 " Enable per-command history.
 " CTRL-N and CTRL-P will be automatically bound to next-history and
@@ -181,7 +181,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 
 let g:polyglot_disabled = ['elm']
-let g:elm_syntastic_show_warnings = 1
+" let g:elm_syntastic_show_warnings = 1
 
 " http://vim.wikia.com/wiki/Go_away_and_come_back
 " Creates a session
@@ -276,7 +276,7 @@ call plug#begin('~/.vim/vim-plug-plugins')
 
     " syntax checking
     " Plug 'vim-syntastic/syntastic'
-    " Plug 'w0rp/ale'
+    Plug 'w0rp/ale'
 
     " easily comment/uncomment lines
     Plug 'tpope/vim-commentary'
