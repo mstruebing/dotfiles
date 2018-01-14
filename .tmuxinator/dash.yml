@@ -50,4 +50,4 @@ windows:
         - neomutt
   - term:
       panes:
-        - 'ssh-add && trizen -Su'
+        - 'ssh-add && trizen -Syyu'
