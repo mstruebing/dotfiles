@@ -39,6 +39,15 @@ windows:
       # synchronize: after
       panes:
         - weechat
+  - reddit:
+      panes:
+        - rtv
+  - twitter:
+      panes:
+        - rainbowstream -iot
+  - mail:
+      panes:
+        - neomutt
   - term:
       panes:
-        - 'ssh-add && pacaur -Syyu'
+        - 'ssh-add && trizen -Su'

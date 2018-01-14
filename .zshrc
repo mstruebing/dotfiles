@@ -112,4 +112,16 @@ autoload -U add-zsh-hook
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
+
+# Experimental
+# sets the backlight to 20 percent automatically at 20 o'clock 
+# when a new shell is initialized
+# HOURS=$(date +"%H")
+
+# if [[ $HOURS -ge 20 ]]; then
+#     backlight 20
+# else 
+#     backlight 100
+# fi
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

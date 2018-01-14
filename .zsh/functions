@@ -98,8 +98,17 @@ function toggleTouchPad() {
   fi
 }
 
+# Create a logbook entry
+# USAGE: lb
 function lb() {
     n ~/Documents/logbook/$(date '+%Y-%m-%d').md
+}
+
+# Set's the backlight a given percent
+# USAGE: backlight <percent>
+function backlight {
+    local percent="$1"
+    light -S $percent
 }
 
 # gets all function comments and the function names

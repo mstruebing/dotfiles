@@ -118,6 +118,14 @@ map <leader>b :Buffers<CR>
 map <Leader>l <Plug>(easymotion-bd-jk)
 nmap <Leader>l <Plug>(easymotion-overwin-line)
 
+" easymotion
+" char
+nmap F <Plug>(easymotion-prefix)s
+" word
+nmap W <Plug>(easymotion-prefix)w
+" end
+nmap E <Plug>(easymotion-prefix)e
+
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
 " ale map 
@@ -174,10 +182,15 @@ let g:deoplete#enable_at_startup = 1
 inoremap <silent><expr><TAB> deoplete#mappings#manual_complete()
 " UltiSnips config
 inoremap <silent><expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <silent><expr><s-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 let g:UltiSnipsExpandTrigger = "<nop>"
 inoremap <expr> <CR> pumvisible() ? "<C-R>=UltiSnips#ExpandSnippetOrJump()<CR>" : "\<CR>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" reselect visual after indenting
+vnoremap < <gv
+vnoremap > >gv
 
 
 let g:polyglot_disabled = ['elm']
