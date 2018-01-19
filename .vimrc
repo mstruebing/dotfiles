@@ -1,11 +1,19 @@
+""""""""""""
+" SETTINGS "
+""""""""""""
+
+
 syntax on
 set background=dark
 colorscheme torte
+filetype plugin on
 
-" temp fix for relative numbers when a file is opened with fzf as a split or
-" new tab
+" temp fix for relative numbers when a file is opened with fzf as a split or new tab
 " see https://github.com/junegunn/fzf/issues/930#issuecomment-303212379
 au TermOpen * set relativenumber
+
+" runtime path
+set rtp^=/usr/share/vim/vimfiles/
 
 " Nicer searching
 set incsearch               " Incremental searching
@@ -13,10 +21,11 @@ set hlsearch                " Highlight matches
 set showmatch               " Show matching brackets
 set ignorecase              " Search case-insensitive
 set smartcase               " ...except when something is capitalized
-set nospell
-set noshowmode
+set nospell                 " nospell by default
+set noshowmode              " not needed because of lightline
 
-set clipboard=unnamedplus
+" some clipboard hack
+set clipboard=unnamedplus   
 
 " reload file if changed on disk
 set autoread
@@ -44,32 +53,36 @@ set wildmode=list:longest,full
 
 set mouse=a " Enable mouse support - even in tmux \o/
 
+" Highlight current line
+set cursorline
+
+" Deactivate swap file creation
+set noswapfile
+
+" some menu tabbing stuff
+set completeopt=longest,menuone
+
+
+
+""""""""""""
+" MAPPINGS "
+""""""""""""
+
+
+" Switch leader key to `<Space>`
+let mapleader = "\<Space>"
+
 " cool resizing
 nnoremap <Left> :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
 nnoremap <Up> :resize -2<CR>
 nnoremap <Down> :resize +2<CR>
 
-map <F11> :w<CR>:VimuxPromptCommand<CR>
-map <F12> :w<CR>:VimuxRunLastCommand<CR>
-inoremap <F11> <ESC>:w<CR>:VimuxPromptCommand<CR>
-inoremap <F12> <ESC>:w<CR>:VimuxRunLastCommand<CR>
-
-set rtp^=/usr/share/vim/vimfiles/
-
-autocmd Filetype javascript iabbrev log console.log(<Right>;<Left><Left>
-
-" nerdtree
-autocmd StdinReadPre * let s:std_in=1
-" enter nerdtree on start
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif""))
-map <C-t> :NERDTreeToggle<CR>
-
-" show hidden files by default
-let NERDTreeShowHidden=1
-
-" disable ctrl-t mapping
-let g:go_def_mapping_enabled = 0
+" vimux \o/
+nnoremap <F11> :w<CR>:VimuxPromptCommand<CR>
+nnoremap <F12> :w<CR>:VimuxRunLastCommand<CR>
+noremap <leader>- :w<CR>:VimuxPromptCommand<CR>
+noremap <leader>= :w<CR>:VimuxRunLastCommand<CR>
 
 " j/k for multilines
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
@@ -77,31 +90,17 @@ noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
 " toggle hlsearch
 nnoremap <F3> :set hlsearch!<CR>
+noremap <leader>3 :set hlsearch!<CR>
+
+" nopaste stuff
 nnoremap <F4> :set nopaste<CR>
+noremap <leader>4 :set nopaste<CR>
 
-" Switch leader key to `<Space>`
-let mapleader = "\<Space>"
-
-" filetype plugin on for specific file mappings
-filetype plugin on
-
-" Highlight current line
-set cursorline
-
-" Deactivate swap file creation
-set noswapfile
-
-" makefile needs tabs
-:autocmd FileType make set noexpandtab
-
-" spell for md
-autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
+" toggle nerdtree
+map <C-t> :NERDTreeToggle<CR>
 
 " Split (unjoin) lines
 nnoremap K i<CR><ESC>
-
-" some menu tabbing stuff
-set completeopt=longest,menuone
 
 " some git maps
 map <leader>gs :Gstatus<CR>
@@ -129,8 +128,37 @@ nmap E <Plug>(easymotion-prefix)e
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
 " ale map 
-nnoremap <Leader>n :ALENext<CR>
-nnoremap <Leader>N :ALEPrevious<CR>
+map <Leader>n :ALENext<CR>
+map <Leader>N :ALEPrevious<CR>
+
+" reselect visual after indenting
+vnoremap < <gv
+vnoremap > >gv
+
+
+"""""""""""""
+" AUTOCMD's "
+"""""""""""""
+
+
+autocmd Filetype javascript iabbrev log console.log(<Right>;<Left><Left>
+autocmd Filetype php iabbrev log var_dump(<Right>;<Left><Left>
+autocmd Filetype php iabbrev flog \Neos\Flow\var_dump(<Right>;<Left><Left>
+
+" nerdtree
+autocmd StdinReadPre * let s:std_in=1
+
+" makefile needs tabs
+autocmd FileType make set noexpandtab
+
+" spell for md
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
+
+
+
+"""""""""""""""""""
+" PLUGIN SETTINGS "
+"""""""""""""""""""
 
 
 " lightline theme
@@ -154,12 +182,6 @@ let g:lightline = {
       \ 'subseparator': { 'left': '|', 'right': '|' }
       \ }
 
-" for syntastic
-" create file .syntastic_javac_config
-" let g:syntastic_java_javac_classpath = '/home/davis/progs/princeton-algos/week1/libs/algs4.jar'
-" see: http://stackoverflow.com/questions/16721322/vim-syntastic-java-unaware-of-current-project-classes
-" let g:syntastic_java_javac_config_file_enabled = 1
-
 " Enable per-command history.
 " CTRL-N and CTRL-P will be automatically bound to next-history and
 " previous-history instead of down and up. If you don't like the change,
@@ -169,13 +191,8 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 " use ag
 let $FZF_DEFAULT_COMMAND = 'ag --hidden -g ""'
 
-syntax on
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
-
-" gives nerdtree the same state in every tab
-" fucks up the git diff buffer from vim-fugitive
-" autocmd BufWinEnter * NERDTreeMirror
 
 " deoplete config
 let g:deoplete#enable_at_startup = 1
@@ -188,13 +205,21 @@ inoremap <expr> <CR> pumvisible() ? "<C-R>=UltiSnips#ExpandSnippetOrJump()<CR>" 
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-" reselect visual after indenting
-vnoremap < <gv
-vnoremap > >gv
+" show hidden files by default
+let NERDTreeShowHidden=1
 
+" disable ctrl-t mapping
+let g:go_def_mapping_enabled = 0
 
+" Enable elm highlight to use the one from 
+" the elm plugin
 let g:polyglot_disabled = ['elm']
-" let g:elm_syntastic_show_warnings = 1
+
+
+""""""""""""
+" SESSIONS "
+""""""""""""
+
 
 " http://vim.wikia.com/wiki/Go_away_and_come_back
 " Creates a session
@@ -226,6 +251,13 @@ augroup sessions
     au VimLeave * :call MakeSession()
   endif
 augroup END
+
+
+
+"""""""""""
+" PLUGINS "
+"""""""""""
+
 
 call plug#begin('~/.vim/vim-plug-plugins')
     """""""""""""""""""""""""""""""
@@ -288,7 +320,6 @@ call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
     " syntax checking
-    " Plug 'vim-syntastic/syntastic'
     Plug 'w0rp/ale'
 
     " easily comment/uncomment lines

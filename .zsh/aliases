@@ -8,7 +8,7 @@ alias '..'='cd ..'
 alias '...'='cd ../..'
 alias 'dl'='cd ~/Downloads'
 alias 'p'='cd ~/projects'
-# alias 't'='cd /tmp'
+alias 't'='cd /tmp'
 alias 'docs'='cd ~/Documents'
 
 # git aliases
@@ -18,22 +18,15 @@ alias 'gup'='git pull origin $(git_current_branch)'
 
 # misc
 alias 'n'='nvim'
-alias 'online'='ping google.de'
 alias 'mux'='tmuxinator'
 alias 'a'='atom -a .'
 alias 'm'='ncmpcpp'
 alias 'ml'='ncmpcpp --host 127.0.0.1'
 alias 'rtv'='rtv --enable-media'
-alias 'r'='rtv'
 alias 'fzf'='FZF_DEFAULT_COMMAND=\'ag --hidden -g ""\' fzf'
 
 # because my prompt isn't show properly
 alias tmux='tmux -2u'
-alias panes='tmux splitw -h && tmux splitw -v'
-
-# creates two new panes and run htop and temp in them
-alias monitor="tmux split-window -h 'htop' && tmux split-window \"watch -n 1 \"sensors | sed 's/.*://g' | sed 's/(.*)//g' | sed 's/^\W\+//g' | head -n 5 | tail -n 3\"\""
-
 
 # gives me the temp of my cores
 alias temp="watch -n 1 \"sensors | sed 's/.*://g' | sed 's/(.*)//g' | sed 's/^\W\+//g' | head -n 5 | tail -n 3\""
