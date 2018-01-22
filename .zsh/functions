@@ -115,3 +115,21 @@ function backlight {
 function getFunctions() {
   grep -E '^#|^function' $HOME/.zsh/functions | sed 's/{/\n/g'
 }
+
+# pseudofunc to print my keybindings
+# for my poker3
+function getKeyBindings() {
+    echo '------ LAYER 1 -------'
+    echo 'fn    + d      -> volume -'
+    echo 'fn    + s      -> volume +'
+    echo 'fn    + f      -> mute'
+    echo '------ LAYER 2 -------'
+    echo 'fn    + q      -> pos1'
+    echo 'fn    + e      -> end'
+    echo 'fn    + w      -> up'
+    echo 'fn    + a      -> left'
+    echo 'fn    + s      -> down'
+    echo 'fn    + d      -> right'
+    echo 'shift + esc    -> ~'
+    echo 'esc            -> `'
+}

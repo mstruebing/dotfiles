@@ -51,6 +51,7 @@ ZSH_TMUX_AUTOSTART=true
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+# plugins=(git tmux tmuxinator zsh-syntax-highlighting)
 plugins=(git tmux tmuxinator)
 
 # User configuration
@@ -60,6 +61,16 @@ plugins=(git tmux tmuxinator)
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+
+SOURCES=~/.zsh/sources
+source $SOURCES
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
+
+# Tell Antigen that you're done.
+antigen apply
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -87,9 +98,6 @@ export LANG=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Personal includes
-
-SOURCES=~/.zsh/sources
-source $SOURCES
 
  # place this after nvm initialization!
 autoload -U add-zsh-hook

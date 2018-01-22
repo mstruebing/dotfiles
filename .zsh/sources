@@ -3,9 +3,11 @@ FUNCTIONS=~/.zsh/functions
 EXPORTS=~/.zsh/exports
 Z=/usr/lib/z.sh
 NVM=/usr/share/nvm/init-nvm.sh
+ANTIGEN=~/.zsh/antigen/bin/antigen.zsh
 
 source $ALIASES
 source $FUNCTIONS
 source $EXPORTS
 source $Z
 source $NVM
+source $ANTIGEN
