@@ -9,6 +9,11 @@ echo /.config/nvim >> filelist
 
 while read file          
 do
+   path=$(dirname $HOME$file)
+   echo $path
+   if [ ! -d "$path" ]; then
+	mkdir -p $path
+   fi
   ln -sf $(pwd)$file $HOME$file
 done < filelist
 
