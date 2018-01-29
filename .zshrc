@@ -57,7 +57,7 @@ plugins=(git tmux tmuxinator)
 # User configuration
 
 #  export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
-  export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:~/.gem/ruby/2.4.0/bin/"
+  export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -120,16 +120,27 @@ autoload -U add-zsh-hook
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-
-# Experimental
-# sets the backlight to 20 percent automatically at 20 o'clock 
-# when a new shell is initialized
-# HOURS=$(date +"%H")
-
-# if [[ $HOURS -ge 20 ]]; then
-#     backlight 20
-# else 
-#     backlight 100
-# fi
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# ~/.zshrc
+function docker-php() {
+    appname=$(basename `pwd -P`)
+    appname="${appname/-/}"
+    imagename='php:cli'
+    output=$(docker images | grep "${appname}_phpserver")
+    if [ "$?" = "0" ]; then
+        imagename="${appname}_phpserver"
+    fi
+    docker run -ti --rm -v $(pwd):/app -w /app $imagename php $*
+}
+
+function docker-composer() {
+    appname=$(basename `pwd -P`)
+    appname="${appname/-/}"
+    imagename='composer'
+    output=$(docker images | grep "${appname}_composer")
+    if [ "$?" = "0" ]; then
+        imagename="${appname}_composer"
+    fi
+    docker run --rm -v ~/.composer:/root/.composer -v $(pwd):/app -v ~/.ssh:/root/.ssh $imagename $*
+}

@@ -61,6 +61,8 @@ macro index ga "<change-folder>=[Gmail]/Alle Nachrichten<enter>" "Go to all mail
 macro index gs "<change-folder>=[Gmail]/Markiert<enter>" "Go to starred messages"
 macro index gd "<change-folder>=[Gmail]/Entwürfe<enter>" "Go to drafts"
 
+bind index m mail
+
 
 
 # Neonwolf Color Scheme for NeoMutt

@@ -124,6 +124,9 @@ nmap F <Plug>(easymotion-prefix)s
 nmap W <Plug>(easymotion-prefix)w
 " end
 nmap E <Plug>(easymotion-prefix)e
+" end
+nmap B <Plug>(easymotion-prefix)b
+
 
 imap <c-x><c-l> <plug>(fzf-complete-line)
 

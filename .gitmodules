@@ -4,3 +4,6 @@
 [submodule ".modules/phpvm"]
 	path = .modules/phpvm
 	url = git@github.com:cfebs/phpvm.git
+[submodule ".modules/phpvm-use.sh"]
+	path = .modules/phpvm-use.sh
+	url = git@github.com:mstruebing/phpvm-use.sh

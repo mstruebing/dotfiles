@@ -32,16 +32,8 @@ startup_window: editor
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t neos-ui
 # post: xdg-open http://127.0.0.1:8000/neos!
-on_project_start: sudo systemctl start mariadb.service && xdg-open http://127.0.0.1:8000/neos!
+on_project_start: sudo systemctl start mysqld && xdg-open http://127.0.0.1:8000/neos!
 
 windows:
   - server: ../../../ && server
-  - editor:
-      layout: 3262,212x56,0,0[212x44,0,0,32,212x11,0,45{106x11,0,45,34,105x11,107,45,35}]
-      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
-      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
-      # synchronize: after
-      panes:
-        - nvim
-        -
-        -
+  - editor: nvim

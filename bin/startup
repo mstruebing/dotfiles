@@ -20,7 +20,7 @@ function toggleTouchPad() {
 function setDisplay() {
   local VGA='DP-1-1'
   local HDMI='HDMI-1-1'
-  local INTERN='eDP-1-1'
+  local INTERN='eDP1'
   local returnValue=0
 
   local connected=$(xrandr --query | grep $HDMI | tail -1 | cut -d \  -f 2)
