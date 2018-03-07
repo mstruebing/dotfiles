@@ -7,6 +7,7 @@ syntax on
 set background=dark
 colorscheme torte
 filetype plugin on
+filetype plugin indent on
 
 " temp fix for relative numbers when a file is opened with fzf as a split or new tab
 " see https://github.com/junegunn/fzf/issues/930#issuecomment-303212379
@@ -157,12 +158,24 @@ autocmd FileType make set noexpandtab
 " spell for md
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
 
+" Highlight 80 char
+autocmd Filetype markdown let &colorcolumn=join(range(81,81),",")
 
 
 """""""""""""""""""
 " PLUGIN SETTINGS "
 """""""""""""""""""
 
+let g:python3_host_prog = '/usr/bin/python3'
+
+" neovim haskell
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
 
 " lightline theme
 let g:lightline = {
@@ -199,6 +212,7 @@ let g:fzf_buffers_jump = 1
 
 " deoplete config
 let g:deoplete#enable_at_startup = 1
+
 inoremap <silent><expr><TAB> deoplete#mappings#manual_complete()
 " UltiSnips config
 inoremap <silent><expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -281,6 +295,9 @@ call plug#begin('~/.vim/vim-plug-plugins')
 
     " haskell code completion
     Plug 'eagletmt/neco-ghc'
+
+    " haskell stuff
+    Plug 'neovimhaskell/haskell-vim'
 
     " html plugin 
     Plug 'mattn/emmet-vim'

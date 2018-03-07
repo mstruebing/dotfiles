@@ -123,14 +123,8 @@ load-nvmrc
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # ~/.zshrc
-function docker-php() {
-    appname=$(basename `pwd -P`)
-    appname="${appname/-/}"
-    imagename='php:cli'
-    output=$(docker images | grep "${appname}_phpserver")
-    if [ "$?" = "0" ]; then
-        imagename="${appname}_phpserver"
-    fi
+function php71() {
+    imagename='php:7.1-fpm'
     docker run -ti --rm -v $(pwd):/app -w /app $imagename php $*
 }
 

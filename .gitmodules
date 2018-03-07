@@ -7,3 +7,6 @@
 [submodule ".modules/phpvm-use.sh"]
 	path = .modules/phpvm-use.sh
 	url = git@github.com:mstruebing/phpvm-use.sh
+[submodule ".modules/urxvt-font-size"]
+	path = .modules/urxvt-font-size
+	url = https://github.com/majutsushi/urxvt-font-size

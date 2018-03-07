@@ -133,3 +133,8 @@ function getKeyBindings() {
     echo 'shift + esc    -> ~'
     echo 'esc            -> `'
 }
+
+function keys() {
+	setxkbmap -option caps:escape
+	setxkbmap -model pc105 -layout us,de -option grp:rctrl_rshift_toggle
+}
