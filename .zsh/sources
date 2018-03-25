@@ -4,6 +4,7 @@ EXPORTS=~/.zsh/exports
 Z=/usr/lib/z.sh
 NVM=/usr/share/nvm/init-nvm.sh
 ANTIGEN=~/.modules/antigen/bin/antigen.zsh
+SOURCERER=~/.sourcerer/sourcerer
 
 source $ALIASES
 source $FUNCTIONS
@@ -11,3 +12,4 @@ source $EXPORTS
 source $Z
 source $NVM
 source $ANTIGEN
+source $SOURCERER

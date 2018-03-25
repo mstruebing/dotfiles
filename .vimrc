@@ -109,14 +109,24 @@ map <leader>gc :Gcommit<CR>
 map <leader>gb :Gblame<CR>
 map <leader>gl :Glog<CR>
 
-map <leader>f :FZF<CR>
+" Git checked in files
+map <leader>f :Files<CR>
 map <leader>a :Ag 
 map <leader>w :Windows<CR> 
 map <leader>b :Buffers<CR> 
+map <leader>h :History<CR> 
 
 " Move to line
 map <Leader>l <Plug>(easymotion-bd-jk)
 nmap <Leader>l <Plug>(easymotion-overwin-line)
+nmap <Leader>L :BLines<CR>
+
+" Marks
+nmap <Leader>' :Marks<CR>
+
+" Tags
+nmap <Leader>t :BTags<CR>
+nmap <Leader>T :Tags<CR>
 
 " easymotion
 " char

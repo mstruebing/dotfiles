@@ -99,7 +99,7 @@ export LANG=en_US.UTF-8
 
 # Personal includes
 
- # place this after nvm initialization!
+# place this after nvm initialization!
 autoload -U add-zsh-hook
  load-nvmrc() {
    local node_version="$(nvm version)"
@@ -118,23 +118,8 @@ autoload -U add-zsh-hook
  }
 
 add-zsh-hook chpwd load-nvmrc
+add-zsh-hook chpwd sourcerer
 load-nvmrc
+sourcerer
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# ~/.zshrc
-function php71() {
-    imagename='php:7.1-fpm'
-    docker run -ti --rm -v $(pwd):/app -w /app $imagename php $*
-}
-
-function docker-composer() {
-    appname=$(basename `pwd -P`)
-    appname="${appname/-/}"
-    imagename='composer'
-    output=$(docker images | grep "${appname}_composer")
-    if [ "$?" = "0" ]; then
-        imagename="${appname}_composer"
-    fi
-    docker run --rm -v ~/.composer:/root/.composer -v $(pwd):/app -v ~/.ssh:/root/.ssh $imagename $*
-}

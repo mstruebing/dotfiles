@@ -1,7 +1,7 @@
 # ~/.tmuxinator/neos-ui.yml
 
 name: neos-ui
-root: ~/projects/contrib/neos-development-distribution/Packages/Application/Neos.Neos.Ui/
+root: ~/projects/contrib/neos-base-distribution/Packages/Application/Neos.Neos.Ui/
 
 # Optional tmux socket
 # socket_name: foo
