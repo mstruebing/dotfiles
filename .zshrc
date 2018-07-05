@@ -68,6 +68,7 @@ source $SOURCES
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
+antigen bundle sandstorm/oh-my-zsh-flow-plugin
 
 # Tell Antigen that you're done.
 antigen apply

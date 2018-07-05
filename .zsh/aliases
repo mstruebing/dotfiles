@@ -8,6 +8,9 @@ alias '..'='cd ..'
 alias '...'='cd ../..'
 alias 'dl'='cd ~/Downloads'
 alias 'p'='cd ~/projects'
+alias 'psg'='cd ~/projects/sg-projects'
+alias 'po'='cd ~/projects/own'
+alias 'pc'='cd ~/projects/contrib'
 alias 't'='cd /tmp'
 alias 'docs'='cd ~/Documents'
 
@@ -24,6 +27,8 @@ alias 'm'='ncmpcpp'
 alias 'ml'='ncmpcpp --host 127.0.0.1'
 alias 'rtv'='rtv --enable-media'
 alias 'fzf'='FZF_DEFAULT_COMMAND=\'ag --hidden -g ""\' fzf'
+alias 'startdocker'='sudo systemctl start docker.socket docker.service'
+alias 'startmysql'='sudo systemctl start mysqld'
 
 # because my prompt isn't show properly
 alias tmux='tmux -2u'

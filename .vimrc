@@ -2,6 +2,10 @@
 " SETTINGS "
 """"""""""""
 
+" per project settings with local .vimrc's
+set exrc
+set secure
+
 
 syntax on
 set background=dark
@@ -302,6 +306,10 @@ call plug#begin('~/.vim/vim-plug-plugins')
 
     " php code completion
     Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
+
+    " php actor
+    Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
+    Plug 'kristijanhusak/deoplete-phpactor'
 
     " haskell code completion
     Plug 'eagletmt/neco-ghc'

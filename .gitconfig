@@ -17,3 +17,5 @@
   branches = branch -a
   remotes = remote -v
   undo = reset --soft HEAD^
+[core]
+	excludesfile = ~/.gitignore

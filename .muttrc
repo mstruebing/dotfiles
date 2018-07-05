@@ -54,7 +54,7 @@ bind editor <space> noop
 # bind index G imap-fetch-mail
 bind index g noop
 macro index,pager y "<save-message>=[Gmail]/Alle Nachrichten<enter><enter>" "Archive"
-macro index,pager d "<save-message>=[Gmail]/Papierkorb<enter><enter>" "Trash"
+macro index,pager d "<save-message>=[Gmail]/Done<enter><enter>" "Trash"
 macro index,pager m "<save-message>=[Gmail]/Markiert<enter><enter>" "Markiert"
 macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
 macro index ga "<change-folder>=[Gmail]/Alle Nachrichten<enter>" "Go to all mail"
