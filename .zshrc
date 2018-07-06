@@ -119,7 +119,6 @@ autoload -U add-zsh-hook
  }
 
 add-zsh-hook chpwd load-nvmrc
-add-zsh-hook chpwd 
 load-nvmrc
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
