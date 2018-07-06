@@ -119,8 +119,7 @@ autoload -U add-zsh-hook
  }
 
 add-zsh-hook chpwd load-nvmrc
-add-zsh-hook chpwd sourcerer
+add-zsh-hook chpwd 
 load-nvmrc
-sourcerer
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
