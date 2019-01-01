@@ -304,13 +304,6 @@ call plug#begin('~/.vim/vim-plug-plugins')
     " javascript code completion
     Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
-    " php code completion
-    Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
-
-    " php actor
-    Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
-    Plug 'kristijanhusak/deoplete-phpactor'
-
     " haskell code completion
     Plug 'eagletmt/neco-ghc'
 
@@ -319,9 +312,6 @@ call plug#begin('~/.vim/vim-plug-plugins')
 
     " html plugin 
     Plug 'mattn/emmet-vim'
-
-    " typoscript // fusion
-    Plug 'mstruebing/vim.typoscript'
 
     """""""""""""""""""""""""""""""
     " Snippets
