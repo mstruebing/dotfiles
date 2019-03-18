@@ -39,7 +39,7 @@ URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
 
 ! Perl extensions
-URxvt.perl-ext-common:      default,matcher,font-size
+URxvt.perl-ext-common: default,matcher,clipboard,resize-font
 URxvt.matcher.button:       1
 URxvt.urlLauncher:          firefox
 
@@ -103,6 +103,8 @@ URxvt.pointerBlank:         true
 **color7: #eee8d5
 **color15: #fdf6e3
 
+
+
 rofi.color-enabled: true
 
 ! State:            'bg',       'fg',       'bgalt',    'hlbg',     'hlfg'
@@ -113,11 +115,9 @@ rofi.color-active:  #000000,    #000000,    #000000,    #000000,    #000000
 !                   'bg',       'border'
 rofi.color-window:  #1d1f21,    #2b6651
 
-URxvt.perl-ext-common: default,matcher,clipboard
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.matcher.button: 1
 URxvt.lineSpace: 1
 
 URxvt.transparent:   true

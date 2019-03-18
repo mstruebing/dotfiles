@@ -1,14 +1,13 @@
 [user]
   email = mxstrbng@gmail.com
   name = Max Strübing
+	signingkey = 52D55A1D4E80A32D
 
 [alias]
   p = push
   pm = push origin master
   a = add
-  up = pull
   c = commit
-  cm = commit -m
   d = diff
   co = checkout
   b = branch
@@ -19,3 +18,7 @@
   undo = reset --soft HEAD^
 [core]
 	excludesfile = ~/.gitignore
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg2

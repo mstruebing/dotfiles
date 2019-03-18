@@ -1,7 +1,7 @@
 ALIASES=~/.zsh/aliases
 FUNCTIONS=~/.zsh/functions
 EXPORTS=~/.zsh/exports
-Z=/usr/lib/z.sh
+Z=/usr/share/z/z.sh
 NVM=/usr/share/nvm/init-nvm.sh
 ANTIGEN=~/.modules/antigen/bin/antigen.zsh
 

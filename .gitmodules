@@ -1,12 +1,6 @@
 [submodule ".modules/antigen"]
 	path = .modules/antigen
 	url = git@github.com:zsh-users/antigen.git
-[submodule ".modules/phpvm"]
-	path = .modules/phpvm
-	url = git@github.com:cfebs/phpvm.git
-[submodule ".modules/phpvm-use.sh"]
-	path = .modules/phpvm-use.sh
-	url = git@github.com:mstruebing/phpvm-use.sh
 [submodule ".modules/urxvt-font-size"]
 	path = .modules/urxvt-font-size
 	url = https://github.com/majutsushi/urxvt-font-size

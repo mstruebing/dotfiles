@@ -54,7 +54,7 @@ clip=primary
 # default_user is also used for password files that have no user field.
 default_user=mstruebing
 default_user2=mxstrbng@gmail.com
-password_length=16
+password_length=32
 
 # Custom Keybindings
 autotype="Alt+1"

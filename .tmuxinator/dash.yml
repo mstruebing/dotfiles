@@ -38,16 +38,7 @@ windows:
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - weechat
-  - reddit:
-      panes:
-        - rtv
-  - twitter:
-      panes:
-        - rainbowstream -iot
-  - mail:
-      panes:
-        - neomutt
+        - 'tmux kill-session -t 0 && weechat'
   - term:
       panes:
         - 'ssh-add && trizen -Syyu'
