@@ -68,7 +68,6 @@ source $SOURCES
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
-antigen bundle sandstorm/oh-my-zsh-flow-plugin
 
 # Tell Antigen that you're done.
 antigen apply
@@ -99,6 +98,7 @@ export LANG=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Personal includes
+#
 
 # place this after nvm initialization!
 autoload -U add-zsh-hook

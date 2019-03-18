@@ -13,6 +13,10 @@ colorscheme torte
 filetype plugin on
 filetype plugin indent on
 
+" unlimited undos
+set undofile
+set undodir=~/.vim/undodir
+
 " temp fix for relative numbers when a file is opened with fzf as a split or new tab
 " see https://github.com/junegunn/fzf/issues/930#issuecomment-303212379
 au TermOpen * set relativenumber
@@ -173,7 +177,7 @@ autocmd FileType make set noexpandtab
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
 
 " Highlight 80 char
-autocmd Filetype markdown let &colorcolumn=join(range(81,81),",")
+" autocmd Filetype markdown let &colorcolumn=join(range(81,81),",")
 
 
 """""""""""""""""""
@@ -313,6 +317,16 @@ call plug#begin('~/.vim/vim-plug-plugins')
     " html plugin 
     Plug 'mattn/emmet-vim'
 
+    " Rust
+    Plug 'rust-lang/rust.vim'
+
+    " REQUIRED: Add a syntax file. YATS is the best
+    Plug 'HerringtonDarkholme/yats.vim'
+    Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+
+    Plug 'prettier/vim-prettier', {
+        \ 'do': 'yarn install' }
+
     """""""""""""""""""""""""""""""
     " Snippets
     """""""""""""""""""""""""""""""
@@ -348,7 +362,7 @@ call plug#begin('~/.vim/vim-plug-plugins')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
     " syntax checking
-    Plug 'w0rp/ale'
+    Plug 'desmap/ale-sensible' | Plug 'w0rp/ale'
 
     " easily comment/uncomment lines
     Plug 'tpope/vim-commentary'

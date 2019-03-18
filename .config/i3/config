@@ -125,14 +125,11 @@ bindsym $super+Shift+9 move container to workspace 9
 bindsym $super+Shift+0 move container to workspace 10
 
 # Assign windows to workspace
-assign [class="Chromium"] 1
-assign [class="qutebrowser"] 1
 assign [class="URxvt"] 2
 assign [class="Slack"] 4
 for_window [class="Spotify"] move to workspace 9
 assign [class="Vlc"] 10
 assign [class="Google-chrome"] 10
-assign [class="Slack"] 4
 assign [class="VirtualBox"] 5
 assign [class="MPlayer"] 10
 
@@ -224,13 +221,13 @@ bindsym $alt+Shift+Tab focus left
 exec --no-startup-id setxkbmap -model pc105 -layout us,de -option grp:rctrl_rshift_toggle
 exec --no-startup-id ~/bin/startup
 exec --no-startup-id nm-applet
-exec --no-startup-id blueman-applet
-exec --no-startup-id ~/.fehbg
-exec --no-startup-id urxvtd -q -f -o
 exec --no-startup-id pasystray
+exec --no-startup-id blueman-applet
+exec --no-startup-id urxvtd -q -f -o
+exec --no-startup-id xautolock -time 5 -locker 'i3lock -d -c 000000 -e -f'
+# exec --no-startup-id xautolock -time 30 -locker 'systemctl hibernate'
 
 client.focused #586e75 #586e75 #fdf6e3 #268bd2
 client.focused_inactive #073642 #073642 #93a1a1 #002b36
 client.unfocused #002b36 #002b36 #586e75 #002b36
 client.urgent #dc322f #dc322f #fdf6e3 #dc322f
-

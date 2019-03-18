@@ -101,7 +101,9 @@ function toggleTouchPad() {
 # Create a logbook entry
 # USAGE: lb
 function lb() {
-    n ~/Documents/logbook/$(date '+%Y-%m-%d').md
+    echo >> ~/Documents/logbook
+    echo $(date +%d.%m.%Y): >> ~/Documents/logbook
+    n ~/Documents/logbook
 }
 
 # Set's the backlight a given percent
@@ -134,7 +136,18 @@ function getKeyBindings() {
     echo 'esc            -> `'
 }
 
+# set keys to my liking
 function keys() {
 	setxkbmap -option caps:escape
 	setxkbmap -model pc105 -layout us,de -option grp:rctrl_rshift_toggle
+}
+
+# cds into the git root
+function cdgit() {
+    cd $(git rev-parse --show-toplevel)
+}
+
+# creates a firefox instance with temporary cache and no profile
+function fx() {
+    firefox --new-instance --profile $(mktemp -d)
 }
