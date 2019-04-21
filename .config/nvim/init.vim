@@ -1,3 +1,123 @@
+"""""""""""
+" PLUGINS "
+"""""""""""
+
+
+call plug#begin('~/.local/share/nvim/plugins')
+"""""""""""""""""""""""""""""""
+" Language Plugins
+"""""""""""""""""""""""""""""""
+
+" elm plugin
+Plug 'elmcast/elm-vim'
+
+" go plugin
+Plug 'fatih/vim-go'
+
+" javascript code completion
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+
+" haskell code completion
+Plug 'eagletmt/neco-ghc'
+
+" haskell stuff
+Plug 'neovimhaskell/haskell-vim'
+
+" haskell stuff
+Plug 'parsonsmatt/intero-neovim'
+
+" html plugin 
+Plug 'mattn/emmet-vim'
+
+" Rust
+Plug 'rust-lang/rust.vim'
+
+" REQUIRED: Add a syntax file. YATS is the best
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+
+Plug 'prettier/vim-prettier', {
+            \ 'do': 'yarn install' }
+
+"""""""""""""""""""""""""""""""
+" Snippets
+"""""""""""""""""""""""""""""""
+
+" ultisnips
+Plug 'SirVer/ultisnips'
+
+" snippet collection
+Plug 'honza/vim-snippets'
+
+" ES2015 code snippets (Optional)
+Plug 'epilande/vim-es2015-snippets'
+
+" React code snippets
+Plug 'epilande/vim-react-snippets'
+
+" use editorconfig
+Plug 'editorconfig/editorconfig-vim'
+
+" () [] {} :)
+Plug 'jiangmiao/auto-pairs'
+
+" easily change/add/delete surroundings
+Plug 'tpope/vim-surround'
+
+" git plugin
+Plug 'tpope/vim-fugitive'
+
+" filebrowser
+Plug 'scrooloose/nerdtree'
+
+" completion framework
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+" easily comment/uncomment lines
+Plug 'tpope/vim-commentary'
+
+" statusline
+Plug 'itchyny/lightline.vim'
+
+" run commands from vim inside a tmux pane
+Plug 'benmills/vimux'
+
+" easily navigate between vim and tmux panes
+Plug 'christoomey/vim-tmux-navigator'
+
+" syntax highlights
+Plug 'sheerun/vim-polyglot'
+
+" scroll through different colorschemes
+Plug 'vim-scripts/ScrollColors'
+
+" fuzzyfinder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+" show changed lines in file
+Plug 'airblade/vim-gitgutter'
+
+" some nice motions
+Plug 'easymotion/vim-easymotion'
+
+" Highlight search cursor
+Plug 'inside/vim-search-pulse'
+
+":BufOnly closes all buffers
+Plug 'vim-scripts/BufOnly.vim'
+
+" Cool tag handling
+Plug 'ludovicchabant/vim-gutentags'
+
+" Wiki :o
+Plug 'vimwiki/vimwiki'
+
+" neomake
+Plug 'neomake/neomake'
+call plug#end()
+
+
 """"""""""""
 " SETTINGS "
 """"""""""""
@@ -149,9 +269,10 @@ nmap B <Plug>(easymotion-prefix)b
 
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
-" ale map 
-map <Leader>n :ALENext<CR>
-map <Leader>N :ALEPrevious<CR>
+" Neomake
+let g:neomake_open_list = 2
+map <Leader>n :NeomakeNextLoclist<CR>
+map <Leader>N :NeomakePrevLoclist<CR>
 
 " reselect visual after indenting
 vnoremap < <gv
@@ -163,9 +284,9 @@ vnoremap > >gv
 """""""""""""
 
 
-autocmd Filetype javascript iabbrev log console.log(<Right>;<Left><Left>
-autocmd Filetype php iabbrev log var_dump(<Right>;<Left><Left>
-autocmd Filetype php iabbrev flog \Neos\Flow\var_dump(<Right>;<Left><Left>
+autocmd Filetype go nmap <C-]> :GoDef<CR>
+autocmd Filetype typescript nmap <C-]> :TSDef<CR>
+autocmd Filetype haskell nmap <C-]> :InteroGoToDef<CR>
 
 " nerdtree
 autocmd StdinReadPre * let s:std_in=1
@@ -197,24 +318,24 @@ let g:haskell_backpack = 1                " to enable highlighting of backpack k
 
 " lightline theme
 let g:lightline = {
-      \ 'colorscheme': 'seoul256',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ },
-      \ 'separator': { 'left': '|', 'right': '|' },
-      \ 'subseparator': { 'left': '|', 'right': '|' }
-      \ }
+            \ 'colorscheme': 'seoul256',
+            \ 'active': {
+            \   'left': [ [ 'mode', 'paste' ],
+            \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+            \ },
+            \ 'component': {
+            \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+            \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+            \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+            \ },
+            \ 'component_visible_condition': {
+            \   'readonly': '(&filetype!="help"&& &readonly)',
+            \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+            \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+            \ },
+            \ 'separator': { 'left': '|', 'right': '|' },
+            \ 'subseparator': { 'left': '|', 'right': '|' }
+            \ }
 
 " Enable per-command history.
 " CTRL-N and CTRL-P will be automatically bound to next-history and
@@ -230,6 +351,7 @@ let g:fzf_buffers_jump = 1
 
 " deoplete config
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#min_pattern_length = 1
 
 inoremap <silent><expr><TAB> deoplete#mappings#manual_complete()
 " UltiSnips config
@@ -239,6 +361,8 @@ let g:UltiSnipsExpandTrigger = "<nop>"
 inoremap <expr> <CR> pumvisible() ? "<C-R>=UltiSnips#ExpandSnippetOrJump()<CR>" : "\<CR>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsSnippetsDir="~/.config/nvim/snips"
+let g:UltiSnipsSnippetDirectories=["snips", "UltiSnips"]
 
 " show hidden files by default
 let NERDTreeShowHidden=1
@@ -259,13 +383,13 @@ let g:polyglot_disabled = ['elm']
 " http://vim.wikia.com/wiki/Go_away_and_come_back
 " Creates a session
 function! MakeSession()
-  let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
-  if (filewritable(b:sessiondir) != 2)
-    exe 'silent !mkdir -p ' b:sessiondir
-    redraw!
-  endif
-  let b:sessionfile = b:sessiondir . '/session.vim'
-  exe 'mksession! ' . b:sessionfile
+    let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
+    if (filewritable(b:sessiondir) != 2)
+        exe 'silent !mkdir -p ' b:sessiondir
+        redraw!
+    endif
+    let b:sessionfile = b:sessiondir . '/session.vim'
+    exe 'mksession! ' . b:sessionfile
 endfunction
 
 " Loads a session if it exists
@@ -273,130 +397,34 @@ function! LoadSession()
     let b:sessiondir = $HOME . '/.vim/sessions' . getcwd()
     let b:sessionfile = b:sessiondir . '/session.vim'
     if (filereadable(b:sessionfile))
-      exe 'source ' b:sessionfile
+        exe 'source ' b:sessionfile
     else
-      echo 'No session loaded.'
+        echo 'No session loaded.'
     endif
 endfunction
 
 augroup sessions
-  autocmd!
-  if argc() == 0
-    au VimEnter * nested :call LoadSession()
-    au VimLeave * :call MakeSession()
-  endif
+    autocmd!
+    if argc() == 0
+        au VimEnter * nested :call LoadSession()
+        au VimLeave * :call MakeSession()
+    endif
 augroup END
 
 
 
-"""""""""""
-" PLUGINS "
-"""""""""""
-
-
-call plug#begin('~/.vim/vim-plug-plugins')
-    """""""""""""""""""""""""""""""
-    " Language Plugins
-    """""""""""""""""""""""""""""""
-
-    " elm plugin
-    Plug 'elmcast/elm-vim'
-
-    " go plugin
-    Plug 'fatih/vim-go'
-
-    " javascript code completion
-    Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-
-    " haskell code completion
-    Plug 'eagletmt/neco-ghc'
-
-    " haskell stuff
-    Plug 'neovimhaskell/haskell-vim'
-
-    " html plugin 
-    Plug 'mattn/emmet-vim'
-
-    " Rust
-    Plug 'rust-lang/rust.vim'
-
-    " REQUIRED: Add a syntax file. YATS is the best
-    Plug 'HerringtonDarkholme/yats.vim'
-    Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-
-    Plug 'prettier/vim-prettier', {
-        \ 'do': 'yarn install' }
-
-    """""""""""""""""""""""""""""""
-    " Snippets
-    """""""""""""""""""""""""""""""
-
-    " ultisnips
-    Plug 'SirVer/ultisnips'
-
-    " snippet collection
-    Plug 'honza/vim-snippets'
-
-    " ES2015 code snippets (Optional)
-    Plug 'epilande/vim-es2015-snippets'
-
-    " React code snippets
-    Plug 'epilande/vim-react-snippets'
-
-    " use editorconfig
-    Plug 'editorconfig/editorconfig-vim'
-    
-    " () [] {} :)
-    Plug 'jiangmiao/auto-pairs'
-
-    " easily change/add/delete surroundings
-    Plug 'tpope/vim-surround'
-
-    " git plugin
-    Plug 'tpope/vim-fugitive'
-
-    " filebrowser
-    Plug 'scrooloose/nerdtree'
-
-    " completion framework
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-    " syntax checking
-    Plug 'desmap/ale-sensible' | Plug 'w0rp/ale'
-
-    " easily comment/uncomment lines
-    Plug 'tpope/vim-commentary'
-
-    " statusline
-    Plug 'itchyny/lightline.vim'
-
-    " run commands from vim inside a tmux pane
-    Plug 'benmills/vimux'
-
-    " easily navigate between vim and tmux panes
-    Plug 'christoomey/vim-tmux-navigator'
-
-    " syntax highlights
-    Plug 'sheerun/vim-polyglot'
-
-    " scroll through different colorschemes
-    Plug 'vim-scripts/ScrollColors'
-
-    " fuzzyfinder
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    Plug 'junegunn/fzf.vim'
-
-    " show changed lines in file
-    Plug 'airblade/vim-gitgutter'
-
-    " some nice motions
-    Plug 'easymotion/vim-easymotion'
-
-    " Highlight search cursor
-    Plug 'inside/vim-search-pulse'
-
-    ":BufOnly closes all buffers
-    Plug 'vim-scripts/BufOnly.vim'
-call plug#end()
 
 hi Normal guibg=NONE ctermbg=NONE
+
+function! MyOnBattery()
+    return readfile('/sys/class/power_supply/AC/online') == ['0']
+endfunction
+
+if MyOnBattery()
+    call neomake#configure#automake('w')
+else
+    call neomake#configure#automake('nrwi', 500)
+endif
+
+call deoplete#custom#source('_', 'sorters', ['sorter_word'])
+call deoplete#custom#source('ultisnips', 'rank', 9999)

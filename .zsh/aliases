@@ -31,4 +31,3 @@ alias fx = 'firefox --new-instance --profile $(mktemp -d)'
 
 # because my prompt isn't show properly
 alias tmux='tmux -2u'
-

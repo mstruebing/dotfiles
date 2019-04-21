@@ -122,3 +122,6 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin
