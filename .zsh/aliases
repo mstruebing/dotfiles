@@ -31,3 +31,9 @@ alias fx = 'firefox --new-instance --profile $(mktemp -d)'
 
 # because my prompt isn't show properly
 alias tmux='tmux -2u'
+
+if command -v colordiff > /dev/null; then
+    alias diff='colordiff -u'
+else
+    alias diff='diff -u'
+fi
