@@ -32,6 +32,9 @@ Plug 'mattn/emmet-vim'
 " Rust
 Plug 'rust-lang/rust.vim'
 
+" Elixir
+Plug 'slashmili/alchemist.vim'
+
 " REQUIRED: Add a syntax file. YATS is the best
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
@@ -110,9 +113,6 @@ Plug 'vim-scripts/BufOnly.vim'
 " Cool tag handling
 Plug 'ludovicchabant/vim-gutentags'
 
-" Wiki :o
-Plug 'vimwiki/vimwiki'
-
 " neomake
 Plug 'neomake/neomake'
 call plug#end()
@@ -135,7 +135,7 @@ filetype plugin indent on
 
 " unlimited undos
 set undofile
-set undodir=~/.vim/undodir
+set undodir=~/.cache/nvim/undodir
 
 " temp fix for relative numbers when a file is opened with fzf as a split or new tab
 " see https://github.com/junegunn/fzf/issues/930#issuecomment-303212379
@@ -228,6 +228,13 @@ noremap <leader>4 :set nopaste<CR>
 " toggle nerdtree
 map <C-t> :NERDTreeToggle<CR>
 
+" ESC escapes terminal mode
+" tnoremap <Esc> <C-\><C-n>
+" tnoremap <C-k> <C-\><C-n><C-w><C-k>
+" tnoremap <C-j> <C-\><C-n><C-w><C-j>
+" tnoremap <C-h> <C-\><C-n><C-w><C-h>
+" tnoremap <C-l> <C-\><C-n><C-w><C-l>
+
 " Split (unjoin) lines
 nnoremap K i<CR><ESC>
 
@@ -274,6 +281,8 @@ let g:neomake_open_list = 2
 map <Leader>n :NeomakeNextLoclist<CR>
 map <Leader>N :NeomakePrevLoclist<CR>
 
+let g:gutentags_cache_dir = '~/.cache/nvim/tags/'
+
 " reselect visual after indenting
 vnoremap < <gv
 vnoremap > >gv
@@ -287,6 +296,8 @@ vnoremap > >gv
 autocmd Filetype go nmap <C-]> :GoDef<CR>
 autocmd Filetype typescript nmap <C-]> :TSDef<CR>
 autocmd Filetype haskell nmap <C-]> :InteroGoToDef<CR>
+
+let g:alchemist_tag_stack_map = '<C-O>'
 
 " nerdtree
 autocmd StdinReadPre * let s:std_in=1
@@ -383,7 +394,7 @@ let g:polyglot_disabled = ['elm']
 " http://vim.wikia.com/wiki/Go_away_and_come_back
 " Creates a session
 function! MakeSession()
-    let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
+    let b:sessiondir = $HOME . "/.cache/nvim/sessions" . getcwd()
     if (filewritable(b:sessiondir) != 2)
         exe 'silent !mkdir -p ' b:sessiondir
         redraw!
@@ -394,7 +405,7 @@ endfunction
 
 " Loads a session if it exists
 function! LoadSession()
-    let b:sessiondir = $HOME . '/.vim/sessions' . getcwd()
+    let b:sessiondir = $HOME . '/.cache/nvim/sessions' . getcwd()
     let b:sessionfile = b:sessiondir . '/session.vim'
     if (filereadable(b:sessionfile))
         exe 'source ' b:sessionfile
