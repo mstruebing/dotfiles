@@ -22,3 +22,7 @@
 	gpgsign = true
 [gpg]
 	program = gpg2
+[rebase]
+	autoStash = true
+[pull]
+	rebase = true

@@ -35,6 +35,8 @@ Plug 'rust-lang/rust.vim'
 " Elixir
 Plug 'slashmili/alchemist.vim'
 
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+
 " REQUIRED: Add a syntax file. YATS is the best
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
@@ -115,6 +117,9 @@ Plug 'ludovicchabant/vim-gutentags'
 
 " neomake
 Plug 'neomake/neomake'
+
+" Make a buffer fullscreen
+Plug 'dhruvasagar/vim-zoom'
 call plug#end()
 
 
