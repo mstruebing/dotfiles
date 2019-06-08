@@ -41,4 +41,4 @@ windows:
         - 'tmux kill-session -t 0 && weechat'
   - term:
       panes:
-        - 'ssh-add && trizen -Syyu'
+        - 'ssh-add && trizen -Syu'

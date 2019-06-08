@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+set -eou pipefail
+
+if [[ $# -ne 1 ]]; then
+    echo You need to provide a video
+    exit 1
+fi
+
+filename="$1"
+paletteFile="palette.png"
+outputFile="output.gif"
+
+# check if ffmpeg is installed
+ffmpeg=$(command -v ffmpeg || true)
+if [ "$ffmpeg" = true ]; then
+    echo The program "ffmpeg" is needed.
+    exit 1
+fi
+
+if [[ ! -f "$filename" || ! -s "$filename" || ! -r "$filename" ]]; then
+    if [[ ! -f "$filename" ]]; then
+        echo The file "$filename" doesnt exist
+        exit 1
+    fi
+
+    if [[ ! -s "$filename" ]]; then
+        echo The file "$filename" has zero size
+        exit 1
+    fi
+
+    if [[ ! -r "$filename" ]]; then
+        echo The file "$filename" is not readable
+        exit 1
+    fi
+fi
+
+ffmpeg -y -i "$filename" -vf fps=10,scale=320:-1:flags=lanczos,palettegen "$paletteFile"
+
+ffmpeg -i "$filename" -i "$paletteFile" -filter_complex \
+"fps=10,scale=320:-1:flags=lanczos[x];[x][1:v]paletteuse" "$outputFile"
+
+rm palette.png
