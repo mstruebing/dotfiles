@@ -17,6 +17,7 @@ alias 'docs'='cd ~/Documents'
 
 # git aliases
 alias 'g'='git'
+alias 'k'='kubectl'
 alias 'gpc'='git push origin $(git_current_branch)' # because i cant use this variable in my gitconfig
 alias 'gup'='git pull origin $(git_current_branch)'
 

@@ -34,6 +34,7 @@ Plug 'rust-lang/rust.vim'
 
 " Elixir
 Plug 'slashmili/alchemist.vim'
+Plug 'mhinz/vim-mix-format'
 
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 
@@ -120,6 +121,10 @@ Plug 'neomake/neomake'
 
 " Make a buffer fullscreen
 Plug 'dhruvasagar/vim-zoom'
+
+" indentation show
+Plug 'Yggdroot/indentLine'
+
 call plug#end()
 
 
@@ -178,6 +183,7 @@ set backspace=indent,eol,start " Backspace through everything
 " Indentation
 set autoindent
 set smartindent
+set list lcs=tab:\┊\ 
 
 set number                  " Line numbering
 set relativenumber
@@ -278,6 +284,8 @@ nmap E <Plug>(easymotion-prefix)e
 " end
 nmap B <Plug>(easymotion-prefix)b
 
+" use the last macro used instead of going into ex mode
+nmap Q @@
 
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
@@ -301,14 +309,13 @@ vnoremap > >gv
 autocmd Filetype go nmap <C-]> :GoDef<CR>
 autocmd Filetype typescript nmap <C-]> :TSDef<CR>
 autocmd Filetype haskell nmap <C-]> :InteroGoToDef<CR>
+autocmd FileType elixir nmap <leader>p :MixFormat<CR>
+autocmd FileType make set noexpandtab
 
 let g:alchemist_tag_stack_map = '<C-O>'
 
 " nerdtree
 autocmd StdinReadPre * let s:std_in=1
-
-" makefile needs tabs
-autocmd FileType make set noexpandtab
 
 " spell for md
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
@@ -389,6 +396,9 @@ let g:go_def_mapping_enabled = 0
 " Enable elm highlight to use the one from 
 " the elm plugin
 let g:polyglot_disabled = ['elm']
+
+" Enable autoformat for elixir
+let g:mix_format_on_save = 1
 
 
 """"""""""""

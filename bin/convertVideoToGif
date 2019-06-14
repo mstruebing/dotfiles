@@ -35,9 +35,9 @@ if [[ ! -f "$filename" || ! -s "$filename" || ! -r "$filename" ]]; then
     fi
 fi
 
-ffmpeg -y -i "$filename" -vf fps=10,scale=320:-1:flags=lanczos,palettegen "$paletteFile"
+ffmpeg -y -i "$filename" -vf fps=10,scale=540:-1:flags=lanczos,palettegen "$paletteFile"
 
 ffmpeg -i "$filename" -i "$paletteFile" -filter_complex \
-"fps=10,scale=320:-1:flags=lanczos[x];[x][1:v]paletteuse" "$outputFile"
+"fps=10,scale=540:-1:flags=lanczos[x];[x][1:v]paletteuse" "$outputFile"
 
 rm palette.png
