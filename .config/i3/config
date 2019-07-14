@@ -224,9 +224,9 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
 exec --no-startup-id blueman-applet
 exec --no-startup-id urxvtd -q -f -o
-exec --no-startup-id xautolock -time 5 -locker 'i3lock -d -c 000000 -e -f'
 exec --no-startup-id xss-lock -- i3lock -d -c 000000 -e -f
-# exec --no-startup-id xautolock -time 30 -locker 'systemctl hibernate'
+# exec --no-startup-id xautolock -time 15 -locker 'systemctl hibernate'
+exec --no-startup-id xautolock -time 5 -locker 'i3lock -d -c 000000 -e -f'
 
 client.focused #586e75 #586e75 #fdf6e3 #268bd2
 client.focused_inactive #073642 #073642 #93a1a1 #002b36
