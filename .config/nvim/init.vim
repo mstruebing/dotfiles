@@ -7,9 +7,10 @@ call plug#begin('~/.local/share/nvim/plugins')
 """""""""""""""""""""""""""""""
 " Language Plugins
 """""""""""""""""""""""""""""""
-
-" elm plugin
-Plug 'elmcast/elm-vim'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 " go plugin
 Plug 'fatih/vim-go'
@@ -311,6 +312,7 @@ autocmd Filetype typescript nmap <C-]> :TSDef<CR>
 autocmd Filetype haskell nmap <C-]> :InteroGoToDef<CR>
 autocmd FileType elixir nmap <leader>p :MixFormat<CR>
 autocmd FileType make set noexpandtab
+autocmd FileType elm nmap <leader>d :call LanguageClient#textDocument_hover()<CR>
 
 let g:alchemist_tag_stack_map = '<C-O>'
 
@@ -318,7 +320,8 @@ let g:alchemist_tag_stack_map = '<C-O>'
 autocmd StdinReadPre * let s:std_in=1
 
 " spell for md
-autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
+autocmd BufRead,BufNewFile * set nospell
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us,de_de
 
 " Highlight 80 char
 " autocmd Filetype markdown let &colorcolumn=join(range(81,81),",")
@@ -375,8 +378,8 @@ let g:fzf_buffers_jump = 1
 " deoplete config
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#min_pattern_length = 1
-
 inoremap <silent><expr><TAB> deoplete#mappings#manual_complete()
+
 " UltiSnips config
 inoremap <silent><expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <silent><expr><s-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
@@ -393,13 +396,21 @@ let NERDTreeShowHidden=1
 " disable ctrl-t mapping
 let g:go_def_mapping_enabled = 0
 
-" Enable elm highlight to use the one from 
-" the elm plugin
-let g:polyglot_disabled = ['elm']
+let g:LanguageClient_serverCommands = {
+    \ 'elm': [ 'elm-language-server', '--stdio' ]
+    \ }
+
+let g:LanguageClient_rootMarkers = {
+    \ 'elm': ['elm.json']
+    \ }
+
+let g:LanguageClient_settingsPath = '~/.config/nvim/settings.json'
+
+nmap <leader>5 :call LanguageClient_contextMenu()<CR>
+nmap <leader>f5 :call LanguageClient_contextMenu()<CR>
 
 " Enable autoformat for elixir
 let g:mix_format_on_save = 1
-
 
 """"""""""""
 " SESSIONS "
@@ -451,6 +462,9 @@ if MyOnBattery()
 else
     call neomake#configure#automake('nrwi', 500)
 endif
+
+command! Notes tabnew ~/projects/own/log/notes.md
+nmap <Leader>nn :Notes<CR>
 
 call deoplete#custom#source('_', 'sorters', ['sorter_word'])
 call deoplete#custom#source('ultisnips', 'rank', 9999)

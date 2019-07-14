@@ -1,9 +1,23 @@
-# permanently set alternative root dir
+# permanently set alternative root dir. Use ":" to separate multiple roots
+# which can be switched at runtime with shift+left/right
 # root=/path/to/root
 
 # rofi command. Make sure to have "$@" as last argument
 _rofi () {
     rofi -i -no-auto-select "$@"
+}
+
+# default command to generate passwords
+_pwgen () {
+	pwgen -scy "$@"
+}
+
+# image viewer to display qrcode of selected entry
+# qrencode is needed to generate the image and a viewer
+# that can read from pipes. Known viewers to work are feh and display
+_image_viewer () {
+    feh -
+#    display
 }
 
 # xdotool needs the keyboard layout to be set using setxkbmap
@@ -28,9 +42,12 @@ delay=2
 # rofi-pass needs to close itself before it can type passwords. Set delay here.
 wait=0.2
 
+# delay between keypresses when typing (in ms)
+xdotool_delay=12
+
 ## Programs to be used
 # Editor
-EDITOR='nvim'
+EDITOR='gvim -f'
 
 # Browser
 BROWSER='xdg-open'
@@ -50,11 +67,18 @@ help_color="#4872FF"
 # Possible options: primary, clipboard, both
 clip=primary
 
-# Options for generating new password entries
+# Seconds before clearing pass from clipboard 
+clip_clear=45
+
+## Options for generating new password entries
+
+# open new password entries in editor
+edit_new_pass="true"
+
 # default_user is also used for password files that have no user field.
 default_user=mstruebing
 default_user2=mxstrbng@gmail.com
-password_length=32
+password_length=50
 
 # Custom Keybindings
 autotype="Alt+1"
