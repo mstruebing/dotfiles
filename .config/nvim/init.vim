@@ -139,7 +139,7 @@ set secure
 
 
 syntax on
-set background=dark
+set background=light
 colorscheme torte
 filetype plugin on
 filetype plugin indent on
@@ -290,6 +290,8 @@ nmap Q @@
 
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
+let g:vim_markdown_conceal_code_blocks = 0
+
 " Neomake
 let g:neomake_open_list = 2
 map <Leader>n :NeomakeNextLoclist<CR>
@@ -406,8 +408,7 @@ let g:LanguageClient_rootMarkers = {
 
 let g:LanguageClient_settingsPath = '~/.config/nvim/settings.json'
 
-nmap <leader>5 :call LanguageClient_contextMenu()<CR>
-nmap <leader>f5 :call LanguageClient_contextMenu()<CR>
+nmap <leader>c :call LanguageClient_contextMenu()<CR>
 
 " Enable autoformat for elixir
 let g:mix_format_on_save = 1

@@ -151,3 +151,15 @@ function cdg() {
 function fx() {
     firefox --new-instance --profile "$(mktemp -d)"
 }
+
+function mirror_monitor() {
+    local full="$1"
+    local RESOLUTION="1920x1080"
+    local OUTPUT=$(grep ' connected' <(xrandr) | grep -v 'eDP1' | awk '{print $1}')
+
+    if [[ ! -z "$full" ]]; then 
+        RESOLUTION=$(xrandr --query | grep -C 1 $OUTPUT | tail -1 | awk '{print $1}')
+    fi
+
+    xrandr --output $OUTPUT --mode $RESOLUTION
+}
