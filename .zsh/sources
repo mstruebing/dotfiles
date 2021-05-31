@@ -2,12 +2,14 @@ ALIASES=~/.zsh/aliases
 FUNCTIONS=~/.zsh/functions
 EXPORTS=~/.zsh/exports
 Z=/usr/share/z/z.sh
-NVM=/usr/share/nvm/init-nvm.sh
 ANTIGEN=~/.modules/antigen/bin/antigen.zsh
+NIX=/etc/profile.d/nix.sh
+
+ASDF=/opt/asdf-vm/asdf.sh
 
 source $ALIASES
 source $FUNCTIONS
 source $EXPORTS
 source $Z
-source $NVM
 source $ANTIGEN
+source $ASDF

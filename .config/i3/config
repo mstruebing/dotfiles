@@ -128,6 +128,7 @@ bindsym $super+Shift+0 move container to workspace 10
 assign [class="URxvt"] 2
 assign [class="Slack"] 4
 for_window [class="Spotify"] move to workspace 9
+assign [class="discord"] 4
 assign [class="Vlc"] 10
 assign [class="Google-chrome"] 10
 assign [class="VirtualBox"] 5
@@ -201,8 +202,8 @@ bindsym $super+c exec ~/bin/play-next.sh
 bindsym $super+z exec ~/bin/play-prev.sh
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # i3lock
 bindsym Control+$alt+l exec i3lock -d -c 000000 -e -f
@@ -220,13 +221,13 @@ bindsym $alt+Shift+Tab focus left
 
 exec --no-startup-id setxkbmap -model pc105 -layout us,de -option grp:rctrl_rshift_toggle
 exec --no-startup-id ~/bin/startup
-exec --no-startup-id nm-applet
-exec --no-startup-id pasystray
+exec --no-startup-id nm-applet --no-agent
+# exec --no-startup-id pasystray
 exec --no-startup-id blueman-applet
 exec --no-startup-id urxvtd -q -f -o
 exec --no-startup-id xss-lock -- i3lock -d -c 000000 -e -f
 # exec --no-startup-id xautolock -time 15 -locker 'systemctl hibernate'
-exec --no-startup-id xautolock -time 5 -locker 'i3lock -d -c 000000 -e -f'
+# exec --no-startup-id xautolock -time 5 -locker 'i3lock -d -c 000000 -e -f'
 
 client.focused #586e75 #586e75 #fdf6e3 #268bd2
 client.focused_inactive #073642 #073642 #93a1a1 #002b36

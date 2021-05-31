@@ -1,7 +1,7 @@
 [user]
   email = mxstrbng@gmail.com
   name = Max Strübing
-	signingkey = 52D55A1D4E80A32D
+  signingkey = 52D55A1D4E80A32D
 
 [alias]
   p = push
@@ -26,3 +26,5 @@
 	autoStash = true
 [pull]
 	rebase = true
+[init]
+	defaultBranch = main

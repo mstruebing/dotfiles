@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh installation.
   export ZSH=/usr/share/oh-my-zsh
 
+  bindkey -v
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -52,7 +53,7 @@ ZSH_TMUX_AUTOSTART=true
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git tmux tmuxinator zsh-syntax-highlighting)
-plugins=(git tmux tmuxinator)
+plugins=(git tmux tmuxinator asdf)
 
 # User configuration
 
@@ -101,27 +102,24 @@ export LANG=en_US.UTF-8
 #
 
 # place this after nvm initialization!
-autoload -U add-zsh-hook
- load-nvmrc() {
-   local node_version="$(nvm version)"
-   local nvmrc_path="$(nvm_find_nvmrc)"
+# autoload -U add-zsh-hook
+#  load-nvmrc() {
+#    local node_version="$(nvm version)"
+#    local nvmrc_path="$(nvm_find_nvmrc)"
 
-   if [ -n "$nvmrc_path" ]; then
-     local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+#    if [ -n "$nvmrc_path" ]; then
+#      local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
 
-     if [ "$nvmrc_node_version" != "N/A" ] && [ "$nvmrc_node_version" != "$node_version" ]; then
-       nvm install
-     fi
-   elif [ "$node_version" != "$(nvm version default)" ]; then
-     echo "Reverting to nvm default version"
-     nvm use default
-   fi
- }
+#      if [ "$nvmrc_node_version" != "N/A" ] && [ "$nvmrc_node_version" != "$node_version" ]; then
+#        nvm install
+#      fi
+#    elif [ "$node_version" != "$(nvm version default)" ]; then
+#      echo "Reverting to nvm default version"
+#      nvm use default
+#    fi
+#  }
 
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+# add-zsh-hook chpwd load-nvmrc
+# load-nvmrc
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# add Pulumi to the PATH
-export PATH=$PATH:$HOME/.pulumi/bin
