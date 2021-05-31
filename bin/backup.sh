@@ -41,7 +41,6 @@ esac
 
 function create_backup() {
     echo "Pack and compress the archive ..."
-    # tar czvf "$HOME/$BACKUP_FILE" "${BACKUP_FILES[@]}" || true
     tar --create \
         --verbose \
         --gzip \
@@ -59,6 +58,7 @@ function create_backup() {
         --exclude dotfiles/.modules \
         --exclude '*cache*' \
         --exclude '.config/Code - OSS' \
+        --exclude '.local/share/Steam' \
         --file "$HOME/$BACKUP_FILE" "${BACKUP_FILES[@]}" || true
     echo "Finished packing and compressing the archive"
 }
@@ -122,7 +122,7 @@ function transfer_single() {
     local target="$2"
 
     echo "Transfer to: $target ..."
-    rsync -vz --info=progress2 "$source" "$target"
+    rsync -vzz --info=progress2 "$source" "$target"
     echo "Finished transfering to: $target"
 }
 

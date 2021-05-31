@@ -109,8 +109,12 @@ function lb() {
 # Set's the backlight a given percent
 # USAGE: backlight <percent>
 function backlight {
-    local percent="$1"
-    light -S $percent
+    if [ $# -gt 0 ]; then 
+        local percent="$1"
+        xbacklight -set $percent
+    else
+        xbacklight
+    fi
 }
 
 # gets all function comments and the function names

@@ -8,13 +8,6 @@ Xft.rgba:                   rgb
 Xft.hinting:                true
 Xft.hintstyle:              hintslight
 
-!-------------------------------------------------------------------------------
-! URxvt settings
-! Colours lifted from Solarized (http://ethanschoonover.com/solarized)
-! More info at:
-! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod
-!-------------------------------------------------------------------------------
-
 URxvt.depth:                32
 URxvt.geometry:             90x30
 URxvt.fading:               0
@@ -78,8 +71,10 @@ URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.lineSpace: 1
 
-URxvt.transparent:   true
-URxvt.shading:       10
+URxvt*inheritPixmap: true
+URxvt*transparent: true
+! URxvt*shading: 0 to 99 darkens, 101 to 200 lightens
+URxvt*shading: 190
 
 ! -----------------------------------------------------------------------------
 ! File: gruvbox-dark.xresources
@@ -117,3 +112,42 @@ URxvt.shading:       10
 ! LightGrey + White
 *color7:  #a89984
 *color15: #ebdbb2
+
+
+
+! special
+urxvt*.foreground:   #6e6b5e
+urxvt*.background:   #fefbec
+urxvt*.cursorColor:  #6e6b5e
+
+! black
+urxvt*.color0:       #20201d
+urxvt*.color8:       #7d7a68
+
+! red
+urxvt*.color1:       #d73737
+urxvt*.color9:       #d73737
+
+! green
+urxvt*.color2:       #60ac39
+urxvt*.color10:      #60ac39
+
+! yellow
+urxvt*.color3:       #cfb017
+urxvt*.color11:      #cfb017
+
+! blue
+urxvt*.color4:       #6684e1
+urxvt*.color12:      #6684e1
+
+! magenta
+urxvt*.color5:       #b854d4
+urxvt*.color13:      #b854d4
+
+! cyan
+urxvt*.color6:       #1fad83
+urxvt*.color14:      #1fad83
+
+! white
+urxvt*.color7:       #a6a28c
+urxvt*.color15:      #fefbec

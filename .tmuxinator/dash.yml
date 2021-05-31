@@ -33,12 +33,10 @@ startup_window: term
 # on_project_start: tmux kill-session -t 0
 
 windows:
-  - chat:
+  - dash:
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - 'tmux kill-session -t 0 && weechat'
-  - term:
-      panes:
-        - 'ssh-add && trizen -Syu'
+        - "tmux kill-session -a -t 0__dash && ssh-add && exit"
+        - "mirror_monitor; keys; trizen -Syu"

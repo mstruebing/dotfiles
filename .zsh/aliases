@@ -24,11 +24,15 @@ alias 'gup'='git pull origin $(git_current_branch)'
 # misc
 alias 'suspend'='i3lock -d -c 000000 -e -f &; systemctl suspend'
 alias 'hibernate'='i3lock -d -c 000000 -e -f &; systemctl hibernate'
+alias 'suspend-then-hibernate'='i3lock -d -c 000000 -e -f &; systemctl suspend-then-hibernate'
 alias 'n'='nvim'
 alias 'mux'='tmuxinator'
 alias 'a'='atom -a .'
-alias 'fzf'='FZF_DEFAULT_COMMAND=\'ag --hidden -g ""\' fzf'
-alias fx = 'firefox --new-instance --profile $(mktemp -d)'
+# alias 'fzf'='FZF_DEFAULT_COMMAND=\'ag --hidden -g ""\' fzf'
+alias 'stuff'='nvim'
+alias 'enablewebcam'='sudo modprobe -a uvcvideo'
+alias 'disablewebcam'='sudo modprobe -r uvcvideo'
+# alias 'stuff'='echo hi'
 
 # because my prompt isn't show properly
 alias tmux='tmux -2u'

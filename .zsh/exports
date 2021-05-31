@@ -1,4 +1,5 @@
-export PATH=~/bin:~/.yarn/bin:$PATH:/home/maex/.gem/ruby/2.5.0/bin:~/.local/bin:~/go/bin:
+export PATH=~/bin:~/.yarn/bin:$PATH:/home/maex/.gem/ruby/2.5.0/bin:~/.local/bin:~/go/bin:~/.cargo/bin:/opt/asdf-vm/bin:~/.gem/ruby/2.7.0/bin/:~/.config/yarn/global/node_modules/.bin:
 export VISUAL="nvim";
 export EDITOR="nvim";
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
+export ANDROID_SDK=~/Android/Sdk

@@ -12,3 +12,5 @@ templates:
    author-email: mxstrbng@gmail.com 
    copyright: MIT
    github-username: mstruebing
+
+allow-newer: true
