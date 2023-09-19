@@ -1,8 +1,3 @@
-# ls
-alias 'ls'='ls -lh --color=auto'
-alias 'll'='ls -ah --color=auto'
-alias 'l'='ls'
-
 # cd aliases
 alias '..'='cd ..'
 alias '...'='cd ../..'
@@ -17,7 +12,6 @@ alias 'docs'='cd ~/Documents'
 
 # git aliases
 alias 'g'='git'
-alias 'k'='kubectl'
 alias 'gpc'='git push origin $(git_current_branch)' # because i cant use this variable in my gitconfig
 alias 'gup'='git pull origin $(git_current_branch)'
 
@@ -27,12 +21,8 @@ alias 'hibernate'='i3lock -d -c 000000 -e -f &; systemctl hibernate'
 alias 'suspend-then-hibernate'='i3lock -d -c 000000 -e -f &; systemctl suspend-then-hibernate'
 alias 'n'='nvim'
 alias 'mux'='tmuxinator'
-alias 'a'='atom -a .'
-# alias 'fzf'='FZF_DEFAULT_COMMAND=\'ag --hidden -g ""\' fzf'
-alias 'stuff'='nvim'
-alias 'enablewebcam'='sudo modprobe -a uvcvideo'
-alias 'disablewebcam'='sudo modprobe -r uvcvideo'
-# alias 'stuff'='echo hi'
+alias 'k'='kubectl'
+alias ls='ls -lah --color=auto'
 
 # because my prompt isn't show properly
 alias tmux='tmux -2u'
@@ -42,3 +32,13 @@ if command -v colordiff > /dev/null; then
 else
     alias diff='diff -u'
 fi
+
+# Ctags fix, wtf?
+# https://gist.github.com/nazgob/1570678
+alias ctags="`brew --prefix`/bin/ctags"
+
+alias find='gfind'
+alias xargs='gxargs'
+alias locate='glocate'
+
+alias k9s='XDG_CONFIG_HOME=~/.config k9s'

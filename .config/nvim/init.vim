@@ -1,4 +1,4 @@
-"""""""""""
+""""""""""
 " PLUGINS "
 """""""""""
 
@@ -89,6 +89,7 @@ call plug#end()
 " SETTINGS "
 """"""""""""
 
+
 " per project settings with local .vimrc's
 set exrc
 set secure
@@ -160,7 +161,6 @@ set noswapfile
 set completeopt=longest,menuone
 
 
-
 """"""""""""
 " MAPPINGS "
 """"""""""""
@@ -200,9 +200,9 @@ map <C-t> :NERDTreeToggle<CR>
 " nnoremap K i<CR><ESC>
 
 " some git maps
-map <leader>gs :Gstatus<CR>
+map <leader>gs :Git<CR>
 map <leader>gc :Gcommit<CR>
-map <leader>gb :Gblame<CR>
+map <leader>gb :Git blame<CR>
 map <leader>gl :Glog<CR>
 
 " Git checked in files
@@ -263,6 +263,7 @@ let &colorcolumn=join(range(81,81),",")
 " PLUGIN SETTINGS "
 """""""""""""""""""
 
+
 let g:python3_host_prog = '/usr/bin/python3'
 
 function! CocCurrentFunction()
@@ -274,7 +275,7 @@ let g:lightline = {
             \ 'colorscheme': 'solarized',
             \ 'active': {
             \   'left': [ [ 'mode', 'paste' ],
-            \             [ 'fugitive', 'cocstatus', 'currentfunction' , 'readonly', 'filename', 'modified' ] ]
+            \             [ 'cocstatus', 'currentfunction' , 'readonly', 'filename', 'modified' ] ]
             \ },
             \ 'component_function': {
             \   'cocstatus': 'coc#status',
@@ -283,12 +284,10 @@ let g:lightline = {
             \ 'component': {
             \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
             \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-            \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
             \ },
             \ 'component_visible_condition': {
             \   'readonly': '(&filetype!="help"&& &readonly)',
             \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-            \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
             \ },
             \ 'separator': { 'left': '|', 'right': '|' },
             \ 'subseparator': { 'left': '|', 'right': '|' }
@@ -306,11 +305,9 @@ let $FZF_DEFAULT_COMMAND = 'ag --hidden -g ""'
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
 
-" UltiSnips config
-inoremap <silent><expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <silent><expr><s-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+" inoremap <silent><expr> <C-e> coc#pum#visible() ? coc#pum#cancel() : "\<C-e>"
+" inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 let g:UltiSnipsExpandTrigger = "<nop>"
-inoremap <expr> <CR> pumvisible() ? "<C-R>=UltiSnips#ExpandSnippetOrJump()<CR>" : "\<CR>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsSnippetsDir="~/.config/nvim/snips"
@@ -359,21 +356,17 @@ augroup sessions
     endif
 augroup END
 
-
-
-
-
 hi Normal guibg=NONE ctermbg=NONE
 
-function! MyOnBattery()
-    return readfile('/sys/class/power_supply/AC/online') == ['0']
-endfunction
+" function! MyOnBattery()
+"     return readfile('/sys/class/power_supply/AC/online') == ['0']
+" endfunction
 
-if MyOnBattery()
-    call neomake#configure#automake('w')
-else
-    call neomake#configure#automake('nrwi', 500)
-endif
+" if MyOnBattery()
+"     call neomake#configure#automake('w')
+" else
+"     call neomake#configure#automake('nrwi', 500)
+" endif
 
 command! Notes tabnew ~/projects/own/log/notes.md
 nmap <Leader>O :Notes<CR>
@@ -406,14 +399,6 @@ else
   set signcolumn=yes
 endif
 
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -427,14 +412,6 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-" position. Coc only does snippet and additional edit on confirm.
-" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
-if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -447,16 +424,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Use K to show documentation in preview window.
-nnoremap <silent> <leader>k :call <SID>show_documentation()<CR>
 
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -523,3 +491,19 @@ nnoremap <leader>cd :ChecklistDisableCheckbox<cr>
 vnoremap <leader>ct :ChecklistToggleCheckbox<cr>
 vnoremap <leader>ce :ChecklistEnableCheckbox<cr>
 vnoremap <leader>cd :ChecklistDisableCheckbox<cr>
+
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1):
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" UltiSnips config
+" inoremap <expr> <C-j> pumvisible() ? "<C-R>=UltiSnips#ExpandSnippetOrJump()<CR>" : "\<CR>"
+
+
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+nnoremap <silent> <s-k> :call CocActionAsync('doHover')<cr>

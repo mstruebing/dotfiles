@@ -1,7 +1,8 @@
 [user]
-  email = mxstrbng@gmail.com
-  name = Max Strübing
-  signingkey = 52D55A1D4E80A32D
+	email = mxstrbng@gmail.com
+	name = Max Strübing
+  ; signingkey = 52D55A1D4E80A32D
+  signingkey = 816982BB006FEAF4
 
 [alias]
   p = push
@@ -20,11 +21,15 @@
 	excludesfile = ~/.gitignore
 [commit]
 	gpgsign = true
-[gpg]
-	program = gpg2
 [rebase]
 	autoStash = true
 [pull]
 	rebase = true
 [init]
 	defaultBranch = main
+[gpg]
+	program = gpg2
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[diff]
+	renameLimit = 16384

@@ -1,15 +1,24 @@
-# Path to your oh-my-zsh installation.
-  export ZSH=/usr/share/oh-my-zsh
+source /Users/mstruebing/.antigen/bundles/robbyrussell/oh-my-zsh/oh-my-zsh.sh
 
-  bindkey -v
+
+SOURCES=~/.zsh/sources
+source $SOURCES
+
+antigen use oh-my-zsh
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
+
+antigen theme mstruebing
+
+# Tell Antigen that you're done.
+antigen apply
+
+# bindkey -v
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="mstruebing"
-# ZSH_THEME="ys"
-ZSH_TMUX_AUTOSTART=true
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -53,25 +62,21 @@ ZSH_TMUX_AUTOSTART=true
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git tmux tmuxinator zsh-syntax-highlighting)
-plugins=(git tmux tmuxinator asdf)
+# plugins=(git tmux tmuxinator asdf)
+plugins=(git colored-man-pages colorize brew macos zsh-syntax-highlighting zsh-autosuggestions tmux tmuxinator asdf)
+
 
 # User configuration
 
 #  export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
-  export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+#  export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
+PATH="/usr/local/sbin:$HOME/bin:$PATH:$HOME/Library/Python/3.9/bin" 
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/gnu-tar/libexec/gnubin:$PATH"
 
-source $ZSH/oh-my-zsh.sh
 
-SOURCES=~/.zsh/sources
-source $SOURCES
 
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-
-# Tell Antigen that you're done.
-antigen apply
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -121,5 +126,15 @@ export LANG=en_US.UTF-8
 
 # add-zsh-hook chpwd load-nvmrc
 # load-nvmrc
+source $SOURCES
+
+PATH="/usr/local/sbin:$HOME/bin:$PATH:$HOME/Library/Python/3.9/bin" 
+PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
+PATH="$(brew --prefix)/opt/make/libexec/gnubin:$PATH"
+PATH="$(brew --prefix)/opt/grep/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# if [ "$TMUX" = "" ]; then exec tmux; fi
+[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session;}

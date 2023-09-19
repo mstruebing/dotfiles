@@ -1,6 +1,6 @@
 # cds into an directory and make an ls and pwd
 function cd() {
-  builtin cd "$@" && ls && pwd
+  builtin cd "$@" && ls -l && pwd
 }
 
 # Shows lines of a file
@@ -166,4 +166,19 @@ function mirror_monitor() {
     fi
 
     xrandr --output $OUTPUT --mode $RESOLUTION
+}
+
+function kill_docker() {
+    osascript -e 'quit app "Docker"'
+}
+
+function start_docker() {
+    open -a Docker
+    waitz docker ps
+    docker stop $(docker ps -q)
+}
+
+function open-ports() {
+    ssh -L 4000:127.0.0.1:4000 -N -f box
+    ssh -L 1234:127.0.0.1:1234 -N -f box
 }
