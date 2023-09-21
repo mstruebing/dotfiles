@@ -1,0 +1,69 @@
+{
+  "packages": [
+    "zsh@latest",
+    "universal-ctags@6.0.0",
+    "kubernetes-helm@latest",
+    "gnused@latest",
+    "gnutar@latest",
+    "uutils-coreutils@0.0.20",
+    "nmap@latest",
+    "lsof@latest",
+    "nettools@latest",
+    "tmuxinator@latest",
+    "git@latest",
+    "yamllint@latest",
+    "ag@latest",
+    "tldr@latest",
+    "tig@latest",
+    "fzf@latest",
+    "htop@latest",
+    "tree@latest",
+    "kubectl@latest",
+    "kind@latest",
+    "jq@latest",
+    "yq@latest",
+    "k9s@latest",
+    "neovim@latest",
+    "direnv@latest",
+    "fluxcd@latest",
+    "fd@latest",
+    "gh@latest",
+    "hyperfine@latest",
+    "shfmt@latest",
+    "docker@latest",
+    "docker-buildx@latest",
+    "go@latest",
+    "gopls@latest",
+    "rustup@latest",
+    "ruby@latest",
+    "nodejs@latest",
+    "nodePackages.neovim@latest",
+    "elmPackages.elm@latest",
+    "elmPackages.elm-format@latest",
+    "elmPackages.elm-test@latest",
+    "elmPackages.elm-language-server@latest",
+    "stow@latest",
+    "tmux@latest",
+    "antigen@latest",
+    "bc@latest",
+    "colordiff@latest",
+    "tmuxPlugins.yank@latest",
+    "tmuxPlugins.sensible@latest",
+    "tmuxPlugins.urlview@latest",
+    "vimPlugins.coc-nvim@latest",
+    "vimPlugins.vim-plug@latest",
+    "rsync@latest",
+    "pinentry@latest",
+    "gnupg@latest"
+  ],
+  "shell": {
+    "init_hook": [
+      "echo 'Welcome to devbox!' > /dev/null"
+    ],
+    "scripts": {
+      "test": [
+        "echo \"Error: no test specified\" && exit 1"
+      ]
+    }
+  }
+}
