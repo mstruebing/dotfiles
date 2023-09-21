@@ -1,0 +1,36 @@
+[user]
+	email = mxstrbng@gmail.com
+	name = Max Strübing
+  ; signingkey = 52D55A1D4E80A32D
+  ; signingkey = 816982BB006FEAF4
+    signingkey = ED0FE75013B7CAAF6F7A9822727B8DC4B50B33CA
+
+[alias]
+  p = push
+  pm = push origin master
+  a = add
+  c = commit
+  d = diff
+  co = checkout
+  b = branch
+  lg = log --oneline --decorate
+  s = status --branch --short
+  branches = branch -a
+  remotes = remote -v
+  undo = reset --soft HEAD^
+[core]
+	excludesfile = ~/.gitignore
+[commit]
+	gpgsign = true
+[rebase]
+	autoStash = true
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
+[gpg]
+	program = gpg2
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[diff]
+	renameLimit = 16384
