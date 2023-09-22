@@ -37,6 +37,12 @@
       "source": "devbox-search",
       "version": "0.11.2"
     },
+    "docker-compose@latest": {
+      "last_modified": "2023-09-17T10:54:49Z",
+      "resolved": "github:NixOS/nixpkgs/5148520bfab61f99fd25fb9ff7bfbb50dad3c9db#docker-compose",
+      "source": "devbox-search",
+      "version": "2.21.0"
+    },
     "docker@latest": {
       "last_modified": "2023-09-17T10:54:49Z",
       "resolved": "github:NixOS/nixpkgs/5148520bfab61f99fd25fb9ff7bfbb50dad3c9db#docker",
