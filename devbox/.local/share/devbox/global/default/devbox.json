@@ -54,7 +54,8 @@
     "vimPlugins.vim-plug@latest",
     "rsync@latest",
     "pinentry@latest",
-    "gnupg@latest"
+    "gnupg@latest",
+    "docker-compose@latest"
   ],
   "shell": {
     "init_hook": [
