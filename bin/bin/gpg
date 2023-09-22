@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# This is a wrapper script for gpg to make it usable in vim-fugitive
+# without a gui pinentry program
+# https://github.com/tpope/vim-fugitive/issues/1836#issuecomment-918677504
+
 if [ -n "$FUGITIVE" ]; then
   set -- --pinentry-mode loopback "$@"
 fi
