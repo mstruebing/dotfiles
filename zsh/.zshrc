@@ -61,6 +61,11 @@ export LANG=en_US.UTF-8
 export LC_CTYPE=C.UTF-8
 # export LC_ALL=en_US.UTF-8
 
+
+# For gpg signing - https://stackoverflow.com/questions/41052538/git-error-gpg-failed-to-sign-data
+export GPG_TTY=$(tty)
+
+
 # Editor
 export EDITOR="nvim"
 
