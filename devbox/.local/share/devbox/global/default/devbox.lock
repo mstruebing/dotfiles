@@ -62,8 +62,8 @@
       "version": "2.7.0"
     },
     "elmPackages.elm-test@latest": {
-      "last_modified": "2022-11-12T05:40:03Z",
-      "resolved": "github:NixOS/nixpkgs/d8f2c4d846a2e65ad3f5a5e842b672f0b81588a2#elmPackages.elm-test",
+      "last_modified": "2022-11-05T09:12:29Z",
+      "resolved": "github:NixOS/nixpkgs/cae3751e9f74eea29c573d6c2f14523f41c2821a#elmPackages.elm-test",
       "source": "devbox-search",
       "version": "0.19.1-revision9"
     },
@@ -92,10 +92,10 @@
       "version": "0.42.0"
     },
     "gh@latest": {
-      "last_modified": "2023-09-17T10:54:49Z",
-      "resolved": "github:NixOS/nixpkgs/5148520bfab61f99fd25fb9ff7bfbb50dad3c9db#gh",
+      "last_modified": "2023-09-19T14:14:51Z",
+      "resolved": "github:NixOS/nixpkgs/8b5ab8341e33322e5b66fb46ce23d724050f6606#gh",
       "source": "devbox-search",
-      "version": "2.34.0"
+      "version": "2.35.0"
     },
     "git@latest": {
       "last_modified": "2023-09-17T10:54:49Z",
@@ -116,14 +116,14 @@
       "version": "4.9"
     },
     "gnutar@latest": {
-      "last_modified": "2023-09-17T10:54:49Z",
-      "resolved": "github:NixOS/nixpkgs/5148520bfab61f99fd25fb9ff7bfbb50dad3c9db#gnutar",
+      "last_modified": "2023-09-15T06:49:28Z",
+      "resolved": "github:NixOS/nixpkgs/46688f8eb5cd6f1298d873d4d2b9cf245e09e88e#gnutar",
       "source": "devbox-search",
       "version": "1.35"
     },
     "go@latest": {
-      "last_modified": "2023-09-17T10:54:49Z",
-      "resolved": "github:NixOS/nixpkgs/5148520bfab61f99fd25fb9ff7bfbb50dad3c9db#go_1_21",
+      "last_modified": "2023-09-15T06:49:28Z",
+      "resolved": "github:NixOS/nixpkgs/46688f8eb5cd6f1298d873d4d2b9cf245e09e88e#go_1_21",
       "source": "devbox-search",
       "version": "1.21.1"
     },
@@ -146,8 +146,8 @@
       "version": "1.17.0"
     },
     "jq@latest": {
-      "last_modified": "2021-03-25T11:14:47Z",
-      "resolved": "github:NixOS/nixpkgs/c0e881852006b132236cbf0301bd1939bb50867e#jq",
+      "last_modified": "2023-02-24T09:01:09Z",
+      "resolved": "github:NixOS/nixpkgs/7d0ed7f2e5aea07ab22ccb338d27fbe347ed2f11#jq",
       "source": "devbox-search",
       "version": "1.6-bin"
     },
@@ -182,8 +182,8 @@
       "version": "4.98.0"
     },
     "neovim@latest": {
-      "last_modified": "2023-09-17T10:54:49Z",
-      "resolved": "github:NixOS/nixpkgs/5148520bfab61f99fd25fb9ff7bfbb50dad3c9db#neovim",
+      "last_modified": "2023-09-15T06:49:28Z",
+      "resolved": "github:NixOS/nixpkgs/46688f8eb5cd6f1298d873d4d2b9cf245e09e88e#neovim",
       "source": "devbox-search",
       "version": "0.9.2"
     },
@@ -218,8 +218,8 @@
       "version": "1.2.1"
     },
     "rsync@latest": {
-      "last_modified": "2023-09-17T10:54:49Z",
-      "resolved": "github:NixOS/nixpkgs/5148520bfab61f99fd25fb9ff7bfbb50dad3c9db#rsync",
+      "last_modified": "2023-09-06T20:35:33Z",
+      "resolved": "github:NixOS/nixpkgs/efd23a1c9ae8c574e2ca923c2b2dc336797f4cc4#rsync",
       "source": "devbox-search",
       "version": "3.2.7"
     },
@@ -250,8 +250,8 @@
       "version": "2.3.1"
     },
     "tig@latest": {
-      "last_modified": "2023-09-17T10:54:49Z",
-      "resolved": "github:NixOS/nixpkgs/5148520bfab61f99fd25fb9ff7bfbb50dad3c9db#tig",
+      "last_modified": "2023-09-15T06:49:28Z",
+      "resolved": "github:NixOS/nixpkgs/46688f8eb5cd6f1298d873d4d2b9cf245e09e88e#tig",
       "source": "devbox-search",
       "version": "2.5.8"
     },
@@ -310,8 +310,8 @@
       "version": "0.0.20"
     },
     "vimPlugins.coc-nvim@latest": {
-      "last_modified": "2023-09-17T10:54:49Z",
-      "resolved": "github:NixOS/nixpkgs/5148520bfab61f99fd25fb9ff7bfbb50dad3c9db#vimPlugins.coc-nvim",
+      "last_modified": "2023-09-17T02:49:28Z",
+      "resolved": "github:NixOS/nixpkgs/fd03a8aa6db25f12ed3799b37170e2933ecd5d4f#vimPlugins.coc-nvim",
       "source": "devbox-search",
       "version": "2023-09-15"
     },
@@ -328,8 +328,8 @@
       "version": "1.32.0"
     },
     "yq@latest": {
-      "last_modified": "2023-09-17T10:54:49Z",
-      "resolved": "github:NixOS/nixpkgs/5148520bfab61f99fd25fb9ff7bfbb50dad3c9db#yq",
+      "last_modified": "2023-09-16T18:11:59Z",
+      "resolved": "github:NixOS/nixpkgs/b2e813ada825ef491546ea81f42ef2d37ce71bf6#yq",
       "source": "devbox-search",
       "version": "3.2.3"
     },
