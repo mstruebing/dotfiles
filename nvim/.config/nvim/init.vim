@@ -48,9 +48,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" show changed lines in file
-Plug 'airblade/vim-gitgutter'
-
 " some nice motions
 Plug 'easymotion/vim-easymotion'
 
@@ -78,11 +75,6 @@ Plug 'meain/vim-printer'
 
 " Automatically resize windows to golden ratio
 Plug 'dm1try/golden_size'
-
-" TODO: Do I need this?
-" gsi( => Sort within parenthesis. (b, c, a) would become (a, b, c)
-" Sort motion
-Plug 'christoomey/vim-sort-motion'
 
 Plug 'evansalter/vim-checklist'
 call plug#end()
