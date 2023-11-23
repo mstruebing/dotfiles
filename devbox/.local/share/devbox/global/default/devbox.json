@@ -33,7 +33,6 @@
     "docker@latest",
     "docker-buildx@latest",
     "go@latest",
-    "gopls@latest",
     "rustup@latest",
     "ruby@latest",
     "nodejs@latest",
@@ -49,13 +48,14 @@
     "colordiff@latest",
     "tmuxPlugins.yank@latest",
     "tmuxPlugins.sensible@latest",
-    "tmuxPlugins.urlview@latest",
     "vimPlugins.coc-nvim@latest",
     "vimPlugins.vim-plug@latest",
     "rsync@latest",
     "pinentry@latest",
     "gnupg@latest",
-    "docker-compose@latest"
+    "docker-compose@latest",
+    "vimPlugins.packer-nvim@latest",
+    "tree-sitter@latest"
   ],
   "shell": {
     "init_hook": [
