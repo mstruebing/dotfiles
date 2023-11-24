@@ -3,21 +3,6 @@ eval "$(devbox global shellenv --init-hook)"
 # Load direnv
 eval "$(direnv hook zsh)"
 
-
-# Load antigen (plugin manager)
-source ~/.local/share/devbox/global/current/.devbox/nix/profile/default/share/antigen/antigen.zsh
-
-# Configure antigen
-antigen use oh-my-zsh
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-
-antigen theme jispwoso
-
-# Tell Antigen that you're done.
-antigen apply
-
 # Start gpg-agent
 gpg-agent --daemon 2>/dev/null
 
@@ -54,6 +39,21 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # plugins=(git zsh-syntax-highlighting zsh-autosuggestions tmux tmuxinator)
 # plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 plugins=()
+
+# Load antigen (plugin manager)
+source ~/.local/share/devbox/global/current/.devbox/nix/profile/default/share/antigen/antigen.zsh
+
+# Configure antigen
+antigen use oh-my-zsh
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
+
+antigen theme jispwoso
+
+# Tell Antigen that you're done.
+antigen apply
+
 
 
 # Some manual language "hacks"
@@ -151,7 +151,7 @@ alias dots='cd ~/.dotfiles'
 # cds into an directory and make an ls and pwd
 # USAGE: cd <DIRECTORY>
 function cd() {
-  builtin cd "$@" && ls -l && pwd
+  builtin cd "$@" && ls -lah --color=auto && pwd
 }
 
 
@@ -185,3 +185,5 @@ function touch() {
 function cdg() {
     cd $(git rev-parse --show-toplevel)
 }
+
+[ -f "/home/debian/.ghcup/env" ] && source "/home/debian/.ghcup/env" # ghcup-env

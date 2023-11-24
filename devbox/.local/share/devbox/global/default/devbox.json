@@ -3,9 +3,6 @@
     "zsh@latest",
     "universal-ctags@6.0.0",
     "kubernetes-helm@latest",
-    "gnused@latest",
-    "gnutar@latest",
-    "uutils-coreutils@0.0.20",
     "nmap@latest",
     "lsof@latest",
     "nettools@latest",
@@ -55,7 +52,11 @@
     "gnupg@latest",
     "docker-compose@latest",
     "vimPlugins.packer-nvim@latest",
-    "tree-sitter@latest"
+    "tree-sitter@latest",
+    "uutils-coreutils@latest",
+    "gnused@latest",
+    "gnutar@latest",
+    "emacs@latest"
   ],
   "shell": {
     "init_hook": [
