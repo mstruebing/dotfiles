@@ -103,7 +103,6 @@ fi
 # only if $XDG_RUNTIME_DIR is set 
 # (seems to work as a difference between mac and linux)
 if [[ ! -z $XDG_RUNTIME_DIR ]]; then
-    echo "XDG_RUNTIME_DIR: $XDG_RUNTIME_DIR"
     if ! pgrep -u "$USER" ssh-agent > /dev/null; then
         ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
     fi
