@@ -1,7 +1,6 @@
 {
   "packages": [
     "zsh@latest",
-    "universal-ctags@6.0.0",
     "kubernetes-helm@latest",
     "nmap@latest",
     "lsof@latest",
@@ -55,8 +54,7 @@
     "tree-sitter@latest",
     "uutils-coreutils@latest",
     "gnused@latest",
-    "gnutar@latest",
-    "emacs@latest"
+    "gnutar@latest"
   ],
   "shell": {
     "init_hook": [

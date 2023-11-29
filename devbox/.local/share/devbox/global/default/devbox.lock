@@ -229,26 +229,6 @@
         }
       }
     },
-    "emacs@latest": {
-      "last_modified": "2023-11-19T09:25:46Z",
-      "resolved": "github:NixOS/nixpkgs/53aeb5c67b78a1bb565467043b79c3948afacbc9#emacs",
-      "source": "devbox-search",
-      "version": "28.2",
-      "systems": {
-        "aarch64-darwin": {
-          "store_path": "/nix/store/idxs0l7z4fwwa7hwjghxvxa80pz9jnsn-emacs-28.2"
-        },
-        "aarch64-linux": {
-          "store_path": "/nix/store/0x70s6qi93a1y5hmy61xlxy8xr7ya317-emacs-28.2"
-        },
-        "x86_64-darwin": {
-          "store_path": "/nix/store/387ypql7n2bx17fsiisdjkxkidjjcpn0-emacs-28.2"
-        },
-        "x86_64-linux": {
-          "store_path": "/nix/store/1izlz6hapl1d2356z2wnv7kcdyn8kzwf-emacs-28.2"
-        }
-      }
-    },
     "fd@latest": {
       "last_modified": "2023-11-19T17:46:56Z",
       "resolved": "github:NixOS/nixpkgs/0bf3f5cf6a98b5d077cdcdb00a6d4b3d92bc78b5#fd",
@@ -944,26 +924,6 @@
         },
         "x86_64-linux": {
           "store_path": "/nix/store/y9x314ap02i1s01ggkh4nmm54ks2ly5d-tree-2.1.1"
-        }
-      }
-    },
-    "universal-ctags@6.0.0": {
-      "last_modified": "2023-11-19T17:46:56Z",
-      "resolved": "github:NixOS/nixpkgs/0bf3f5cf6a98b5d077cdcdb00a6d4b3d92bc78b5#universal-ctags",
-      "source": "devbox-search",
-      "version": "6.0.0",
-      "systems": {
-        "aarch64-darwin": {
-          "store_path": "/nix/store/f645yhmm3b76wqkjfydbkfck6ilx9709-universal-ctags-6.0.0"
-        },
-        "aarch64-linux": {
-          "store_path": "/nix/store/1mqbvrffh804x0qc0farcak6l5kn7rqs-universal-ctags-6.0.0"
-        },
-        "x86_64-darwin": {
-          "store_path": "/nix/store/9faxfrf1glbgn3d4x2hyggx3i5m8aaf6-universal-ctags-6.0.0"
-        },
-        "x86_64-linux": {
-          "store_path": "/nix/store/m59b6lwf5hhg17y3jnm3sj1dg389rmsi-universal-ctags-6.0.0"
         }
       }
     },

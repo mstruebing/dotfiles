@@ -54,8 +54,6 @@ antigen theme jispwoso
 # Tell Antigen that you're done.
 antigen apply
 
-
-
 # Some manual language "hacks"
 export LANG=en_US.UTF-8
 export LC_CTYPE=C.UTF-8
