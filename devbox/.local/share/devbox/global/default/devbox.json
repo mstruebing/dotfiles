@@ -54,7 +54,9 @@
     "tree-sitter@latest",
     "uutils-coreutils@latest",
     "gnused@latest",
-    "gnutar@latest"
+    "gnutar@latest",
+    "podman@latest",
+    "qemu@latest"
   ],
   "shell": {
     "init_hook": [

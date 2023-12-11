@@ -683,6 +683,46 @@
         }
       }
     },
+    "podman@latest": {
+      "last_modified": "2023-11-17T14:14:56Z",
+      "resolved": "github:NixOS/nixpkgs/a71323f68d4377d12c04a5410e214495ec598d4c#podman",
+      "source": "devbox-search",
+      "version": "4.7.2",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/9gg95661cimajallcp6q48dj7543gswc-podman-4.7.2"
+        },
+        "aarch64-linux": {
+          "store_path": "/nix/store/prcwn7ckrf6clpg1df57b5d8640wl160-podman-4.7.2"
+        },
+        "x86_64-darwin": {
+          "store_path": "/nix/store/k917vxvg5nyyzfj7nn2xb7gqjj4glhyb-podman-4.7.2"
+        },
+        "x86_64-linux": {
+          "store_path": "/nix/store/igpk3cb4dmrr1mpvx5kb5prd1fk8kcss-podman-4.7.2"
+        }
+      }
+    },
+    "qemu@latest": {
+      "last_modified": "2023-11-30T09:21:56Z",
+      "resolved": "github:NixOS/nixpkgs/f5c27c6136db4d76c30e533c20517df6864c46ee#qemu",
+      "source": "devbox-search",
+      "version": "8.1.3",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/25l5j1xm9wb4cizp59dqymz6dagimlb2-qemu-8.1.3"
+        },
+        "aarch64-linux": {
+          "store_path": "/nix/store/r64s4c0v0lq7kqspjn70ng4bhimdqw5n-qemu-8.1.3"
+        },
+        "x86_64-darwin": {
+          "store_path": "/nix/store/16rkbk6h35pc5i13sklypvxnhq5c3nav-qemu-8.1.3"
+        },
+        "x86_64-linux": {
+          "store_path": "/nix/store/1ldr8byb5d87vhk4pi9a05br9ddx76k3-qemu-8.1.3"
+        }
+      }
+    },
     "rsync@latest": {
       "last_modified": "2023-11-19T17:46:56Z",
       "resolved": "github:NixOS/nixpkgs/0bf3f5cf6a98b5d077cdcdb00a6d4b3d92bc78b5#rsync",
