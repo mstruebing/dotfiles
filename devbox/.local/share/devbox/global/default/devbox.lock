@@ -987,26 +987,6 @@
         }
       }
     },
-    "vimPlugins.coc-nvim@latest": {
-      "last_modified": "2023-11-19T17:46:56Z",
-      "resolved": "github:NixOS/nixpkgs/0bf3f5cf6a98b5d077cdcdb00a6d4b3d92bc78b5#vimPlugins.coc-nvim",
-      "source": "devbox-search",
-      "version": "2023-09-30",
-      "systems": {
-        "aarch64-darwin": {
-          "store_path": "/nix/store/3z7vj2y5j0bpjsrq9ys4zqcx887ri0qw-vimplugin-coc.nvim-2023-09-30"
-        },
-        "aarch64-linux": {
-          "store_path": "/nix/store/dqkq6f948sfn74idmcxl164bc09mp18x-vimplugin-coc.nvim-2023-09-30"
-        },
-        "x86_64-darwin": {
-          "store_path": "/nix/store/0d0di3v8c4nsm5f86f3kc68baaaj6h4s-vimplugin-coc.nvim-2023-09-30"
-        },
-        "x86_64-linux": {
-          "store_path": "/nix/store/x0x4zp3lya0cdl0vfm8d1201fsw1lajb-vimplugin-coc.nvim-2023-09-30"
-        }
-      }
-    },
     "vimPlugins.packer-nvim@latest": {
       "last_modified": "2023-11-19T17:46:56Z",
       "resolved": "github:NixOS/nixpkgs/0bf3f5cf6a98b5d077cdcdb00a6d4b3d92bc78b5#vimPlugins.packer-nvim",
@@ -1024,26 +1004,6 @@
         },
         "x86_64-linux": {
           "store_path": "/nix/store/5yz26p1c6wr4ly3lpjiaq5nvkz0f2m40-vimplugin-packer.nvim-2023-08-24"
-        }
-      }
-    },
-    "vimPlugins.vim-plug@latest": {
-      "last_modified": "2023-11-19T17:46:56Z",
-      "resolved": "github:NixOS/nixpkgs/0bf3f5cf6a98b5d077cdcdb00a6d4b3d92bc78b5#vimPlugins.vim-plug",
-      "source": "devbox-search",
-      "version": "2023-04-01",
-      "systems": {
-        "aarch64-darwin": {
-          "store_path": "/nix/store/jjapjv6vmfkwc5blcrnx33j3yxs0b16s-vimplugin-vim-plug-2023-04-01"
-        },
-        "aarch64-linux": {
-          "store_path": "/nix/store/mqfdr0mkvbyhqvhhqlvgkz07w6q8q8zj-vimplugin-vim-plug-2023-04-01"
-        },
-        "x86_64-darwin": {
-          "store_path": "/nix/store/g52fm2d7dfia3dm4wh5zldy9kr9a67wd-vimplugin-vim-plug-2023-04-01"
-        },
-        "x86_64-linux": {
-          "store_path": "/nix/store/9pm8hmxa1x8v2riyvnracnwg50xncdlb-vimplugin-vim-plug-2023-04-01"
         }
       }
     },
