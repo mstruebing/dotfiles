@@ -44,8 +44,6 @@
     "colordiff@latest",
     "tmuxPlugins.yank@latest",
     "tmuxPlugins.sensible@latest",
-    "vimPlugins.coc-nvim@latest",
-    "vimPlugins.vim-plug@latest",
     "rsync@latest",
     "pinentry@latest",
     "gnupg@latest",
