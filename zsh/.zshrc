@@ -68,7 +68,7 @@ export GPG_TTY=$(tty)
 export EDITOR="nvim"
 
 # Local bin dir
-export PATH=/home/debian/bin:$PATH
+export PATH=$HOME/bin:$PATH
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -84,7 +84,9 @@ export PATH=/home/debian/bin:$PATH
 #
 
 # Load fzf: https://github.com/junegunn/fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.local/share/devbox/global/current/.devbox/nix/profile/default/share/fzf/key-bindings.zsh ] && source ~/.local/share/devbox/global/current/.devbox/nix/profile/default/share/fzf/key-bindings.zsh
+[ -f ~/.local/share/devbox/global/current/.devbox/nix/profile/default/share/fzf/completion.zsh.zsh ] && source ~/.local/share/devbox/global/current/.devbox/nix/profile/default/share/fzf/completion.zsh.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Automatically start or attach to an existing tmux session
 [ -z "$TMUX"  ] && { tmux -2u attach || exec tmux -2u new-session;}
@@ -139,6 +141,7 @@ alias 'k'='kubectl'
 alias ls='ls -lah --color=auto'
 alias tmux='tmux -2u'
 alias dots='cd ~/.dotfiles'
+alias docker='podman'
 
 
 #############
