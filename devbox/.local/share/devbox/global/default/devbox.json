@@ -54,7 +54,8 @@
     "gnused@latest",
     "gnutar@latest",
     "podman@latest",
-    "qemu@latest"
+    "qemu@latest",
+    "pkg-config@latest"
   ],
   "shell": {
     "init_hook": [
