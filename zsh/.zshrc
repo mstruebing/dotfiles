@@ -141,7 +141,6 @@ alias 'k'='kubectl'
 alias ls='ls -lah --color=auto'
 alias tmux='tmux -2u'
 alias dots='cd ~/.dotfiles'
-alias docker='podman'
 
 
 #############
