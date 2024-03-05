@@ -4,6 +4,10 @@ vim.opt.relativenumber = true
 
 vim.opt.spelllang = 'en_us,de_de'
 
+-- allow per project vimrc
+vim.opt.exrc = true
+vim.opt.secure = true
+
 
 -- indentations
 vim.opt.smartindent = true
