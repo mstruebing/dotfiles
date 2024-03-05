@@ -683,26 +683,6 @@
         }
       }
     },
-    "pkg-config@latest": {
-      "last_modified": "2024-02-10T18:15:24Z",
-      "resolved": "github:NixOS/nixpkgs/10b813040df67c4039086db0f6eaf65c536886c6#pkg-config",
-      "source": "devbox-search",
-      "version": "0.29.2",
-      "systems": {
-        "aarch64-darwin": {
-          "store_path": "/nix/store/0f8369ffv9dfkd93ghgiy1khs9yw57js-pkg-config-wrapper-0.29.2"
-        },
-        "aarch64-linux": {
-          "store_path": "/nix/store/94lakjkgzz88vzbs7nw7k5wlnfrlrcdw-pkg-config-wrapper-0.29.2"
-        },
-        "x86_64-darwin": {
-          "store_path": "/nix/store/lri79ly90rl19f210f54ii6ss8sqik9k-pkg-config-wrapper-0.29.2"
-        },
-        "x86_64-linux": {
-          "store_path": "/nix/store/knxv5h4hsh86c649rabd6dqfd97kwp5d-pkg-config-wrapper-0.29.2"
-        }
-      }
-    },
     "podman@latest": {
       "last_modified": "2024-02-20T22:56:03Z",
       "resolved": "github:NixOS/nixpkgs/5eeded8e3518579daa13887297efa79f5be74b41#podman",
@@ -1024,6 +1004,23 @@
         },
         "x86_64-linux": {
           "store_path": "/nix/store/anr921kwfynaj3j9bm4n7c5chfgz71ai-vimplugin-packer.nvim-2023-08-24"
+        }
+      }
+    },
+    "watch@latest": {
+      "last_modified": "2023-02-24T09:01:09Z",
+      "resolved": "github:NixOS/nixpkgs/7d0ed7f2e5aea07ab22ccb338d27fbe347ed2f11#watch",
+      "source": "devbox-search",
+      "version": "3.3.17",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/8n0jrrxwk8j71ncsrixajkjiydaarm2y-watch-procps-3.3.17"
+        },
+        "x86_64-darwin": {
+          "store_path": "/nix/store/dh8y47j709rd3b48wflmgk053d1czs3g-watch-procps-3.3.17"
+        },
+        "x86_64-linux": {
+          "store_path": "/nix/store/y560919p80md417rf7bwk8yimrjprj3k-watch-procps-3.3.17"
         }
       }
     },
