@@ -149,86 +149,6 @@
         }
       }
     },
-    "elmPackages.elm-format@latest": {
-      "last_modified": "2024-02-10T18:15:24Z",
-      "resolved": "github:NixOS/nixpkgs/10b813040df67c4039086db0f6eaf65c536886c6#elmPackages.elm-format",
-      "source": "devbox-search",
-      "version": "0.8.7",
-      "systems": {
-        "aarch64-darwin": {
-          "store_path": "/nix/store/kg4qphsc650plr482pl2wnbp07yj0wdz-elm-format-0.8.7"
-        },
-        "aarch64-linux": {
-          "store_path": "/nix/store/xw859b80m9df5y1kdj2l58kfzjw22yls-elm-format-0.8.7"
-        },
-        "x86_64-darwin": {
-          "store_path": "/nix/store/pyz2fd9535nd57irgx047zk4a9rxiz6r-elm-format-0.8.7"
-        },
-        "x86_64-linux": {
-          "store_path": "/nix/store/h79rfqs736v9rdr55rmkrqzrwcz6wy4i-elm-format-0.8.7"
-        }
-      }
-    },
-    "elmPackages.elm-language-server@latest": {
-      "last_modified": "2024-02-15T12:53:33Z",
-      "resolved": "github:NixOS/nixpkgs/085589047343aad800c4d305cf7b98e8a3d51ae2#elmPackages.elm-language-server",
-      "source": "devbox-search",
-      "version": "2.8.0",
-      "systems": {
-        "aarch64-darwin": {
-          "store_path": "/nix/store/k26v8942v34i82qwfxpibv8l8jlqapw0-_at_elm-tooling_slash_elm-language-server-2.8.0"
-        },
-        "aarch64-linux": {
-          "store_path": "/nix/store/lc41q5c85j4pzwrqqlz8fhz07rbabj89-_at_elm-tooling_slash_elm-language-server-2.8.0"
-        },
-        "x86_64-darwin": {
-          "store_path": "/nix/store/s6lrv7m992ddg997bwxq57s4wr9jx3ri-_at_elm-tooling_slash_elm-language-server-2.8.0"
-        },
-        "x86_64-linux": {
-          "store_path": "/nix/store/kibzpq8jq7vyi34pwi3rsqck44s517az-_at_elm-tooling_slash_elm-language-server-2.8.0"
-        }
-      }
-    },
-    "elmPackages.elm-test@latest": {
-      "last_modified": "2024-02-15T12:53:33Z",
-      "resolved": "github:NixOS/nixpkgs/085589047343aad800c4d305cf7b98e8a3d51ae2#elmPackages.elm-test",
-      "source": "devbox-search",
-      "version": "0.19.1-revision12",
-      "systems": {
-        "aarch64-darwin": {
-          "store_path": "/nix/store/rq1b6sax8g8b2fpljsimnrsfdp21xps6-elm-test-0.19.1-revision12"
-        },
-        "aarch64-linux": {
-          "store_path": "/nix/store/fw8jxc9g5llmv4i9vl0smdwbrg60diav-elm-test-0.19.1-revision12"
-        },
-        "x86_64-darwin": {
-          "store_path": "/nix/store/splppjjqy79f8vjsn1iw4bv9xdjwgl1p-elm-test-0.19.1-revision12"
-        },
-        "x86_64-linux": {
-          "store_path": "/nix/store/0kamsk7v4ap3kszkikkvy5rpxv6qrb1i-elm-test-0.19.1-revision12"
-        }
-      }
-    },
-    "elmPackages.elm@latest": {
-      "last_modified": "2024-02-15T12:53:33Z",
-      "resolved": "github:NixOS/nixpkgs/085589047343aad800c4d305cf7b98e8a3d51ae2#elmPackages.elm",
-      "source": "devbox-search",
-      "version": "0.19.1",
-      "systems": {
-        "aarch64-darwin": {
-          "store_path": "/nix/store/cy23vhndc6bxxwqrmkwzss36h4pl7gzg-elm-0.19.1"
-        },
-        "aarch64-linux": {
-          "store_path": "/nix/store/7g434bcyllfsbwma6x241xj2ja1g3pff-elm-0.19.1"
-        },
-        "x86_64-darwin": {
-          "store_path": "/nix/store/8kq85icz0j04vwxkd3ibxxgp5i3yn844-elm-0.19.1"
-        },
-        "x86_64-linux": {
-          "store_path": "/nix/store/6jlaildy2zyl5q6xsf2wyf7l8sylqmzv-elm-0.19.1"
-        }
-      }
-    },
     "fd@latest": {
       "last_modified": "2024-02-10T18:15:24Z",
       "resolved": "github:NixOS/nixpkgs/10b813040df67c4039086db0f6eaf65c536886c6#fd",
@@ -683,46 +603,6 @@
         }
       }
     },
-    "podman@latest": {
-      "last_modified": "2024-02-20T22:56:03Z",
-      "resolved": "github:NixOS/nixpkgs/5eeded8e3518579daa13887297efa79f5be74b41#podman",
-      "source": "devbox-search",
-      "version": "4.9.3",
-      "systems": {
-        "aarch64-darwin": {
-          "store_path": "/nix/store/nq0wj1msh0xyhk4ay60h1dbqlqn4mx0b-podman-4.9.3"
-        },
-        "aarch64-linux": {
-          "store_path": "/nix/store/7ig0n3ifri1zyabv2x5i5as71y16a543-podman-4.9.3"
-        },
-        "x86_64-darwin": {
-          "store_path": "/nix/store/h9285xz51b9cvvmbklpmbg0n8bqmi39x-podman-4.9.3"
-        },
-        "x86_64-linux": {
-          "store_path": "/nix/store/hb56qk6nrsqcxcnca74lrxdyll4zjq2y-podman-4.9.3"
-        }
-      }
-    },
-    "qemu@latest": {
-      "last_modified": "2024-02-20T22:56:03Z",
-      "resolved": "github:NixOS/nixpkgs/5eeded8e3518579daa13887297efa79f5be74b41#qemu",
-      "source": "devbox-search",
-      "version": "8.2.1",
-      "systems": {
-        "aarch64-darwin": {
-          "store_path": "/nix/store/2yi9ba93c2xlgxcjrla87yjfa88c6ifj-qemu-8.2.1"
-        },
-        "aarch64-linux": {
-          "store_path": "/nix/store/mjzsax84njpiskr47blnfb0y72f1vy9q-qemu-8.2.1"
-        },
-        "x86_64-darwin": {
-          "store_path": "/nix/store/l7yxdcbg488s7dfyl4s8w6aib0al7k1p-qemu-8.2.1"
-        },
-        "x86_64-linux": {
-          "store_path": "/nix/store/znwkq5wim983q3xbxyx00z3sga21kwba-qemu-8.2.1"
-        }
-      }
-    },
     "rsync@latest": {
       "last_modified": "2024-02-10T18:15:24Z",
       "resolved": "github:NixOS/nixpkgs/10b813040df67c4039086db0f6eaf65c536886c6#rsync",
@@ -802,6 +682,20 @@
         },
         "x86_64-linux": {
           "store_path": "/nix/store/nmgznxckl0740214pbvxk62rvykvrrmd-shfmt-3.8.0"
+        }
+      }
+    },
+    "skhd@latest": {
+      "last_modified": "2024-02-24T23:06:34Z",
+      "resolved": "github:NixOS/nixpkgs/9a9dae8f6319600fa9aebde37f340975cab4b8c0#skhd",
+      "source": "devbox-search",
+      "version": "0.3.9",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/m1mz3yzc992wpqahr58jbfb2f57pja8n-skhd-0.3.9"
+        },
+        "x86_64-darwin": {
+          "store_path": "/nix/store/yrh4ngmsjzb1wpanjr9msa8z795y93m3-skhd-0.3.9"
         }
       }
     },
@@ -1023,6 +917,12 @@
           "store_path": "/nix/store/y560919p80md417rf7bwk8yimrjprj3k-watch-procps-3.3.17"
         }
       }
+    },
+    "yabai@latest": {
+      "last_modified": "2024-02-24T23:06:34Z",
+      "resolved": "github:NixOS/nixpkgs/9a9dae8f6319600fa9aebde37f340975cab4b8c0#yabai",
+      "source": "devbox-search",
+      "version": "6.0.15"
     },
     "yamllint@latest": {
       "last_modified": "2024-02-10T18:15:24Z",
