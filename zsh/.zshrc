@@ -55,8 +55,8 @@ antigen theme jispwoso
 antigen apply
 
 # Some manual language "hacks"
-export LANG=en_US.UTF-8
-export LC_CTYPE=C.UTF-8
+# export LANG=en_US.UTF-8
+# export LC_CTYPE=C.UTF-8
 # export LC_ALL=en_US.UTF-8
 
 
@@ -127,7 +127,7 @@ alias 'pc'='cd ~/projects/contrib'
 alias 'pt'='cd ~/projects/trying'
 alias 't'='cd /tmp'
 alias 'docs'='cd ~/Documents'
-alias 'dots'='cd ~/.dotfiles'
+alias 'dots'='cd ~/projects/own/dotfiles/'
 
 # git aliases
 alias 'g'='git'
@@ -140,7 +140,6 @@ alias 'mux'='tmuxinator'
 alias 'k'='kubectl'
 alias ls='ls -lah --color=auto'
 alias tmux='tmux -2u'
-alias dots='cd ~/.dotfiles'
 
 
 #############
