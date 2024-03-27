@@ -19,7 +19,7 @@ cmd - 6 : yabai -m space --focus  6 || skhd -k "ctrl + alt + cmd - 6"
 cmd - 7 : yabai -m space --focus  7 || skhd -k "ctrl + alt + cmd - 7"
 cmd - 8 : yabai -m space --focus  8 || skhd -k "ctrl + alt + cmd - 8"
 cmd - 9 : yabai -m space --focus  9 || skhd -k "ctrl + alt + cmd - 9"
-cmd - 0 : yabai -m space --focus 10 || skhd -k "ctrl + alt + cmd - 0"
+# cmd - 0 : yabai -m space --focus 10 || skhd -k "ctrl + alt + cmd - 0"
 
 
 # send window to desktop and follow focus

@@ -7,7 +7,6 @@
     "nettools@latest",
     "tmuxinator@latest",
     "git@latest",
-    "yamllint@latest",
     "ag@latest",
     "tldr@latest",
     "tig@latest",
