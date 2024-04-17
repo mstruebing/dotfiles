@@ -21,3 +21,9 @@ vim.keymap.set("n", "<leader>-", ":w<CR>:VimuxPromptCommand<CR>")
 vim.keymap.set("n", "<leader>=", ":w<CR>:VimuxRunLastCommand<CR>")
 
 vim.keymap.set("n", "<leader>o", ":tabnew ~/projects/own/log/notes.md<CR>")
+
+-- Copilot with <C-J>
+vim.keymap.set('i', '<C-J>', 'copilot#Accept("\\<CR>")', {
+      expr = true,
+      replace_keycodes = false
+})
