@@ -21,6 +21,17 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
      end,
 })
 
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+    pattern = { "*.ts", "*.tsx" },
+    desc = "Auto-format ts files after saving",
+    callback = function()
+        local fileName = vim.api.nvim_buf_get_name(0)
+        vim.cmd(":silent !./node_modules/.bin/prettier --write" .. fileName)
+    end,
+})
+
+
+
 -- let g:vim_printer_items = {
 --       \ 'typescriptreact': 'console.log("{$}:", {$})',
 --       \ 'elixir': 'IO.puts("{$}: {$}")',

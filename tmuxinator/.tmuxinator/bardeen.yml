@@ -1,7 +1,7 @@
 # ~/.tmuxinator/dotfiles.yml
 
-name: dotfiles
-root: ~/projects/own/dotfiles/
+name: bardeen
+root: ~/projects/work/bardeen-client/
 
 # Optional tmux socket
 # socket_name: foo
@@ -32,10 +32,17 @@ root: ~/projects/own/dotfiles/
 
 windows:
   - editor:
-      layout: even-horizontal
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
         - nvim
+  - misc:
+      layout: main-vertical 
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
+      panes:
         - git status
+        - yarn
+        - echo hi

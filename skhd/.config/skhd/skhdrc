@@ -6,7 +6,7 @@ shift + cmd - h   : yabai -m window --grid 1:2:0:0:1:1
 shift + cmd - l  : yabai -m window --grid 1:2:1:0:1:1
 
 # change layout
-# shift + alt - t : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "float" else "bsp" end')
+shift + alt - t : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "float" else "bsp" end')
 
 
 # fast focus desktop

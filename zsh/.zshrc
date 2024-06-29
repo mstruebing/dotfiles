@@ -127,7 +127,8 @@ alias 'pc'='cd ~/projects/contrib'
 alias 'pt'='cd ~/projects/trying'
 alias 't'='cd /tmp'
 alias 'docs'='cd ~/Documents'
-alias 'dots'='cd ~/projects/own/dotfiles/'
+alias 'dots'='cd ~/projects/own/dotfiles/ && nvim'
+alias 'log'='cd ~/projects/own/log/ && nvim'
 
 # git aliases
 alias 'g'='git'

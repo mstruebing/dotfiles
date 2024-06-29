@@ -14,6 +14,16 @@ lsp_zero.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+
+  -- go to definition in a split view
+  vim.keymap.set('n', 'gv', function() 
+      vim.cmd([[
+      vsplit
+      ]])
+      vim.lsp.buf.definition()
+  end, bufopts)
+  
+
 end)
 
 require('mason').setup({})
