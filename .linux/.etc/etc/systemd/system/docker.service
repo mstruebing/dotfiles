@@ -3,7 +3,7 @@ Description=Docker daemon
 
 [Service]
 User=root
-ExecStart=/home/debian/.local/share/devbox/global/default/.devbox/virtenv/.wrappers/bin/dockerd
+ExecStart=/home/debian/.local/share/devbox/global/default/.devbox/nix/profile/default/bin/dockerd
 Restart=always
 RestartSec=3
 

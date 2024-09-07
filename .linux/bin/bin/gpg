@@ -7,5 +7,5 @@
 if [ -n "$FUGITIVE" ]; then
   set -- --pinentry-mode loopback "$@"
 fi
-# exec /usr/bin/gpg "$@"
-exec /home/debian/.local/share/devbox/global/default/.devbox/virtenv/.wrappers/bin/gpg "$@"
+
+exec /home/debian/.local/share/devbox/global/default/.devbox/nix/profile/default/bin/gpg "$@"
