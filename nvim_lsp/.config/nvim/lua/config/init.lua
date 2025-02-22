@@ -30,6 +30,17 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
     end,
 })
 
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+    pattern = { "*.rs" },
+    desc = "Auto-format rust files after saving",
+    callback = function()
+        local fileName = vim.api.nvim_buf_get_name(0)
+        vim.lsp.buf.format({async = true})
+    end,
+    group = autocmd_group,
+})
+
+
 
 
 -- let g:vim_printer_items = {
