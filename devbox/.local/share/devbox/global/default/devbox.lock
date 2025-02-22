@@ -777,6 +777,9 @@
         }
       }
     },
+    "github:NixOS/nixpkgs/nixpkgs-unstable": {
+      "resolved": "github:NixOS/nixpkgs/dad564433178067be1fbdfcce23b546254b6d641?lastModified=1740019556&narHash=sha256-vn285HxnnlHLWnv59Og7muqECNMS33mWLM14soFIv2g%3D"
+    },
     "gnupg@latest": {
       "last_modified": "2025-02-07T11:26:36Z",
       "resolved": "github:NixOS/nixpkgs/d98abf5cf5914e5e4e9d57205e3af55ca90ffc1d#gnupg",
@@ -1613,56 +1616,9 @@
         }
       }
     },
-    "nodePackages.neovim@latest": {
-      "last_modified": "2025-02-07T11:26:36Z",
-      "resolved": "github:NixOS/nixpkgs/d98abf5cf5914e5e4e9d57205e3af55ca90ffc1d#nodePackages.neovim",
-      "source": "devbox-search",
-      "version": "5.2.1",
-      "systems": {
-        "aarch64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/lq7al71p78n3wfv7pyafahyx5mvdn733-neovim-5.2.1",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/lq7al71p78n3wfv7pyafahyx5mvdn733-neovim-5.2.1"
-        },
-        "aarch64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/hx9mcwanx51c9axz5rvqq01zxcmj7x11-neovim-5.2.1",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/hx9mcwanx51c9axz5rvqq01zxcmj7x11-neovim-5.2.1"
-        },
-        "x86_64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/3i54aia046ifq05fhwkvqvsi8r63kk2f-neovim-5.2.1",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/3i54aia046ifq05fhwkvqvsi8r63kk2f-neovim-5.2.1"
-        },
-        "x86_64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/zk702b7ag65cqbl4xnx79ry376hngp9z-neovim-5.2.1",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/zk702b7ag65cqbl4xnx79ry376hngp9z-neovim-5.2.1"
-        }
-      }
-    },
     "nodejs@latest": {
       "last_modified": "2025-02-07T11:26:36Z",
+      "plugin_version": "0.0.2",
       "resolved": "github:NixOS/nixpkgs/d98abf5cf5914e5e4e9d57205e3af55ca90ffc1d#nodejs_23",
       "source": "devbox-search",
       "version": "23.7.0",
@@ -1951,6 +1907,7 @@
     },
     "ruby@latest": {
       "last_modified": "2025-02-07T11:26:36Z",
+      "plugin_version": "0.0.2",
       "resolved": "github:NixOS/nixpkgs/d98abf5cf5914e5e4e9d57205e3af55ca90ffc1d#ruby_3_4",
       "source": "devbox-search",
       "version": "3.4.1",
@@ -2015,6 +1972,7 @@
     },
     "rustup@latest": {
       "last_modified": "2025-02-07T11:26:36Z",
+      "plugin_version": "0.0.1",
       "resolved": "github:NixOS/nixpkgs/d98abf5cf5914e5e4e9d57205e3af55ca90ffc1d#rustup",
       "source": "devbox-search",
       "version": "1.27.1",

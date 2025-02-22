@@ -31,7 +31,6 @@
     "rustup":                 "latest",
     "ruby":                   "latest",
     "nodejs":                 "latest",
-    "nodePackages.neovim":    "latest",
     "stow":                   "latest",
     "tmux":                   "latest",
     "antigen":                "latest",

@@ -61,82 +61,91 @@ return packer.startup(function(use)
             local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
             ts_update()
         end,}
-        use("nvim-treesitter/playground")
 
-        use {
-            'VonHeikemen/lsp-zero.nvim',
-            branch = 'v3.x',
-            requires = {
-                -- LSP Support
-                {'neovim/nvim-lspconfig'},
-                {'williamboman/mason.nvim'},
-                {'williamboman/mason-lspconfig.nvim'},
+    use("nvim-treesitter/playground")
 
-                -- Autocompletion
-                {'hrsh7th/nvim-cmp'},
-                {'hrsh7th/cmp-buffer'},
-                {'hrsh7th/cmp-path'},
-                {'saadparwaiz1/cmp_luasnip'},
-                {'hrsh7th/cmp-nvim-lsp'},
-                {'hrsh7th/cmp-nvim-lua'},
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v3.x',
+        requires = {
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},
+            {'williamboman/mason.nvim'},
+            {'williamboman/mason-lspconfig.nvim'},
 
-                -- Snippets
-                {'L3MON4D3/LuaSnip'},
-                {'rafamadriz/friendly-snippets'},
-            }
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},
+            {'hrsh7th/cmp-buffer'},
+            {'hrsh7th/cmp-path'},
+            {'saadparwaiz1/cmp_luasnip'},
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'hrsh7th/cmp-nvim-lua'},
+
+            -- Snippets
+            {'L3MON4D3/LuaSnip'},
+            {'rafamadriz/friendly-snippets'},
         }
+    }
 
-        -- () [] {} :)
-        use 'cohama/lexima.vim'
+    -- () [] {} :)
+    use 'cohama/lexima.vim'
 
         -- easily change/add/delete surroundings
-        use 'tpope/vim-surround'
+    use 'tpope/vim-surround'
 
-        -- git plugin
-        use 'tpope/vim-fugitive'
+    -- git plugin
+    use 'tpope/vim-fugitive'
 
-        -- filebrowser
-        use 'scrooloose/nerdtree'
+    -- filebrowser
+    use 'scrooloose/nerdtree'
 
-        -- easily comment/uncomment lines
-        use 'tpope/vim-commentary'
+    -- easily comment/uncomment lines
+    use 'tpope/vim-commentary'
 
-        -- run commands from vim inside a tmux pane
-        use 'benmills/vimux'
+    -- run commands from vim inside a tmux pane
+    use 'benmills/vimux'
 
-        -- easily navigate between vim and tmux panes
-        use 'christoomey/vim-tmux-navigator'
+    -- easily navigate between vim and tmux panes
+    use 'christoomey/vim-tmux-navigator'
 
-        -- BufOnly closes all buffers
-        use 'vim-scripts/BufOnly.vim'
+    -- BufOnly closes all buffers
+    use 'vim-scripts/BufOnly.vim'
 
-        -- easy debugging
-        use 'meain/vim-printer'
+    -- easy debugging
+    use 'meain/vim-printer'
 
-        -- Automatically resize windows to golden ratio
-        use 'dm1try/golden_size'
+    -- Automatically resize windows to golden ratio
+    use 'dm1try/golden_size'
 
-        -- Checklist
-        use 'evansalter/vim-checklist'
+    -- Checklist
+    use 'evansalter/vim-checklist'
 
-        -- auto-session: https://github.com/rmagatti/auto-session
-        use {
-            'rmagatti/auto-session',
-            config = function()
-                require("auto-session").setup {
-                    log_level = "error",
-                    -- auto_session_allowed_dirs = { "~/projects" }	
-                }
-            end
-        }
-
-        use {
-            'github/copilot.vim'
-        }
-
-        -- Automatically set up your configuration after cloning packer.nvim
-        -- Put this at the end after all plugins
-        if PACKER_BOOTSTRAP then
-            require("packer").sync()
+    -- auto-session: https://github.com/rmagatti/auto-session
+    use {
+        'rmagatti/auto-session',
+        config = function()
+            require("auto-session").setup {
+                log_level = "error",
+                -- auto_session_allowed_dirs = { "~/projects" }	
+            }
         end
-    end)
+    }
+
+    use {
+        'github/copilot.vim'
+    }
+
+    use {
+        'nvim-lua/plenary.nvim'
+    }
+
+    use {
+        'CopilotC-Nvim/CopilotChat.nvim',
+    }
+
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
+    if PACKER_BOOTSTRAP then
+        require("packer").sync()
+    end
+end)
