@@ -361,54 +361,6 @@
         }
       }
     },
-    "emacs@latest": {
-      "last_modified": "2025-02-07T11:26:36Z",
-      "resolved": "github:NixOS/nixpkgs/d98abf5cf5914e5e4e9d57205e3af55ca90ffc1d#emacs",
-      "source": "devbox-search",
-      "version": "29.4",
-      "systems": {
-        "aarch64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/ib95rrfc8jp9q72id6s7f8v5vwzwn7a5-emacs-29.4",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/ib95rrfc8jp9q72id6s7f8v5vwzwn7a5-emacs-29.4"
-        },
-        "aarch64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/mnmavpl2jylznybj3y32k8l7li36ddz9-emacs-29.4",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/mnmavpl2jylznybj3y32k8l7li36ddz9-emacs-29.4"
-        },
-        "x86_64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/fs7bki48sfvdqn4xpmgkb3qas7whr1h5-emacs-29.4",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/fs7bki48sfvdqn4xpmgkb3qas7whr1h5-emacs-29.4"
-        },
-        "x86_64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/69s21i54r9is6yis701hyxdh2715ch5l-emacs-29.4",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/69s21i54r9is6yis701hyxdh2715ch5l-emacs-29.4"
-        }
-      }
-    },
     "fd@latest": {
       "last_modified": "2025-02-07T11:26:36Z",
       "resolved": "github:NixOS/nixpkgs/d98abf5cf5914e5e4e9d57205e3af55ca90ffc1d#fd",
@@ -1546,6 +1498,15 @@
       "source": "devbox-search",
       "version": "2.10",
       "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "2008",
+              "path": "/nix/store/0fc0c5q2q2g352k1y53hhrkwnfagdwfa-nettools-1003.1-2008",
+              "default": true
+            }
+          ]
+        },
         "aarch64-linux": {
           "outputs": [
             {
@@ -2464,70 +2425,6 @@
             }
           ],
           "store_path": "/nix/store/4avbfki2vp636xd9ycwapycvri7d8mqn-tmuxinator-3.3.3"
-        }
-      }
-    },
-    "transmission@latest": {
-      "last_modified": "2024-06-16T13:15:37Z",
-      "resolved": "github:NixOS/nixpkgs/683aa7c4e385509ca651d49eeb35e58c7a1baad6#transmission",
-      "source": "devbox-search",
-      "version": "3.00",
-      "systems": {
-        "aarch64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/yd1kn1gf89qgcmyjf8myqyjlc16chh5y-transmission-3.00",
-              "default": true
-            },
-            {
-              "name": "apparmor",
-              "path": "/nix/store/ddfvwk7dsg5mf4wal4da1kn20hp7sxkq-transmission-3.00-apparmor"
-            }
-          ],
-          "store_path": "/nix/store/yd1kn1gf89qgcmyjf8myqyjlc16chh5y-transmission-3.00"
-        },
-        "aarch64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/59wv0s8a2jq4xa91hf69wnmbx5qrq1n3-transmission-3.00",
-              "default": true
-            },
-            {
-              "name": "apparmor",
-              "path": "/nix/store/n3z625gfdbyw7i6f99yk4zmbxz165cil-transmission-3.00-apparmor"
-            }
-          ],
-          "store_path": "/nix/store/59wv0s8a2jq4xa91hf69wnmbx5qrq1n3-transmission-3.00"
-        },
-        "x86_64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/vm0q90n7220mgjhz5swplyb1g7ny84jn-transmission-3.00",
-              "default": true
-            },
-            {
-              "name": "apparmor",
-              "path": "/nix/store/ddrnk23z6ih0la6nzy2vrrahlf0fwsa8-transmission-3.00-apparmor"
-            }
-          ],
-          "store_path": "/nix/store/vm0q90n7220mgjhz5swplyb1g7ny84jn-transmission-3.00"
-        },
-        "x86_64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/47q6k865swgkf4b1p6d70s7ai326z5i8-transmission-3.00",
-              "default": true
-            },
-            {
-              "name": "apparmor",
-              "path": "/nix/store/y03p2fvc3xj5hn9rsmp2fnfwk7ia9kmr-transmission-3.00-apparmor"
-            }
-          ],
-          "store_path": "/nix/store/47q6k865swgkf4b1p6d70s7ai326z5i8-transmission-3.00"
         }
       }
     },

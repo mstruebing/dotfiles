@@ -56,9 +56,7 @@
       "version":   "latest",
       "platforms": ["aarch64-darwin"]
     },
-    "emacs":           "latest",
     "gcc":             "latest",
-    "transmission":    "latest",
     "pinentry-curses": "latest"
   },
   "shell": {
