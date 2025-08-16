@@ -57,7 +57,9 @@
       "platforms": ["aarch64-darwin"]
     },
     "gcc":             "latest",
-    "pinentry-curses": "latest"
+    "pinentry-curses": "latest",
+    "zip":             "latest",
+    "unzip":           "latest"
   },
   "shell": {
     "init_hook": [
