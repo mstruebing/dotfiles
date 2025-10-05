@@ -59,7 +59,9 @@
     "gcc":             "latest",
     "pinentry-curses": "latest",
     "zip":             "latest",
-    "unzip":           "latest"
+    "unzip":           "latest",
+    "elmPackages.elm": "latest",
+    "obsidian":        "latest"
   },
   "shell": {
     "init_hook": [

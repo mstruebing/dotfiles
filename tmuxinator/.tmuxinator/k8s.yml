@@ -1,6 +1,6 @@
 # ~/.tmuxinator/dotfiles.yml
 
-name: dotfiles
+name: k8s
 root: ~/projects/own/flux-cluster/
 
 # Optional tmux socket
