@@ -1,0 +1,43 @@
+{ pkgs, ... }:
+{
+  services.skhd = {
+    enable = true;
+    skhdConfig = ''
+      # make floating window fill screen
+      shift + cmd - j     : yabai -m window --grid 1:1:0:0:1:1
+      # make floating window fill left-half of screen
+      shift + cmd - h   : yabai -m window --grid 1:2:0:0:1:1
+      # make floating window fill right-half of screen
+      shift + cmd - l  : yabai -m window --grid 1:2:1:0:1:1
+
+      # change layout
+      shift + alt - t : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "float" else "bsp" end')
+
+
+      # fast focus desktop
+      cmd - 1 : yabai -m space --focus  1 || skhd -k "ctrl + alt + cmd - 1"
+      cmd - 2 : yabai -m space --focus  2 || skhd -k "ctrl + alt + cmd - 2"
+      cmd - 3 : yabai -m space --focus  3 || skhd -k "ctrl + alt + cmd - 3"
+      cmd - 4 : yabai -m space --focus  4 || skhd -k "ctrl + alt + cmd - 4"
+      cmd - 5 : yabai -m space --focus  5 || skhd -k "ctrl + alt + cmd - 5"
+      cmd - 6 : yabai -m space --focus  6 || skhd -k "ctrl + alt + cmd - 6"
+      cmd - 7 : yabai -m space --focus  7 || skhd -k "ctrl + alt + cmd - 7"
+      cmd - 8 : yabai -m space --focus  8 || skhd -k "ctrl + alt + cmd - 8"
+      cmd - 9 : yabai -m space --focus  9 || skhd -k "ctrl + alt + cmd - 9"
+      # cmd - 0 : yabai -m space --focus 10 || skhd -k "ctrl + alt + cmd - 0"
+
+
+      # send window to desktop and follow focus
+      shift + cmd - 1 : yabai -m window --space  1 && yabai -m space --focus 1
+      shift + cmd - 2 : yabai -m window --space  2 && yabai -m space --focus 2
+      shift + cmd - 3 : yabai -m window --space  3 && yabai -m space --focus 3
+      shift + cmd - 4 : yabai -m window --space  4 && yabai -m space --focus 4
+      shift + cmd - 5 : yabai -m window --space  5 && yabai -m space --focus 5
+      shift + cmd - 6 : yabai -m window --space  6 && yabai -m space --focus 6
+      shift + cmd - 7 : yabai -m window --space  7 && yabai -m space --focus 7
+      shift + cmd - 8 : yabai -m window --space  8 && yabai -m space --focus 8
+      shift + cmd - 9 : yabai -m window --space  9 && yabai -m space --focus 9
+      shift + cmd - 0 : yabai -m window --space 10 && yabai -m space --focus 10
+    '';
+  };
+}

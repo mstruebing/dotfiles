@@ -1,0 +1,49 @@
+{ pkgs, ... }:
+{
+  environment.systemPackages = [
+    pkgs.nixfmt
+    pkgs.tldr
+    pkgs.kubernetes-helm
+    pkgs.nmap
+    pkgs.lsof
+    pkgs.nettools
+    pkgs.silver-searcher
+    pkgs.tig
+    pkgs.fzf
+    pkgs.htop
+    pkgs.tree
+    pkgs.kubectl
+    pkgs.kind
+    pkgs.jq
+    pkgs.yq
+    pkgs.k9s
+    pkgs.direnv
+    pkgs.nix-direnv
+    pkgs.fluxcd
+    pkgs.fd
+    pkgs.gh
+    pkgs.hyperfine
+    pkgs.shfmt
+    pkgs.docker
+    pkgs.docker-buildx
+    pkgs.go
+    pkgs.rustup
+    pkgs.ruby
+    pkgs.nodejs
+    pkgs.bc
+    pkgs.colordiff
+    pkgs.tmuxPlugins.yank
+    pkgs.tmuxPlugins.sensible
+    pkgs.rsync
+    pkgs.gnupg
+    pkgs.docker-compose
+    pkgs.tree-sitter
+    pkgs.coreutils
+    pkgs.gnused
+    pkgs.gnutar
+    pkgs.watch
+    pkgs.zip
+    pkgs.unzip
+    pkgs.zoxide
+  ];
+}

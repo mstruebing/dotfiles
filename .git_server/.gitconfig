@@ -1,9 +1,0 @@
-[include]
-	path = projects/own/dotfiles/git/.gitconfig
-
-[user]
-signingkey = 697842B6E5A179678165D2751E0C16253B48DC57
-
-[gpg]
-program = /home/debian/bin/gpg
-
