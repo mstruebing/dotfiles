@@ -11,6 +11,7 @@
       plugins = [
         "git"
         "kubectl"
+        "ssh-agent"
       ];
     };
 
