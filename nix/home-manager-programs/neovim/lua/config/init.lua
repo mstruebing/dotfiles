@@ -26,7 +26,7 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
     desc = "Auto-format ts files after saving",
     callback = function()
         local fileName = vim.api.nvim_buf_get_name(0)
-        vim.cmd(":silent !./node_modules/.bin/prettier --write" .. fileName)
+        vim.cmd(":silent !./node_modules/.bin/prettier --write " .. fileName)
     end,
 })
 
