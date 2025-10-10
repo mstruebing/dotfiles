@@ -5,7 +5,6 @@
     userName = "Max Strübing";
     userEmail = "mxstrbng@gmail.com";
     signing = {
-      key = "87EE19B0";
       signByDefault = true;
     };
     extraConfig = {

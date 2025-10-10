@@ -3,13 +3,10 @@
   imports = [
     ../modules/yabai.nix
     ../modules/skhd.nix
-    ../modules/shared.nix
     inputs.home-manager.darwinModules.home-manager
   ];
 
   nixpkgs.hostPlatform = "aarch64-darwin";
-
-  # Needs to be disabled if using the determinate installer
 
   nix = {
     package = pkgs.nix;
@@ -87,7 +84,8 @@
     pkgs.vscode
     pkgs.alacritty
     pkgs.pinentry_mac
-  ];
+  ]
+  ++ (import ../modules/common-packages.nix { inherit pkgs; });
 
   homebrew = {
     enable = true;
@@ -97,8 +95,6 @@
     };
 
     taps = [
-      # Gives `Error: Refusing to untap homebrew/cask because it contains the following
-      # installed formulae or casks: ...` with `cleanup = "zap"` if this isn't present.
       "homebrew/cask"
     ];
 
@@ -112,6 +108,9 @@
   };
 
   home-manager.users.maex = import ../home-manager.nix;
+
+  services.gpg-agent.pinentry.program = "${pkgs.pinentry}/bin/pinentry-mac";
+  programs.git.signing.key = "72B77F06DE96FEE0";
 
   users.users.maex = {
     home = "/Users/maex";

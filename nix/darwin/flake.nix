@@ -31,7 +31,7 @@
     {
       darwinConfigurations."Maxs-MacBook-Air" = nix-darwin.lib.darwinSystem {
         modules = [
-          ./hosts/darwin.nix
+          ./darwin.nix
           nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {
@@ -67,11 +67,5 @@
         ];
         specialArgs = { inherit inputs; };
       };
-
-      # Example for a Linux host (uncomment and adjust hostname as needed)
-      # nixosConfigurations."my-linux-host" = nixpkgs.lib.nixosSystem {
-      #   modules = [ ./hosts/linux.nix ];
-      #   specialArgs = { inherit inputs; };
-      # };
     };
 }

@@ -1,12 +1,15 @@
 # On change
 rebuild-darwin: format
-	sudo darwin-rebuild switch --flake ~/.config/nix
+	sudo darwin-rebuild switch --flake ~/.config/nix/darwin
 	make yabai
 	make fix-permissions
 
 # First installation
 build-darwin:
 	sudo nix run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch
+
+rebuild-linux: format
+	home-manager switch --flake ~/.config/nix/linux
 
 format:
 	nixfmt .

@@ -5,8 +5,6 @@
   ...
 }:
 {
-  home.stateVersion = "24.05";
-
   programs.home-manager.enable = true;
   programs.zoxide.enable = true;
 
@@ -21,7 +19,6 @@
 
   programs.direnv = {
     enable = true;
-    # TODO: enable when https://github.com/nix-community/home-manager/pull/7954 should be merged (Remove hack in Makefile as well)
     enableZshIntegration = true;
     nix-direnv.enable = true;
   };
@@ -38,7 +35,6 @@
     enable = true;
     defaultCacheTtl = 34560000;
     maxCacheTtl = 34560000;
-    pinentry.program = "${pkgs.pinentry}/bin/pinentry-mac";
     enableScDaemon = false;
   };
 
