@@ -1,6 +1,6 @@
 # On change
 rebuild-darwin: format
-	sudo darwin-rebuild switch --flake ~/.config/nix/darwin
+	sudo SIGNING_KEY="72B77F06DE96FEE0" darwin-rebuild --impure switch --flake ~/.config/nix/darwin
 	make yabai
 	make fix-permissions
 
@@ -9,7 +9,7 @@ build-darwin:
 	sudo nix run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch
 
 rebuild-linux: format
-	home-manager switch --flake ~/.config/nix/linux
+	SYSTEM="Linux" SIGNING_KEY="EFFD43697B78E942" home-manager --impure switch --flake ~/.config/nix/linux
 
 format:
 	nixfmt .

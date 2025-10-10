@@ -8,6 +8,8 @@
   programs.home-manager.enable = true;
   programs.zoxide.enable = true;
 
+  home.stateVersion = "24.05";
+
   imports = [
     ./home-manager-programs/neovim.nix
     ./home-manager-programs/zsh.nix
@@ -36,6 +38,11 @@
     defaultCacheTtl = 34560000;
     maxCacheTtl = 34560000;
     enableScDaemon = false;
+
+    pinentry = {
+      package = if builtins.getEnv "SYSTEM" == "Linux" then pkgs.pinentry-curses else pkgs.pinentry_mac;
+      program = if builtins.getEnv "SYSTEM" == "Linux" then "pinentry-curses" else "pinentry-mac";
+    };
   };
 
   programs.ssh = {

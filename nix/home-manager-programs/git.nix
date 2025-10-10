@@ -6,6 +6,7 @@
     userEmail = "mxstrbng@gmail.com";
     signing = {
       signByDefault = true;
+      key = builtins.getEnv "SIGNING_KEY";
     };
     extraConfig = {
       core.excludesFile = "~/.gitignore";

@@ -109,9 +109,6 @@
 
   home-manager.users.maex = import ../home-manager.nix;
 
-  services.gpg-agent.pinentry.program = "${pkgs.pinentry}/bin/pinentry-mac";
-  programs.git.signing.key = "72B77F06DE96FEE0";
-
   users.users.maex = {
     home = "/Users/maex";
     shell = pkgs.zsh;
