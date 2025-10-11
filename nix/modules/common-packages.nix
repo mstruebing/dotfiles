@@ -1,6 +1,9 @@
 { pkgs }:
 with pkgs;
 [
+  weechat
+  tinyxxd
+  nix-search-cli
   gcc
   nixfmt
   tldr
