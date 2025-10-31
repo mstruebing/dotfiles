@@ -8,8 +8,33 @@
       signByDefault = true;
       key = builtins.getEnv "SIGNING_KEY";
     };
+    ignores = [
+      "*.swp"
+      "*.swo"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      "npm-debug.log*"
+      "yarn-debug.log*"
+      "yarn-error.log*"
+      ".env"
+      ".env.local"
+      ".env.*.local"
+      ".vscode/"
+      ".idea/"
+      "dist/"
+      "build/"
+      "node_modules/"
+      ".cache/"
+      ".next/"
+      ".nuxt/"
+      "node_modules"
+      ".nvimrc"
+      ".nvim.lua"
+      "NOTES.md"
+    ];
     extraConfig = {
-      core.excludesFile = "~/.gitignore";
       commit.verbose = true;
       rebase.autoStash = true;
       pull.rebase = true;

@@ -20,7 +20,10 @@ vim.keymap.set('n', '<leader>gb', ":Git blame<CR>")
 vim.keymap.set("n", "<leader>-", ":w<CR>:VimuxPromptCommand<CR>")
 vim.keymap.set("n", "<leader>=", ":w<CR>:VimuxRunLastCommand<CR>")
 
-vim.keymap.set("n", "<leader>o", ":tabnew ~/projects/own/log/notes.md<CR>")
+vim.keymap.set("n", "<leader>O", ":tabnew ~/projects/own/log/notes.md<CR>")
+vim.keymap.set("n", "<leader>o", function()
+  vim.cmd("tabnew " .. vim.fn.getcwd() .. "/NOTES.md")
+end)
 vim.keymap.set("n", "<leader>t", ":tabnew ~/projects/own/log/todo.md<CR>")
 
 -- Copilot with <C-J>
@@ -30,3 +33,5 @@ vim.keymap.set('i', '<C-J>', 'copilot#Accept("\\<CR>")', {
 })
 
 vim.keymap.set('n', '<leader>rr', ':LspRestart<CR>')
+
+
