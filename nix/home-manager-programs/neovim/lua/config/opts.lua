@@ -44,4 +44,5 @@ vim.opt.cursorline = true
 
 vim.opt.autoread = true
 
-vim.env.FZF_DEFAULT_COMMAND = 'ag --hidden -g ""'
+vim.env.FZF_DEFAULT_COMMAND = 'fd --type file --strip-cwd-prefix --hidden --exclude .git'
+
