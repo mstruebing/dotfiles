@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# This script forwards a port from a remote host to the local machine
+
+if [[ $# -lt 2 || $# -gt 3 ]]; then
+  echo "Usage: $0 <remote_host> <remote_port> [local_port]"
+  exit 1
+fi
+
+REMOTE_HOST="$1"
+REMOTE_PORT="$2"
+LOCAL_PORT="${3:-$REMOTE_PORT}"
+
+echo forwarding port "$REMOTE_PORT" on "$REMOTE_HOST" to localhost port "$LOCAL_PORT"
+
+ssh -N -L "$LOCAL_PORT:localhost:$REMOTE_PORT" "$REMOTE_HOST"
