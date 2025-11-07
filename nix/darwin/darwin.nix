@@ -87,6 +87,13 @@
   ]
   ++ (import ../modules/common-packages.nix { inherit pkgs; });
 
+  fonts = {
+    packages = [
+      pkgs.nerd-fonts.symbols-only
+      pkgs.nerd-fonts.space-mono
+    ];
+  };
+
   homebrew = {
     enable = true;
 

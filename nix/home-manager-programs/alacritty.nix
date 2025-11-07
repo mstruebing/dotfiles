@@ -13,6 +13,25 @@
       # Colors section of "Alacritty - TOML configuration file format"
       # https://github.com/alacritty/alacritty/blob/master/extra/man/alacritty.5.scd#colors
 
+      [font]
+      size = 12.0
+
+      [font.normal]
+      family = "SpaceMono Nerd Font"
+      style = "Regular"
+
+      [font.bold]
+      family = "SpaceMono Nerd Font"
+      style = "Bold"
+
+      [font.italic]
+      family = "SpaceMono Nerd Font"
+      style = "Italic"
+
+      [font.bold_italic]
+      family = "SpaceMono Nerd Font"
+      style = "Bold Italic"
+
       [colors.primary]
       foreground = "#e0def4"
       background = "#232136"
