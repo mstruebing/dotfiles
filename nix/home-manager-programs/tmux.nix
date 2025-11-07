@@ -10,6 +10,7 @@
       yank
       sensible
       rose-pine
+      fzf-tmux-url
     ];
 
     tmuxinator = {
