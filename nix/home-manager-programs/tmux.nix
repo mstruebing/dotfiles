@@ -21,6 +21,9 @@
       set -g default-command ${pkgs.zsh}/bin/zsh
       set -g @rose_pine_variant 'moon' # Options are 'main', 'moon' or 'dawn'
 
+      # Initialize rose-pine theme
+      run-shell ${pkgs.tmuxPlugins.rose-pine}/share/tmux-plugins/rose-pine/rose-pine.tmux
+
       set-window-option -g mode-keys vi
 
       bind-key R source-file ~/.config/tmux/tmux.conf \; display-message "tmux.conf reloaded."
@@ -33,8 +36,6 @@
       bind h split-window -h -c '#{pane_current_path}'
       bind v split-window -v -c '#{pane_current_path}'
 
-      set-option -g default-terminal "screen-256color"
-      set-option -sa terminal-overrides "screen-256color:RGB"
       set-option -sg escape-time 10
 
       vim_pattern='(\S+/)?g?\.?(view|l?n?vim?x?|fzf)(diff)?(-wrapped)?'
@@ -55,9 +56,6 @@
       bind-key -T copy-mode-vi 'C-k' select-pane -U
       bind-key -T copy-mode-vi 'C-l' select-pane -R
       bind-key -T copy-mode-vi 'C-\' select-pane -l
-
-      set -g default-terminal "screen-256color"
-      set-option -sa terminal-overrides ',screen-256color:RGB'
 
       bind -T root F12  \
           set prefix None \;\
