@@ -10,6 +10,7 @@
       { id = "mlomiejdfkolichcflejclcbmpeaniij"; } # ghostery
       { id = "nngceckbapebfimnlniiiahkandclblb"; } # bitwarden
       { id = "beakmhbijpdhipnjhnclmhgjlddhidpe"; } # linkding
+      { id = "lodbfhdipoipcjmlebjbgmmgekckhpfb"; } # harper
     ];
   };
 }
