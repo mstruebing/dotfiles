@@ -73,6 +73,14 @@
           set -u window-status-current-style \;\
           set -u window-status-current-format \;\
           refresh-client -S
+
+      # Enable OSC 52 clipboard passthrough
+      set -s set-clipboard on
+      set -ag terminal-overrides "vte*:XT:Ms=\\E]52;c;%p2%s\\7,xterm*:XT:Ms=\\E]52;c;%p2%s\\7"
+
+      # For tmux-yank plugin to use OSC 52
+      set -g @yank_selection_mouse 'clipboard'
+      set -g @override_copy_command 'true'  # Let tmux-yank use OSC 52
           		'';
   };
 }

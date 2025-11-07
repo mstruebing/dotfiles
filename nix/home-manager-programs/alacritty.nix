@@ -9,6 +9,9 @@
   # Only on darwin
   xdg.configFile = pkgs.lib.mkIf pkgs.stdenv.isDarwin {
     "alacritty/alacritty.toml".text = ''
+      [terminal]
+      osc52 = "CopyPaste" # Enable clipboard access via OSC 52
+
       # Stolen from: https://github.com/rose-pine/alacritty/blob/main/dist/rose-pine-moon.toml
       # Colors section of "Alacritty - TOML configuration file format"
       # https://github.com/alacritty/alacritty/blob/master/extra/man/alacritty.5.scd#colors
