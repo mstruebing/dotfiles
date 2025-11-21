@@ -48,4 +48,6 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 --       \ 'elixir': 'IO.puts("{$}: {$}")',
 --       \ }
 
--- command! Date :r!date "+\%F"
+vim.api.nvim_create_user_command('Date', function()
+  vim.cmd('r!date "+\\%F"')
+end, {})

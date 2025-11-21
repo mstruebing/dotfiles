@@ -32,6 +32,4 @@ vim.keymap.set('i', '<C-J>', 'copilot#Accept("\\<CR>")', {
       replace_keycodes = false
 })
 
-vim.keymap.set('n', '<leader>rr', ':LspRestart<CR>')
-
-
+vim.keymap.set('n', '<leader>cp', ':CopilotChat<CR>')
