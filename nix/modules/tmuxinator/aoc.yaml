@@ -1,7 +1,7 @@
 # /home/debian/.config/tmuxinator/dotfiles.yml
 
-name: dotfiles
-root: ~/projects/own/dotfiles/nix/
+name: aoc
+root: ~/projects/own/coding-challenges/adventofcode/2025/
 
 # Optional tmux socket
 # socket_name: foo

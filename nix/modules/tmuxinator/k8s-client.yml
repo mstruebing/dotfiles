@@ -1,7 +1,7 @@
 # /home/debian/.config/tmuxinator/dotfiles.yml
 
-name: dotfiles
-root: ~/projects/own/dotfiles/nix/
+name: k8s-client
+root: ~/projects/contrib/javascript/
 
 # Optional tmux socket
 # socket_name: foo
