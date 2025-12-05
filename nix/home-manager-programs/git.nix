@@ -39,7 +39,7 @@
         email = "mxstrbng@gmail.com";
       };
 
-      aliases = {
+      alias = {
         p = "push";
         pm = "push origin master";
         a = "add";
