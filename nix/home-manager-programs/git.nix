@@ -54,28 +54,26 @@
         undo = "reset --soft HEAD^";
       };
 
-      extraConfig = {
-        commit.verbose = true;
-        rebase.autoStash = true;
-        pull.rebase = true;
-        init.defaultBranch = "main";
-        gpg.program = "gpg2";
-        # url."git@github.com:".insteadOf = "https://github.com/";
-        diff.renameLimit = 16384;
-        diff.algorithm = "histogram";
-        diff.colorMoved = "plain";
-        diff.mnemonicPrefix = true;
-        diff.renames = true;
-        column.ui = "auto";
-        branch.sort = "-committerdate";
-        tag.sort = "version:refname";
-        push.default = "simple";
-        push.autoSetupRemote = true;
-        push.followTags = true;
-        fetch.prune = true;
-        fetch.pruneTags = true;
-        fetch.all = true;
-      };
+      commit.verbose = true;
+      rebase.autoStash = true;
+      pull.rebase = true;
+      init.defaultBranch = "main";
+      gpg.program = "gpg2";
+      # url."git@github.com:".insteadOf = "https://github.com/";
+      diff.renameLimit = 16384;
+      diff.algorithm = "histogram";
+      diff.colorMoved = "plain";
+      diff.mnemonicPrefix = true;
+      diff.renames = true;
+      column.ui = "auto";
+      branch.sort = "-committerdate";
+      tag.sort = "version:refname";
+      push.default = "simple";
+      push.autoSetupRemote = true;
+      push.followTags = true;
+      fetch.prune = true;
+      fetch.pruneTags = true;
+      fetch.all = true;
     };
   };
 }
