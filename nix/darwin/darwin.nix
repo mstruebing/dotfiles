@@ -42,6 +42,7 @@
     dock = {
       autohide = true;
       mru-spaces = false;
+      wvous-br-corner = 1;
     };
     finder = {
       AppleShowAllExtensions = true;
