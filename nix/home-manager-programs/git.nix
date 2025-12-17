@@ -7,6 +7,8 @@
       key = builtins.getEnv "SIGNING_KEY";
     };
     ignores = [
+      ".envrc"
+      ".direnv"
       "*.swp"
       "*.swo"
       ".DS_Store"
