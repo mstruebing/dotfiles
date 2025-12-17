@@ -1,0 +1,35 @@
+vim.g.mapleader = " "
+vim.keymap.set("n", "<leader>f", ":Files<CR>")
+vim.keymap.set("n", "<leader>b", ":Buffers<CR>")
+vim.keymap.set("n", "<leader>ag", ":Ag ")
+vim.keymap.set("n", "<leader>'", ":Marks<CR>")
+
+vim.keymap.set("n", "<leader>h", ":set invhlsearch<CR>")
+
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
+
+vim.keymap.set('n', "Q", "@@")
+
+vim.keymap.set('n', "<C-t>", ":NERDTreeToggle<CR>")
+
+vim.keymap.set('n', '<leader>gs', ":Git<CR>")
+vim.keymap.set('n', '<leader>gb', ":Git blame<CR>")
+
+-- vimux \o/
+vim.keymap.set("n", "<leader>-", ":w<CR>:VimuxPromptCommand<CR>")
+vim.keymap.set("n", "<leader>=", ":w<CR>:VimuxRunLastCommand<CR>")
+
+vim.keymap.set("n", "<leader>O", ":tabnew ~/projects/own/log/notes.md<CR>")
+vim.keymap.set("n", "<leader>o", function()
+  vim.cmd("tabnew " .. vim.fn.getcwd() .. "/NOTES.md")
+end)
+vim.keymap.set("n", "<leader>t", ":tabnew ~/projects/own/log/todo.md<CR>")
+
+-- Copilot with <C-J>
+vim.keymap.set('i', '<C-J>', 'copilot#Accept("\\<CR>")', {
+      expr = true,
+      replace_keycodes = false
+})
+
+vim.keymap.set('n', '<leader>cp', ':CopilotChat<CR>')
