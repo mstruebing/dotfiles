@@ -27,7 +27,7 @@
       "t" = "cd /tmp";
       "docs" = "cd ~/Documents";
       "dots" = "cd ~/projects/own/dotfiles/ && nvim";
-      "log" = "cd ~/projects/own/log/ && nvim";
+      "notes" = "cd ~/projects/own/log/ && nvim";
       "g" = "git";
       "gpc" = "git push origin $(git_current_branch)";
       "gup" = "git pull origin $(git_current_branch)";

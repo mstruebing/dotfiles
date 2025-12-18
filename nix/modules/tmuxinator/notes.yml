@@ -1,7 +1,7 @@
 # /home/debian/.config/tmuxinator/log.yml
 
-name: log
-root: ~/projects/own/log/
+name: notes
+root: ~/projects/own/notes/
 
 # Optional tmux socket
 # socket_name: foo

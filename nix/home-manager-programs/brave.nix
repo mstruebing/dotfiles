@@ -4,6 +4,7 @@
   # Only on darwin
   programs.brave = pkgs.lib.mkIf pkgs.stdenv.isDarwin {
     enable = true;
+    package = pkgs.brave;
     extensions = [
       { id = "dbepggeogbaibhgnhhndojpepiihcmeb"; } # vimium
       { id = "fbpcaneckpeeinnachahnnpapdiaohei"; } # profile-peek

@@ -18,6 +18,7 @@
     ./home-manager-programs/alacritty.nix
     ./home-manager-programs/brave.nix
     ./home-manager-programs/firefox.nix
+    ./home-manager-programs/obisidian.nix
   ];
 
   programs.direnv = {
