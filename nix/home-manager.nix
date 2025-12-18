@@ -17,6 +17,7 @@
     ./home-manager-programs/git.nix
     ./home-manager-programs/alacritty.nix
     ./home-manager-programs/brave.nix
+    ./home-manager-programs/firefox.nix
   ];
 
   programs.direnv = {

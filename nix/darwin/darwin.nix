@@ -85,6 +85,8 @@
     pkgs.vscode
     pkgs.alacritty
     pkgs.pinentry_mac
+    pkgs.firefox
+    pkgs.obsidian
   ]
   ++ (import ../modules/common-packages.nix { inherit pkgs; });
 
