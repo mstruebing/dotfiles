@@ -61,8 +61,6 @@ return packer.startup(function(use)
             ts_update()
         end,}
 
-    use("nvim-treesitter/playground")
-
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
