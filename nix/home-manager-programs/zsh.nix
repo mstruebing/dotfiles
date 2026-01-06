@@ -65,6 +65,8 @@
       function cdg() {
         cd $(git rev-parse --show-toplevel)
       }
+
+      export LC_CTYPE="en_US.UTF-8"
     '';
   };
 }
