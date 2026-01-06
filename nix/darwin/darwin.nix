@@ -114,6 +114,7 @@
       "spotify"
       "slack"
       "bitwarden"
+      "google-chrome"
     ];
   };
 
