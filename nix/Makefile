@@ -1,7 +1,7 @@
 # On change
 rebuild-darwin: format
 	sudo SIGNING_KEY="72B77F06DE96FEE0" darwin-rebuild --impure switch --flake ~/.config/nix/darwin
-	make yabai
+	# make yabai
 	make fix-permissions
 
 # First installation

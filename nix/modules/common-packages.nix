@@ -17,6 +17,7 @@ with pkgs;
   htop
   tree
   kubectl
+  krew
   kind
   jq
   yq
