@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, pkgs-unstable, inputs, ... }:
 {
   imports = [
     ../modules/yabai.nix
@@ -88,7 +88,7 @@
     pkgs.firefox
     pkgs.obsidian
   ]
-  ++ (import ../modules/common-packages.nix { inherit pkgs; });
+  ++ (import ../modules/common-packages.nix { inherit pkgs pkgs-unstable; });
 
   fonts = {
     packages = [
