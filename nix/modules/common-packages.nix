@@ -20,7 +20,7 @@ with pkgs;
   krew
   kind
   jq
-  yq
+  yq-go
   k9s
   direnv
   nix-direnv
