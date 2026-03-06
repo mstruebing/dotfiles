@@ -35,6 +35,12 @@
     };
   };
 
+  systemd.user.services.nh-clean = {
+    Service = {
+      Environment = "PATH=/nix/var/nix/profiles/default/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin";
+    };
+  };
+
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
@@ -50,8 +56,8 @@
     enableScDaemon = false;
 
     pinentry = {
-      package = if builtins.getEnv "SYSTEM" == "Linux" then pkgs.pinentry-curses else pkgs.pinentry_mac;
-      program = if builtins.getEnv "SYSTEM" == "Linux" then "pinentry-curses" else "pinentry-mac";
+      package = if pkgs.stdenv.isLinux then pkgs.pinentry-curses else pkgs.pinentry_mac;
+      program = if pkgs.stdenv.isLinux then "pinentry-curses" else "pinentry-mac";
     };
   };
 
