@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.11-darwin";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-25.11";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager/release-25.11";
@@ -23,11 +24,19 @@
       self,
       nix-darwin,
       nixpkgs,
+      nixpkgs-unstable,
       home-manager,
       nix-homebrew,
       homebrew-core,
       homebrew-cask,
     }:
+    let
+      system = "aarch64-darwin";
+      pkgs-unstable = import nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    in
     {
       darwinConfigurations."Maxs-MacBook-Air" = nix-darwin.lib.darwinSystem {
         modules = [
@@ -65,7 +74,7 @@
           )
 
         ];
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs pkgs-unstable; };
       };
     };
 }
