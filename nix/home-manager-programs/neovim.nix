@@ -4,6 +4,8 @@
     enable = true;
     viAlias = true;
     vimAlias = true;
+    withRuby = true;
+    withPython3 = true;
 
     extraPackages = with pkgs; [
       vimPlugins.packer-nvim

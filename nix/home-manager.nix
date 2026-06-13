@@ -64,7 +64,7 @@
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    matchBlocks = {
+    settings = {
       # All hosts
       "*" = {
         addKeysToAgent = "12h";

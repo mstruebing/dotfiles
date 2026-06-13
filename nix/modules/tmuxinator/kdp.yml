@@ -1,7 +1,7 @@
 # /home/debian/.config/tmuxinator/weechat.yml
 
 name: KDP
-root: ~/projects/work/developer-platform-dashboard/
+root: ~/projects/work/developer-platform-mgmt
 
 # Optional tmux socket
 # socket_name: foo
@@ -45,17 +45,11 @@ root: ~/projects/work/developer-platform-dashboard/
 # attach: false
 
 windows:
-  - vim:
-      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
-      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
-      # synchronize: after
+  - mgmt:
       panes:
-        - nvim
-  - term:
+        - ls
+  - ws:
       layout: even-horizontal
-      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
-      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
-      # synchronize: after
       panes:
-        - echo hi
         - git status
+        - echo hi
