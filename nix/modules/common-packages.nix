@@ -18,6 +18,7 @@ with pkgs;
   tree
   kubectl
   krew
+  inetutils
   kind
   jq
   yq-go
