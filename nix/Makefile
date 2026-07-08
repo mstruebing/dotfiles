@@ -12,7 +12,7 @@ rebuild-linux: format
 	SYSTEM="Linux" SIGNING_KEY="5DFF6D1F2B08D962" home-manager --impure switch --flake ~/.config/nix/linux
 
 format:
-	nixfmt .
+	find . -name '*.nix' | xargs nixfmt
 
 # Seems to be needed for yabai scripting addition to work
 yabai:
