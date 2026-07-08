@@ -38,35 +38,37 @@
       "tmux" = "tmux -2u";
     };
     initContent = ''
-      # Editor and GPG
-      export EDITOR="nvim"
+       # Editor and GPG
+       export EDITOR="nvim"
 
-      # Local bin dir
-      export PATH="$HOME/bin:$PATH"
-      export ZSH_THEME="jispwoso"
+       # Local bin dir
+       export PATH="$HOME/bin:$PATH"
+       export ZSH_THEME="jispwoso"
 
-      # Automatically start or attach to an existing tmux session
-      [ -z "$TMUX"  ] && { tmux -2u attach || exec tmux -2u new-session;}
+       # Automatically start or attach to an existing tmux session
+       [ -z "$TMUX"  ] && { tmux -2u attach || exec tmux -2u new-session;}
 
-      # Use colordiff if present
-      if command -v colordiff > /dev/null; then
-          alias diff='colordiff -u'
-      else
-          alias diff='diff -u'
-      fi
+       # Use colordiff if present
+       if command -v colordiff > /dev/null; then
+           alias diff='colordiff -u'
+       else
+           alias diff='diff -u'
+       fi
 
-      # Functions
-      function cd() {
-        builtin cd "$@" && ls -lah --color=auto && pwd
-      }
-      function mkd() {
-        mkdir -p "$@" && cd "$@";
-      }
-      function cdg() {
-        cd $(git rev-parse --show-toplevel)
-      }
+       # Functions
+       function cd() {
+         builtin cd "$@" && ls -lah --color=auto && pwd
+       }
+       function mkd() {
+         mkdir -p "$@" && cd "$@";
+       }
+       function cdg() {
+         cd $(git rev-parse --show-toplevel)
+       }
 
-      export LC_CTYPE="en_US.UTF-8"
+       export LC_CTYPE="en_US.UTF-8"
+
+      export PATH="''${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
     '';
   };
 }
