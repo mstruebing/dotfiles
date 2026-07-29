@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
   ...
 }:
 
@@ -12,6 +11,8 @@
   home.homeDirectory = "/home/debian";
 
   imports = [ ../home-manager.nix ];
+
+  nixpkgs.config.allowUnfree = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -43,7 +44,7 @@
     # '')
     pkgs.pinentry-curses
   ]
-  ++ (import ../modules/common-packages.nix { inherit pkgs pkgs-unstable; });
+  ++ (import ../modules/common-packages.nix { inherit pkgs; });
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

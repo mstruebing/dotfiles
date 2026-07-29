@@ -1,6 +1,5 @@
 {
   pkgs,
-  pkgs-unstable,
   inputs,
   ...
 }:
@@ -93,7 +92,7 @@
     pkgs.firefox
     pkgs.obsidian
   ]
-  ++ (import ../modules/common-packages.nix { inherit pkgs pkgs-unstable; });
+  ++ (import ../modules/common-packages.nix { inherit pkgs; });
 
   fonts = {
     packages = [

@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable }:
+{ pkgs }:
 with pkgs;
 [
   weechat
@@ -53,6 +53,6 @@ with pkgs;
   zoxide
   zsh
   gnumake
-  pkgs-unstable.github-copilot-cli
-  pkgs-unstable.claude-code
+  github-copilot-cli
+  claude-code
 ]
