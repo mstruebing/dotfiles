@@ -90,6 +90,11 @@
       source = ./bin;
       recursive = true;
     };
+
+    # Writable out-of-store symlink so Claude Code can still update its own
+    # settings (model, plugins, ...) and changes land in the dotfiles repo.
+    ".claude/settings.json".source =
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/projects/own/dotfiles/nix/modules/claude/settings.json";
   };
 
 }
