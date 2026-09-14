@@ -4,6 +4,7 @@
     "pr": "",
     "sessionUrl": false
   },
+  "model": "opus[1m]",
   "enabledPlugins": {
     "rust-analyzer-lsp@claude-plugins-official": true,
     "gopls-lsp@claude-plugins-official": true,
@@ -11,5 +12,7 @@
     "typescript-lsp@claude-plugins-official": true
   },
   "tui": "fullscreen",
-  "model": "opus[1m]"
+  "editorMode": "normal",
+  "preferredNotifChannel": "auto",
+  "autoCompactEnabled": true
 }
