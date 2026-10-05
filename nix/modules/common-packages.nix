@@ -55,4 +55,6 @@ with pkgs;
   gnumake
   github-copilot-cli
   claude-code
+
+  unstable.openspec
 ]

@@ -12,6 +12,17 @@
 
   nixpkgs.hostPlatform = "aarch64-darwin";
 
+  # Expose the unstable channel as `pkgs.unstable.<name>` for packages that are
+  # not in the 26.05 release yet.
+  nixpkgs.overlays = [
+    (final: prev: {
+      unstable = import inputs.nixpkgs-unstable {
+        inherit (prev.stdenv.hostPlatform) system;
+        config.allowUnfree = true;
+      };
+    })
+  ];
+
   nix = {
     package = pkgs.nix;
     settings = {

@@ -11,13 +11,15 @@ build-darwin:
 rebuild-linux: format
 	SYSTEM="Linux" SIGNING_KEY="5DFF6D1F2B08D962" home-manager --impure switch --flake ~/.config/nix/linux
 
-update-darwin:
+update-darwin: update-channels
 	nix-channel --update
 	nix flake update --flake ~/.config/nix/darwin
 
-update-linux:
-	nix-channel --update
+update-linux: update-channels
 	nix flake update --flake ~/.config/nix/linux
+
+update-channels:
+	nix-channel --update
 
 format:
 	find . -name '*.nix' | xargs nixfmt
