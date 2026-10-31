@@ -15,5 +15,6 @@
   "theme": "dark",
   "editorMode": "normal",
   "preferredNotifChannel": "auto",
-  "autoCompactEnabled": true
+  "autoCompactEnabled": true,
+  "outputStyle": "concise"
 }
