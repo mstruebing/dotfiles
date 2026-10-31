@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# Runs Claude Code against a dedicated config directory so that several
+# accounts can be used side by side. Credentials, sessions, history and
+# project state live in ~/.claude-<profile>, everything else (settings,
+# commands, skills, plugins) is symlinked in from ~/.claude by home-manager.
+#
+# Normally invoked through the `claude-work` / `claude-private` wrappers.
+
+set -euo pipefail
+
+if [[ $# -lt 1 ]]; then
+  echo "Usage: $0 <profile> [claude args...]" >&2
+  exit 1
+fi
+
+PROFILE="$1"
+shift
+
+CLAUDE_BIN="${CLAUDE_BIN:-}"
+if [[ -z "$CLAUDE_BIN" ]]; then
+  for candidate in \
+    "$HOME/.nix-profile/bin/claude" \
+    /run/current-system/sw/bin/claude \
+    /etc/profiles/per-user/"$USER"/bin/claude; do
+    if [[ -x "$candidate" ]]; then
+      CLAUDE_BIN="$candidate"
+      break
+    fi
+  done
+fi
+
+if [[ -z "$CLAUDE_BIN" ]]; then
+  echo "claude-profile: could not find the claude binary, set CLAUDE_BIN" >&2
+  exit 1
+fi
+
+export CLAUDE_CONFIG_DIR="$HOME/.claude-$PROFILE"
+mkdir -p "$CLAUDE_CONFIG_DIR"
+
+exec "$CLAUDE_BIN" "$@"

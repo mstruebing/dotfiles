@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Claude Code with the work account (~/.claude-work)
+
+exec "$HOME/bin/claude-profile" work "$@"

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Claude Code with the private account (~/.claude-private)
+
+exec "$HOME/bin/claude-profile" private "$@"

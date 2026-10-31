@@ -54,7 +54,7 @@ with pkgs;
   zsh
   gnumake
   github-copilot-cli
-  claude-code
 
   unstable.openspec
+  unstable.claude-code
 ]

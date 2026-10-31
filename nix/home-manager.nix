@@ -4,6 +4,29 @@
   inputs,
   ...
 }:
+let
+  dotfiles = "${config.home.homeDirectory}/projects/own/dotfiles/nix";
+
+  # Claude Code profiles with their own credentials/sessions/history, sharing
+  # everything else with ~/.claude. See nix/bin/claude-profile.
+  claudeSharedFromHome = [
+    "commands"
+    "skills"
+    "plugins"
+  ];
+  claudeProfileFiles =
+    profile:
+    {
+      ".claude-${profile}/settings.json".source =
+        config.lib.file.mkOutOfStoreSymlink "${dotfiles}/modules/claude/settings.json";
+    }
+    // builtins.listToAttrs (
+      map (entry: {
+        name = ".claude-${profile}/${entry}";
+        value.source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.claude/${entry}";
+      }) claudeSharedFromHome
+    );
+in
 {
   programs.home-manager.enable = true;
   programs.zoxide.enable = true;
@@ -94,7 +117,9 @@
     # Writable out-of-store symlink so Claude Code can still update its own
     # settings (model, plugins, ...) and changes land in the dotfiles repo.
     ".claude/settings.json".source =
-      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/projects/own/dotfiles/nix/modules/claude/settings.json";
-  };
+      config.lib.file.mkOutOfStoreSymlink "${dotfiles}/modules/claude/settings.json";
+  }
+  // claudeProfileFiles "work"
+  // claudeProfileFiles "private";
 
 }

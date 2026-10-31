@@ -12,6 +12,7 @@
     "typescript-lsp@claude-plugins-official": true
   },
   "tui": "fullscreen",
+  "theme": "dark",
   "editorMode": "normal",
   "preferredNotifChannel": "auto",
   "autoCompactEnabled": true
