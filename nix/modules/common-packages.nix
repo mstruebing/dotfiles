@@ -57,4 +57,8 @@ with pkgs;
 
   unstable.openspec
   unstable.claude-code
+  unstable.gopls
+  unstable.context7-mcp
+  unstable.playwright-mcp
+  unstable.codebase-memory-mcp
 ]

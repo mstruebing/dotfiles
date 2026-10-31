@@ -1,0 +1,5 @@
+{
+  "name": "mcp-servers",
+  "version": "1.0.0",
+  "description": "Shared MCP servers: context7, kubernetes, playwright, gopls"
+}

@@ -1,0 +1,6 @@
+read_only = true
+
+[[denied_resources]]
+group = ""
+version = "v1"
+kind = "Secret"

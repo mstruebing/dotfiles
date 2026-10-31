@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "context7": {
+      "command": "context7-mcp"
+    },
+    "kubernetes": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "kubernetes-mcp-server@0.1.1",
+        "--config",
+        "${CLAUDE_PLUGIN_ROOT}/kubernetes.toml"
+      ]
+    },
+    "playwright": {
+      "command": "playwright-mcp",
+      "args": [
+        "--headless"
+      ]
+    },
+    "gopls": {
+      "command": "gopls",
+      "args": [
+        "mcp"
+      ]
+    }
+  }
+}

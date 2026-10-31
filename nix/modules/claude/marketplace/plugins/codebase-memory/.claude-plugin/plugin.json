@@ -1,0 +1,5 @@
+{
+  "name": "codebase-memory",
+  "version": "0.12.1",
+  "description": "codebase-memory-mcp knowledge graph: MCP server, skill, graph agents and context hooks"
+}

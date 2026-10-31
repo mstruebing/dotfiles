@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [{ "type": "command", "command": "codebase-memory-mcp hook-augment 2>/dev/null || true", "timeout": 5 }]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "matcher": "*",
+        "hooks": [{ "type": "command", "command": "codebase-memory-mcp hook-augment 2>/dev/null || true", "timeout": 5 }]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Grep|Glob|Bash",
+        "hooks": [{ "type": "command", "command": "codebase-memory-mcp hook-augment 2>/dev/null || true", "timeout": 5 }]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Read",
+        "hooks": [{ "type": "command", "command": "codebase-memory-mcp hook-augment 2>/dev/null || true", "timeout": 5 }]
+      }
+    ]
+  }
+}

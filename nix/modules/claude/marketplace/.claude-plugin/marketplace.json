@@ -1,0 +1,18 @@
+{
+  "name": "dotfiles",
+  "owner": {
+    "name": "Max Strübing"
+  },
+  "plugins": [
+    {
+      "name": "mcp-servers",
+      "source": "./plugins/mcp-servers",
+      "description": "Shared MCP servers: context7, kubernetes, playwright, gopls"
+    },
+    {
+      "name": "codebase-memory",
+      "source": "./plugins/codebase-memory",
+      "description": "codebase-memory-mcp knowledge graph: MCP server, skill, graph agents and context hooks"
+    }
+  ]
+}
