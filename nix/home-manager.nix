@@ -19,6 +19,8 @@ let
     {
       ".claude-${profile}/settings.json".source =
         config.lib.file.mkOutOfStoreSymlink "${dotfiles}/modules/claude/settings.json";
+      ".claude-${profile}/CLAUDE.md".source =
+        config.lib.file.mkOutOfStoreSymlink "${dotfiles}/modules/claude/CLAUDE.md";
     }
     // builtins.listToAttrs (
       map (entry: {
@@ -118,6 +120,8 @@ in
     # settings (model, plugins, ...) and changes land in the dotfiles repo.
     ".claude/settings.json".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfiles}/modules/claude/settings.json";
+    ".claude/CLAUDE.md".source =
+      config.lib.file.mkOutOfStoreSymlink "${dotfiles}/modules/claude/CLAUDE.md";
   }
   // claudeProfileFiles "work"
   // claudeProfileFiles "private";
